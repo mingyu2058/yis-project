@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div style="text-align: center; background: red; font-size: 50px">
+        <button th:onclick="|location.href='@{/join}'|">회원가입</button>
+    </div>
+    <div style="text-align: center; background: skyblue; font-size: 200px; margin-top: 50px">메인1</div>
+    <div style="text-align: center; background: deepskyblue; font-size: 200px; margin-top: 50px" >메인2</div>
+    <div style="text-align: center; background: deepskyblue; font-size: 30px; margin-top: 50px" >
+        <button th:onclick="|location.href='@{/basic/items/add}'|">등록</button>
+    </div>
+
+</div>
+</body>
+</html>
