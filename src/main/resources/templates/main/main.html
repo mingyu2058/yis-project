@@ -3,19 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
+    <link   th:href="@{/css/main.css}"
+            href="C:\Users\inch1\OneDrive\바탕 화면\졸작\yis\src\main\resources\static\css" rel="stylesheet">
+
     <title>Title</title>
 </head>
 <body>
 <div>
-    <div style="text-align: center; background: red; font-size: 50px">
+    <div class = "container">
+    <div class="content-left">
+        <h1> = </h1>
+    </div>
+    <div class = "content-center">
+        <h1>YIS</h1>
+    </div >
+    <div class = "content-right">
         <button th:onclick="|location.href='@{/join}'|">회원가입</button>
     </div>
-    <div style="text-align: center; background: skyblue; font-size: 200px; margin-top: 50px">메인1</div>
-    <div style="text-align: center; background: deepskyblue; font-size: 200px; margin-top: 50px" >메인2</div>
-    <div style="text-align: center; background: deepskyblue; font-size: 30px; margin-top: 50px" >
-        <button th:onclick="|location.href='@{/basic/items/add}'|">등록</button>
+    </div>
+    <div class="container" style="height: 300px;">
+    <div class="main-left" style="text-align: center; font-size: 50px; margin-top: 50px">메인1</div>
+    <div class="main-right" style="text-align: center; font-size: 50px; margin-top: 50px" >메인2</div>
     </div>
 
+    <div class="container" style="text-align: center; font-size: 30px; margin-top: 50px" >
+        <button th:onclick="|location.href='@{/basic/items/add}'|">등록</button>
+    </div>
 </div>
 </body>
 </html>
