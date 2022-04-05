@@ -22,6 +22,10 @@
     flex-direction: row;
 }
 
+.container_middle{
+    flex-flow: row wrap;
+}
+
 .main-left{
     border: 1px solid #cdcdcd;
     border-radius: 10px;
