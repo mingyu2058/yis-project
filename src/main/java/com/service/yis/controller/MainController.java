@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 
     @GetMapping("")
-    public String addForm(){
-        return "main/main";
+    public String selectForm(){
+        return "main/select";
     }
+
+    @GetMapping("main")
+    public String mainForm(){ return "main/main"};
 }
