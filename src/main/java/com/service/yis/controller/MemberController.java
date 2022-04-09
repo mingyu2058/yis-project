@@ -26,7 +26,7 @@ public class MemberController {
     public String addUser(Member member){
         memberRepository.save(member);
 
-        return "/basic/items";
+        return "basic/items";
     }
 
     @PostConstruct
