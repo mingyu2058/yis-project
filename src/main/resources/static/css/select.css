@@ -1,0 +1,17 @@
+.select-supply{
+    float:left;
+}
+
+.select-demand{
+    float: right;
+    margin-left: 50px;
+}
+
+.select-button{
+    width: 250px;
+    height: 250px;
+    font-size: 40px;
+    background: #99FF99;
+    border: 1px solid #cdcdcd;
+    border-radius: 10px;
+}

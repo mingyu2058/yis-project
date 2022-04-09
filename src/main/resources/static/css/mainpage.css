@@ -1,0 +1,37 @@
+.top{
+    padding: 20px;
+    height: 80px;
+    margin-top: 10px;
+}
+
+.top-left{
+    float:left;
+}
+.top-center{
+}
+.top-right{
+    float:right;
+}
+.top-button{
+    background: white;
+    color: #99FF99;
+    font-size : 20px;
+    border: white;
+    font-weight: bold;
+}
+
+.item-button{
+    border: white;
+    font-weight: bold;
+    height: 200px;
+    width: 200px;
+}
+
+.center{
+    text-align: center;
+    margin-bottom: 15px;
+}
+text{
+    font-weight: bold;
+    font-size: 30px;
+}

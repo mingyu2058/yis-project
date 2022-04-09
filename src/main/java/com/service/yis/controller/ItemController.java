@@ -62,8 +62,8 @@ public class ItemController {
 
     @PostConstruct
     public void init(){
-        itemRepository.save(new Item("itemA",10000,10));
-        itemRepository.save(new Item("itemB",12000,10));
+        itemRepository.save(new Item("A 농장",10000,10));
+        itemRepository.save(new Item("B 농장",12000,10));
     }
 
 
