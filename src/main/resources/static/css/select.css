@@ -1,17 +1,22 @@
+.select-top{
+    padding: 20px;
+    height: 400px;
+}
+
 .select-supply{
     float:left;
 }
 
 .select-demand{
-    float: right;
     margin-left: 50px;
+    float: left;
 }
 
 .select-button{
     width: 250px;
     height: 250px;
     font-size: 40px;
-    background: #99FF99;
+    color: #12b564;
     border: 1px solid #cdcdcd;
     border-radius: 10px;
 }

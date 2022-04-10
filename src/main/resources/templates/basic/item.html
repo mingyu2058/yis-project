@@ -40,10 +40,10 @@
         <div class="col">
             <button class="w-100 btn btn-primary btn-lg"
                     onclick="location.href='editForm.html'"
-                    th:onclick="|location.href='@{/basic/items/{itemId}/edit(itemId=${item.id})}'|"
+                    th:onclick="|location.href='@{/basic/items/{itemId}/buy(itemId=${item.id})}'|"
                     type="button">구매하기</button>
         </div>
-        <div class="col">
+        <div class="col" style="margin-bottom: 30px;">
             <button class="w-100 btn btn-secondary btn-lg"
                     onclick="location.href='items.html'"
                     th:onclick="|location.href='@{/basic/items}'|"

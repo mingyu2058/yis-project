@@ -1,7 +1,7 @@
 .top{
     padding: 20px;
-    height: 80px;
     margin-top: 10px;
+    text-align: center;
 }
 
 .top-left{
@@ -14,7 +14,7 @@
 }
 .top-button{
     background: white;
-    color: #99FF99;
+    color: #12b564;
     font-size : 20px;
     border: white;
     font-weight: bold;

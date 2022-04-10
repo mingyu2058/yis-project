@@ -60,10 +60,22 @@ public class ItemController {
 
     }
 
+    @GetMapping("/{itemId}/buy")
+    public String buyForm(@PathVariable Long itemId, Model model){
+        Item item = itemRepository.findById(itemId);
+        model.addAttribute("item",item);
+        return "basic/buyForm";
+    }
+
+
     @PostConstruct
     public void init(){
         itemRepository.save(new Item("A 농장",10000,10));
-        itemRepository.save(new Item("B 농장",12000,10));
+        itemRepository.save(new Item("B 농장",11000,10));
+        itemRepository.save(new Item("C 농장",10500,10));
+        itemRepository.save(new Item("D 농장",11500,10));
+
+
     }
 
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <link   th:href="@{/css/mainpage.css}"
+          href="/css/mainpage.css" rel="stylesheet">
+
+  <title>Title</title>
+</head>
+<body>
+<div>
+  <div> <text>YIS</text> </div>
+  <div class="top">
+    <div class="top-left">
+      <button class="top-button">고객센터</button>
+    </div>
+    <div class="top-right">
+      <button class="top-button"
+              th:onclick="|location.href='@{/join}'|"
+              type="button">로그인</button>
+      <button class="top-button"
+              th:onclick="|location.href='@{/join}'|"
+              type="button">회원가입</button>
+      <button class="top-button"
+              th:onclick="|location.href='@{/join}'|"
+              type="button">마이페이지</button>
+    </div>
+  </div>
+
+  <div>
+    <button class="top-button"
+          th:onclick="|location.href='@{/main}'|"
+          type="button">구매하러가기</button>
+  </div>
+
+
+  <div>
+  <img th:src="@{/img/데이터.PNG}"/>
+  </div>
+
+
+
+</div>
+</body>
+</html>
