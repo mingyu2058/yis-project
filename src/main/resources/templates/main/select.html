@@ -8,21 +8,25 @@
 </head>
 <body>
     <div class="select-top">
-        <div class = "select-supply">
-            <button class = "select-button" th:onclick="|location.href='@{/main}'|" type="button">
-                데이터
-                <br>
-                바로가기
-            </button>
+        <table>
+            <tr>
+                <td>
+                    <button class = "select-button" th:onclick="|location.href='@{/data}'|" type="button">
+                        데이터
+                        <br>
+                        확인하기
+                    </button>
+                </td>
+                <td>
+                    <button class = "select-button" th:onclick="|location.href='@{/main}'|" type="button">
+                        구입
+                        <br>
+                        바로가기
+                    </button>
+                </td>
+            <tr>
+        </table>
 
-        </div>
-        <div class = "select-demand">
-            <button class = "select-button" th:onclick="|location.href='@{/main}'|" type="button">
-                구입
-                <br>
-                바로가기
-            </button>
-        </div>
     </div>
 </body>
 </html>

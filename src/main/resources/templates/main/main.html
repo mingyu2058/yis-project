@@ -29,10 +29,14 @@
     </div>
 
     <div class="top">
-        <button class="top-button">선물거래</button>
-        <button class="top-button
+        <button class="top-button"
+                th:onclick="|location.href='@{/data}'|">데이터확인</button>
+        <button class="top-button"
                 th:onclick="|location.href='@{/main}'|"
-                크라우드펀딩</button>
+                type="button">선물거래</button>
+        <button class="top-button"
+                th:onclick="|location.href='@{/crowd}'|"
+                type="button">크라우드펀딩</button>
         <button class="top-button">현물거래</button>
     </div>
 

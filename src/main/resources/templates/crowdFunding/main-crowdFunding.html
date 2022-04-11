@@ -9,8 +9,8 @@
     <title>Title</title>
 </head>
 <body>
-<div>
-    <div> <text>YIS</text> </div>
+<div style="margin: 20px;">
+    <div> <text>YBOT</text> </div>
     <div class="top">
         <div class="top-left">
             <button class="top-button">고객센터</button>
@@ -28,53 +28,28 @@
         </div>
     </div>
 
+
     <div class="top">
-        <button class="top-button">선물거래</button>
         <button class="top-button"
-                th:onclick="|location.href='@{/crowdFunding/main-crowdFunding'|">크라우드펀딩</button>
+                th:onclick="|location.href='@{/data}'|">데이터확인</button>
+        <button class="top-button"
+                th:onclick="|location.href='@{/main}'|"
+                type="button">선물거래</button>
+        <button class="top-button"
+                th:onclick="|location.href='@{/crowd}'|"
+                type="button">크라우드펀딩</button>
         <button class="top-button">현물거래</button>
     </div>
 
-    <div>
-        <button class="top-button"
-                th:onclick="|location.href='@{/main}'|"
-                type="button">구매하기</button>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <img style = "width: 100%;"th:src="@{/img/크라우드펀딩.PNG}"/>
     </div>
 
-
-    <div>
-        <img th:src="@{/img/데이터.PNG}"  width="300px" height="200px;" />
+    <div style="text-align: center; margin-top: 30px;">
+        <img style = "width: 100%;"th:src="@{/img/크라우드펀딩2.PNG}"/>
     </div>
 
-    <div class = "center">
-        <text>카테고리</text> <br>
-        <button class="item-button">전체 품목</button>
-        <button class="item-button"
-                th:onclick="|location.href='@{/basic/items}'|"
-                type="button">사진1</button>
-        <button class="item-button">사진2</button>
-        <button class="item-button">사진3</button>
-        <button class="item-button">사진4</button>
-        <button class="item-button">사진5</button>
-    </div>
-
-    <div class = "center">
-        <text>추천 상품</text> <br>
-        <button class="item-button">사진1</button>
-        <button class="item-button">사진2</button>
-        <button class="item-button">사진3</button>
-        <button class="item-button">사진4</button>
-        <button class="item-button">사진5</button>
-    </div>
-
-    <div class = "center">
-        <text>판매량 TOP5</text> <br>
-        <button class="item-button">사진1</button>
-        <button class="item-button">사진2</button>
-        <button class="item-button">사진3</button>
-        <button class="item-button">사진4</button>
-        <button class="item-button">사진5</button>
-    </div>
 
 </div>
 </body>
