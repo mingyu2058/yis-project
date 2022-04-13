@@ -9,7 +9,7 @@
     <title>Title</title>
 </head>
 <body>
-<div>
+<div style="padding-left:20px; padding-right: 20px;">
     <div> <text>YBOT</text> </div>
     <div class="top">
         <div class="top-left">
@@ -43,11 +43,21 @@
     <div class = "center">
         <text>카테고리</text> <br>
         <button class="item-button">전체 품목</button>
+
+
         <button class="item-button"
                 th:onclick="|location.href='@{/basic/items}'|"
                 type="button">사진1</button>
-        <button class="item-button">사진2</button>
-        <button class="item-button">사진3</button>
+
+        <button class="item-button"
+                th:onclick="|location.href='@{/basic/items}'|"
+                type="button">사진2</button>
+
+        <button class="item-button"
+                th:onclick="|location.href='@{/basic/items}'|"
+                type="button">사진3</button>
+
+
         <button class="item-button">사진4</button>
         <button class="item-button">사진5</button>
     </div>

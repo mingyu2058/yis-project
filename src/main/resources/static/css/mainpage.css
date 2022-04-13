@@ -16,7 +16,7 @@
 .top-button{
     background: white;
     color: #12b564;
-    font-size : 20px;
+    font-size : 30px;
     border: white;
     font-weight: bold;
 }
@@ -24,8 +24,8 @@
 .item-button{
     border: white;
     font-weight: bold;
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
 }
 
 .center{
