@@ -12,12 +12,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Test {
 
     @GetMapping
-    public String crowdFundingMain(){
+    public String testMain(){
         return "/test/main-test";
     }
 
     @GetMapping("/login")
-    public String test(){
+    public String testLogin(){
         return "/test/login-test";
     }
+
+    @GetMapping("/item")
+    public String testItem(){return "/test/item-test";}
 }

@@ -7,6 +7,10 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
     <meta charset="utf-8">
     <link   th:href="@{/css/main-test.css}"
             href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <link   th:href="@{/css/item-test.css}"
+            href="../css/bootstrap.min.css" rel="stylesheet">
+
     <title>Title</title>
     <!--
     <script>
@@ -44,139 +48,44 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
         </ul>
     </nav>
 
-    <!-- information -->
-    <header class="showcase">
-        <h2> 정보 들어갈 곳 </h2>
-        <p>
-            <Se></Se>정보 정보 정보
-        </p>
-        <a href="#" class="btn">
-            자세히 보기 <i class="fas fa-chevron-right"></i>
-        </a>
-    </header>
 
-    <!-- Home cards 1 -->
-    <div>
-        <h3 class="section-title">금주의 인기 품목 </h3>
-    </div>
-    <section class="home-cards">
-        <div>
+    <ul/>
+    <!-- 그래프 -->
+    <section class="graph">
+        <img    class="graph-img1"
+                th:src="@{/img/데이터.PNG}"/>
+        <img    class="graph-img2"
+                th:src="@{/img/데이터2.PNG}"/>
+    </section>
+
+    <ul/>
+
+    <!-- Item title -->
+
+    <section class="item-title">
+        <div class="item-title-img">
             <img th:src="@{/img/사과.png}"
                  src="/img/사과.png"/>
-            <h3>청송 사과</h3>
-            <p>
-                거래 기간 : 2022.04.20~ 22.05.21 <br>
-                예상 수확일 : 7~8월
-            </p>
-            <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
         </div>
-        <div>
-            <img th:src="@{/img/아오리사과.jpg}"
-                 src="/img/아오리사과.jpg"/>
-            <h3>아오리 사과</h3>
-            <p>
-                기간 : 2022.04.20~ 22.05.21 <br>
-                예상 수확일 : 7~8월
-            </p>
-            <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
-        </div>
-        <div>
-            <img th:src="@{/img/복숭아.jpeg}"
-                 src="/img/복숭아.jpeg"/>
-            <h3>딱딱한 복숭아</h3>
-            <p>
-                기간 : 2022.04.20~ 22.6.10 <br>
-                예상 수확일 : 7~8월
-            </p>
-            <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
-        </div>
-        <div>
-            <img th:src="@{/img/복숭아.jpeg}"
-                 src="/img/복숭아.jpeg"/>
-            <h3>말랑한 복숭아</h3>
-            <p>
-                기간 : 2022.04.20~ 22.05.21<br>
-                예상 수확일 : 7~8월
-            </p>
-            <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
+        <div class="item-title-content">
+            <h1>청송 사과</h1>
+            <p>국내산 청송사과</p>
+            <p>거래 기간 : 2022.04.20~ 22.05.21</p>
+            <p>예상 수확일 : 7~8월
         </div>
     </section>
 
 
-    <div>
-        <h3 class="section-title">최근 올라온 물품</h3>
-    </div>
+    <!--item content-->
 
+    <section>
+        <div class="item-contents">
 
-    <!-- Xbox
-    <section class="xbox">
-        <div class="content">
-            <h2>Xbox Game Pass Ultimate</h2>
-            <p>Xbox Game Pass Ultimate Xbox Live Gold and over 100 high-quality
-                console and PC games. Play together with friends and discover your
-                next favorite game.</p>
-            <a href="#" class="btn">
-                Join Now <i class="fas fa-chevron-right"></i>
-            </a>
         </div>
-    </section>
-    -->
 
-    <!-- Home cards 2 -->
-    <section class="home-cards">
-        <div>
-            <img th:src="@{/img/사과.png}"
-                 src="/img/사과.png"/>
-            <h3>청송 사과</h3>
-            <p>
-                거래 기간 : 2022.04.20~ 22.05.21 <br>
-                예상 수확일 : 7~8월
-            </p>
-            <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
-        </div>
-        <div>
-            <img th:src="@{/img/아오리사과.jpg}"
-                 src="/img/아오리사과.jpg"/>
-            <h3>아오리 사과</h3>
-            <p>
-                기간 : 2022.04.20~ 22.05.21 <br>
-                예상 수확일 : 7~8월
-            </p>
-            <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
-        </div>
-        <div>
-            <img th:src="@{/img/복숭아.jpeg}"
-                 src="/img/복숭아.jpeg"/>
-            <h3>딱딱한 복숭아</h3>
-            <p>
-                기간 : 2022.04.20~ 22.6.10 <br>
-                예상 수확일 : 7~8월
-            </p>
-            <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
-        </div>
-        <div>
-            <img th:src="@{/img/복숭아.jpeg}"
-                 src="/img/복숭아.jpeg"/>
-            <h3>말랑한 복숭아</h3>
-            <p>
-                기간 : 2022.04.20~ 22.05.21 <br>
-                예상 수확일 : 7~8월
-            </p>
-            <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
-        </div>
     </section>
 
-    <!-- Carbon -->
-    <section class="carbon dark">
-        <div class="content">
-            <h2>Commiting To Carbon Negative</h2>
-            <p>Microsoft will be carbon negative by 2030 and by 2050 we will remove
-                all carbon the company has emitted since it was founded in 1975</p>
-            <a href="#" class="btn">
-                Learn More <i class="fas fa-chevron-right"></i>
-            </a>
-        </div>
-    </section>
+
 
     <!-- Follow -->
     <!--
@@ -194,6 +103,21 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
     </section>
     -->
 </div>
+
+
+<!-- button -->
+<section>
+    <div class="item-button">
+        <button class="item-button-content">
+            구입
+        </button>
+
+        <button class="item-button-content">
+            목록보기
+        </button>
+    </div>
+</section>
+
 
 <!-- Links -->
 <section class="links">
@@ -251,6 +175,8 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
         </ul>-->
     </div>
 </section>
+
+
 
 <!-- Footer -->
 <footer class="footer">
