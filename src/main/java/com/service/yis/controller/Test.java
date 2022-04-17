@@ -23,4 +23,12 @@ public class Test {
 
     @GetMapping("/item")
     public String testItem(){return "/test/item-test";}
+
+    @GetMapping("/mypage")
+    public String testMypage(){return "/test/mypage-test";}
+
+
+    @GetMapping("/mypage/chat")
+    public String testChat(){return "/test/chat-test";}
+
 }
