@@ -50,3 +50,11 @@
     width: 300px;
     margin: 10px;
 }
+
+/* chat btn */
+.chat-btn{
+    border-radius: 15px;
+    background: lawngreen;
+    width: 200px;
+    height: 70px;
+}
