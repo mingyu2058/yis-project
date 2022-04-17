@@ -2,20 +2,19 @@
     box-sizing:border-box;
 }
 body{
-    background-color:#abd9e9;
     font-family:Arial;
 }
 #chat-container{
-    width:750px;
+    width:1600px;
     height:800px;
     background:#eff3f7;
-    margin:0 auto;
+    margin:10px auto;
     font-size:0;
     border-radius:5px;
     overflow:hidden;
 }
 aside{
-    width:260px;
+    width:500px;
     height:800px;
     background-color:#3b3e49;
     display:inline-block;
@@ -23,10 +22,11 @@ aside{
     vertical-align:top;
 }
 main{
-    width:490px;
+    padding-left: 30px;
+    width:1000px;
     height:800px;
     display:inline-block;
-    font-size:15px;
+    font-size:20px;
     vertical-align:top;
 }
 
@@ -77,10 +77,11 @@ aside li div{
     margin-top:12px;
 }
 aside li h2{
-    font-size:14px;
+    font-size:30px;
     color:#fff;
     font-weight:normal;
     margin-bottom:5px;
+    margin-left: 20px;
 }
 aside li h3{
     font-size:12px;
