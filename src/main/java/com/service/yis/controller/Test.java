@@ -21,6 +21,9 @@ public class Test {
         return "/test/login-test";
     }
 
+    @GetMapping("/join")
+    public String testJoin(){ return "/test/join-test";}
+
     @GetMapping("/item")
     public String testItem(){return "/test/item-test";}
 
