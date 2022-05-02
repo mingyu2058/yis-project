@@ -34,6 +34,7 @@ public class MemberController {
         memberRepository.save(new Member("userA","user","1234"));
         memberRepository.save(new Member("userB","user2","2345"));
         memberRepository.save(new Member("userC","user3","34345"));
+        memberRepository.save(new Member("userD","user4","34235"));
 
     }
 }
