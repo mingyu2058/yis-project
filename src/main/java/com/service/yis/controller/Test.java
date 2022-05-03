@@ -34,4 +34,7 @@ public class Test {
     @GetMapping("/mypage/chat")
     public String testChat(){return "/test/chat-test";}
 
+    @GetMapping("/search")
+    public String testSearch(){return "/test/search-test";}
+
 }
