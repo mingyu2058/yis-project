@@ -37,4 +37,10 @@ public class Test {
     @GetMapping("/search")
     public String testSearch(){return "/test/search-test";}
 
+    @GetMapping("/mypage-real")
+    public String testMypageReal(){return "/test/mypage-test";}
+
+    @GetMapping("/mypage-customer")
+    public String testMypageCustomer(){return "/test/mypage-customer-test";}
+
 }

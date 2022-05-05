@@ -23,6 +23,9 @@ dependencies {
 
 	//스프링 시큐리티
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	//실시간 업데이트 반영
+	implementation 'org.springframework.boot:spring-boot-devtools'
 }
 
 tasks.named('test') {
