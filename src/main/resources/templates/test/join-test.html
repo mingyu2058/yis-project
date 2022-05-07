@@ -5,7 +5,7 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <link   th:href="@{/css/main-test.css}"
+    <link   th:href="@{/css/join-test.css}"
             href="../css/bootstrap.min.css" rel="stylesheet">
 
     <link   th:href="@{/css/item-test.css}"
@@ -50,35 +50,69 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
         </ul>
     </nav>
 </div>
-    <!--item content-->
-<div>
-    <section>
-        <div>
-            <p>회원가입</p>
-        </div>
 
-        <!-- input main form -->
-        <div>
-            <input title="이메일">
-            <input title="비밀번호">
-            <input title="비밀번호 확인">
-        </div>
 
-        
-
-    </section>
+<div class="img">
+<img
+        th:src="@{/img/로고.PNG}"/>
 </div>
 
+<div class="title">
+    <p>회원가입</p>
+</div>
+
+    <!--item content-->
+<div class = "join">
+    <section>
+
+        <!-- e-mail / id -->
+        <div>
+            <p>아이디(이메일)</p>
+            <input title="이메일">
+        </div>
+
+        <!-- 패스워드 -->
+        <div>
+            <p>비밀번호</p>
+            <input title="이메일">
+        </div>
+
+        <!-- 패스워드 확인 -->
+        <div>
+            <p>비밀번호 확인</p>
+            <input title="이메일">
+        </div>
+
+        <!-- 이름 -->
+        <div>
+            <p>이름</p>
+            <input title="이메일">
+        </div>
+
+        <!-- 생산자 체크 -->
+        <div>
+            <p>생산자여부</p>
+            <button>해당있음</button>
+            <button>해당없음</button>
+        </div>
+
+        <!-- 기업,개인-->
+        <div>
+            <p>사업자번호</p>
+            <button>해당있음</button>
+            <button>해당없음</button>
+            <!--<input title="사업자번호">-->
+        </div>
 
 
+    </section>
 
+</div>
 
-
-<!-- Links -->
-<section class="links">
-    <div class="links-inner">
-    </div>
-</section>
+<div class="bottom">
+    <button class="back">이전으로</button>
+    <button class="join-btn">가입하기</button>
+</div>
 
 
 
