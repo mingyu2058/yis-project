@@ -68,13 +68,13 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
         <!-- 내용 선택 버튼-->
         <div class = "section-contents-list">
             <div style="border-bottom: none; color: #cbcbcb;" class="section-contents-button">
-                진행중인물품
+                진행중인물품(1)
             </div>
             <div class="section-contents-button">
-                판매중인물품
+                판매중인물품(2)
             </div>
             <div style="border-bottom: none; color: #cbcbcb;"  class="section-contents-button">
-                채팅관리
+                채팅관리(13)
             </div>
         </div>
 
@@ -83,20 +83,37 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
 
     <!-- 하단 내용 -->
     <section class="section-contents">
-        <!-- 판매중인 물품-->
+        <!-- 진행중인 물품-->
         <div>
             <ul class="contents-ul">
                 <li>
+                    <img th:src="@{/img/복숭아.jpeg}">
+                    <p>경산 하우스 복숭아</p>
+                    <div>
+                        <button class="offer-button">구매자 정보</button>
+                        <button class="item-edit-button">계약서 확인</button>
+                        <button class="item-edit-button">정보 수정</button>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- 판매중인 물품-->
+        <div style="display: none">
+            <ul class="contents-ul">
+                <li>
                     <img th:src="@{/img/사과.PNG}">
-                    <p>맛있는 사과</p>
+                    <p>고당도 대구 꿀 사과</p>
                     <div>
                     <button class="offer-button">견적요청보기</button>
                     <button class="item-edit-button">내용수정하기</button>
                     </div>
                 </li>
                 <li>
-                    <img th:src="@{/img/복숭아.jpeg}">
-                    <p>제철 복숭아</p>
+                    <img th:src="@{/img/아오리사과.jpg}">
+                    <p>최저가 아오리 사과</p>
                     <div>
                     <button class="offer-button">견적요청보기</button>
                     <button class="item-edit-button">내용수정하기</button>

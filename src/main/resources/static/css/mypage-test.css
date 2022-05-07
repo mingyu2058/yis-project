@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Spoqa Han Sans,"Sans-serif";
 }
 
 body {
@@ -23,7 +23,7 @@ ul {
 
 .container {
     width: 90%;
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -348,8 +348,8 @@ ul {
 .page-name{
     text-align: center;
     font-size: 36px;
+    font-weight: bold;
     margin-top: 100px;
-
 }
 
 /* 상위 내용 */
@@ -402,6 +402,7 @@ hr{
     text-align: center;
     font-weight: bold;
     font-size: 30px;
+    margin-top: 30px;
 }
 .contents-ul div{
     text-align: center;
@@ -409,6 +410,9 @@ hr{
 
 img{
     float: left;
+    width: 500px;
+    height: 350px;
+    margin-left: 80px;
 }
 
 .offer-button{
