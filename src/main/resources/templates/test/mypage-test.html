@@ -50,6 +50,11 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
     </ul>
 </nav>
 
+<div class="logo">
+    <img
+            th:src="@{/img/로고.PNG}"/>
+</div>
+
 
 <div class="container">
 
@@ -70,7 +75,7 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
             <div style="border-bottom: none; color: #cbcbcb;" class="section-contents-button">
                 진행중인물품(1)
             </div>
-            <div class="section-contents-button">
+            <div  class="section-contents-button">
                 판매중인물품(2)
             </div>
             <div style="border-bottom: none; color: #cbcbcb;"  class="section-contents-button">
@@ -80,14 +85,14 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
 
     </section>
 
-
     <!-- 하단 내용 -->
     <section class="section-contents">
         <!-- 진행중인 물품-->
-        <div>
+        <div style="display: none">
             <ul class="contents-ul">
                 <li>
-                    <img th:src="@{/img/복숭아.jpeg}">
+                    <img    class="img"
+                            th:src="@{/img/복숭아.jpeg}">
                     <p>경산 하우스 복숭아</p>
                     <div>
                         <button class="offer-button">구매자 정보</button>
@@ -101,10 +106,11 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
         </div>
 
         <!-- 판매중인 물품-->
-        <div style="display: none">
+        <div >
             <ul class="contents-ul">
                 <li>
-                    <img th:src="@{/img/사과.PNG}">
+                    <img    class="img"
+                            th:src="@{/img/사과.PNG}">
                     <p>고당도 대구 꿀 사과</p>
                     <div>
                     <button class="offer-button">견적요청보기</button>
@@ -112,7 +118,8 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
                     </div>
                 </li>
                 <li>
-                    <img th:src="@{/img/아오리사과.jpg}">
+                    <img    class="img"
+                            th:src="@{/img/아오리사과.jpg}">
                     <p>최저가 아오리 사과</p>
                     <div>
                     <button class="offer-button">견적요청보기</button>
