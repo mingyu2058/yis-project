@@ -42,4 +42,10 @@ public class Test {
     @GetMapping("/mypage-customer")
     public String testMypageCustomer(){return "/test/mypage-customer-test";}
 
+    @GetMapping("/mainpage-test.html")
+    public String testMainPage(){return "/test/mainpage-test-real";}
+
+    @GetMapping("/item-test-real")
+    public String testItemReal(){return "/test/item-test-real";}
+
 }
