@@ -13,40 +13,40 @@ public class Test {
 
     @GetMapping
     public String testMain(){
-        return "/test/main-test";
+        return "test/main-test";
     }
 
     @GetMapping("/login-real")
     public String testLogin(){
-        return "/test/login";
+        return "test/login";
     }
 
     @GetMapping("/join")
-    public String testJoin(){ return "/test/join-test";}
+    public String testJoin(){ return "test/join-test";}
 
     @GetMapping("/item")
-    public String testItem(){return "/test/item-test";}
+    public String testItem(){return "test/item-test";}
 
     @GetMapping("/mypage")
-    public String testMypage(){return "/test/mypage-test";}
+    public String testMypage(){return "test/mypage-test";}
 
 
     @GetMapping("/mypage/chat")
-    public String testChat(){return "/test/chat-test";}
+    public String testChat(){return "test/chat-test";}
 
     @GetMapping("/search")
-    public String testSearch(){return "/test/search-test";}
+    public String testSearch(){return "test/search-test";}
 
     @GetMapping("/mypage-real")
-    public String testMypageReal(@PathVariable Long itemId){return "/test/mypage-test";}
+    public String testMypageReal(@PathVariable Long itemId){return "test/mypage-test";}
 
     @GetMapping("/mypage-customer")
-    public String testMypageCustomer(){return "/test/mypage-customer-test";}
+    public String testMypageCustomer(){return "test/mypage-customer-test";}
 
     @GetMapping("/mainpage-test.html")
-    public String testMainPage(){return "/test/mainpage-test-real";}
+    public String testMainPage(){return "test/mainpage-test-real";}
 
     @GetMapping("/item-test-real")
-    public String testItemReal(){return "/test/item-test-real";}
+    public String testItemReal(){return "test/item-test-real";}
 
 }
