@@ -33,7 +33,9 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
 
         <ul class="right-menu">
             <li>
-                <a href="#">로그인</a>
+                <a href="#"
+                   th:onclick="|location.href='@{/test/mypage-real}'|"
+                   type="button">로그인</a>
                 <a style="display: none" href="#">로그아웃</a>
             </li>
             <li>
@@ -41,7 +43,9 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
                 <a style="display: none" href='#'>정보수정</a>
             </li>
             <li>
-                <a href="#">마이페이지</a>
+                <a href="#"
+                   th:onclick="|location.href='@{/test/mypage-customer}'|"
+                   type="button">마이페이지</a>
             </li>
         </ul>
     </nav>

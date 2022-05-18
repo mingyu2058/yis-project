@@ -25,7 +25,7 @@ public class Test {
     public String testJoin(){ return "test/join-test";}
 
     @GetMapping("/item")
-    public String testItem(){return "test/item-test";}
+    public String testItem(){return "test/item-test-real";}
 
     @GetMapping("/mypage")
     public String testMypage(){return "test/mypage-test";}
