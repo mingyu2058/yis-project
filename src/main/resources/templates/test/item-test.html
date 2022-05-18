@@ -5,10 +5,10 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <link   th:href="@{css/main-test.css}"
+    <link   th:href="@{/css/main-test.css}"
             href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <link   th:href="@{css/item-test.css}"
+    <link   th:href="@{/css/item-test.css}"
             href="../css/bootstrap.min.css" rel="stylesheet">
 
     <title>Title</title>
@@ -38,7 +38,7 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
         <ul class="right-menu">
             <li>
                 <a href="#"
-                   th:onclick="|location.href='@{/test/mypage-real}'|"
+                   th:onclick="|location.href='@{/test/login-real}'|"
                    type="button">>로그인</a>
                 <a style="display: none" href="#">로그아웃</a>
             </li>
