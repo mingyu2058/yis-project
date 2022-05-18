@@ -38,7 +38,7 @@ public class Test {
     public String testSearch(){return "test/search-test";}
 
     @GetMapping("/mypage-real")
-    public String testMypageReal(@PathVariable Long itemId){return "test/mypage-test";}
+    public String testMypageReal(){return "test/mypage-test";}
 
     @GetMapping("/mypage-customer")
     public String testMypageCustomer(){return "test/mypage-customer-test";}
