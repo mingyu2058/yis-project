@@ -35,7 +35,7 @@
         <ul class="right-menu">
             <li>
                 <a href="#"
-                   th:onclick="|location.href='@{/test/mypage-real}'|"
+                   th:onclick="|location.href='@{/test/login-real}'|"
                    type="button">>로그인</a>
                 <a style="display: none" href="#">로그아웃</a>
             </li>
@@ -75,7 +75,9 @@
                 <div class="innerBox">
                     <div class="imgsArea">
                         <div class="imgWrap">
-                            <img src="ex4_2.jpg" alt="상품이미지" />
+                            <img src="ex4_2.jpg"
+                                 th:src="@{/img/ex4_2.jpg}"
+                                 alt="상품이미지" />
                         </div>
                         <div class="togetherBuy">
                             <h4>
@@ -90,7 +92,9 @@
 
                                         <!--<a href="/product/detail/38279-1039278" class="liImage">-->
 
-                                        <img src="ex4_3.PNG" alt="농부이미지">
+                                        <img src="ex4_3.PNG"
+                                             th:src="@{/img/ex4_3.PNG}"
+                                             alt="농부이미지">
 
                                         <span>농장 이름 : 사과농장....</span>
                                     </div>

@@ -24,9 +24,7 @@
 <body>
     <div class="container">
         <nav class="main-nav">
-            <div style="text-align: left">
-                <img class="mainImg" src="../../../../../../코드%20병합용/Final%20Project/main.png" style="margin-top:100px;">
-            </div>
+
 
             <!--왼쪽 메뉴 네비게이션-->
             <ul class="main-menu">
@@ -82,7 +80,7 @@
             </div>
 
             <!--상세 검색 모달 페이지-->
-            <div>
+            <div style="text-align: center">
                 <button class="openBtn">상세 검색</button>
                 <div class="modal hidden">
                     <div class="bg"></div>
@@ -154,8 +152,9 @@
                                 </tr>
                             </table>
 
-                            <input class="submit" type="submit" value="검색">
-                            <button class="closeBtn"></button>
+                            <button class="closeBtn"
+                                    th:onclick="|location.href='@{/test}'|"
+                                    type="button">검색</button>
                         </form>
                     </span>
                 </div>
@@ -177,9 +176,13 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="../../../../../../코드%20병합용/Final%20Project/modal.js"></script>
-    <script type="text/javascript" src="../../../../../../코드%20병합용/Final%20Project/changer.js"></script>
-    <script type="text/javascript" src="../../../../../../코드%20병합용/Final%20Project/datepicker.js"></script>
+
+    <script type="text/javascript" src="../../../../../../코드%20병합용/Final%20Project/modal.js"
+            th:src="@{/js/modal.js}"></script>
+    <script type="text/javascript" src="../../../../../../코드%20병합용/Final%20Project/changer.js"
+            th:src="@{/js/changer.js}"></script>
+    <script type="text/javascript" src="../../../../../../코드%20병합용/Final%20Project/datepicker.js"
+            th:src="@{/js/datepicker.js}"></script>
 </body>
 
 </html>

@@ -11,14 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 public class Test {
 
+    @GetMapping("/index")
+    public String index(){return "test/index";}
+
     @GetMapping
-    public String testMain(){
-        return "test/main-test";
+    public String testMain(){return "test/main-test";
     }
 
     @GetMapping("/login-real")
-    public String testLogin(){
-        return "test/login";
+    public String testLogin(){return "test/login";
     }
 
     @GetMapping("/join")
@@ -35,7 +36,7 @@ public class Test {
     public String testChat(){return "test/chat-test";}
 
     @GetMapping("/search")
-    public String testSearch(){return "test/search-test";}
+    public String testSearch(){return "test/BtoB";}
 
     @GetMapping("/mypage-real")
     public String testMypageReal(){return "test/mypage-test";}
@@ -48,5 +49,8 @@ public class Test {
 
     @GetMapping("/item-test-real")
     public String testItemReal(){return "test/item-test-real";}
+
+    @GetMapping("data")
+    public String data(){return "test/data";}
 
 }

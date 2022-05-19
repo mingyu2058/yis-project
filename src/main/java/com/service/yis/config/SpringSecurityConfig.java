@@ -19,7 +19,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                         .anyRequest().authenticated() // 어떠한 요청들을 다 로그인 필요
                 .and()
                         .formLogin() // 폼 방식 로그인
-                        .defaultSuccessUrl("/test",true) // 로그인 성공시 url
+                        .defaultSuccessUrl("/test/index",true) // 로그인 성공시 url
                         .permitAll()
                 .and()
                         .logout(); // 로그아웃
