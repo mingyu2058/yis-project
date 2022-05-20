@@ -17,15 +17,20 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.projectlombok:lombok:1.18.20'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
-	compileOnly 'org.projectlombok:lombok'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	//스프링 시큐리티
-	//implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 
 	//실시간 업데이트 반영
 	implementation 'org.springframework.boot:spring-boot-devtools'
+
+	//mysql connect -> https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.29
+	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.29'
+
 }
 
 tasks.named('test') {

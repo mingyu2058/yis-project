@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/index.css}"
+          href="../static/css/index.css" rel="stylesheet">
+
+    <link th:href="@{/css/mainpage.css}"
+          href="../static/css/mainpage.css" rel="stylesheet">
+
+
+    <title>Title</title>
+</head>
+
+<body>
+<nav class="main-nav">
+    <test>농부아지야</test>
+    <!--<img src="https://i.ibb.co/wwLhz98/logo.png" alt="Microsoft" class="logo">-->
+
+    <ul class="main-menu">
+        <li><a href="#">데이터확인</a></li>
+        <li><a href="#">선물거래</a></li>
+        <li><a href="#">뉴스정보</a></li>
+        <li><a href="#">크라우드펀딩(진행예정)</a></li>
+    </ul>
+
+    <ul class="right-menu">
+        <li>
+            <a style="display: none" href="#">로그인</a>
+            <a href="/doLogout">로그아웃</a>
+        </li>
+        <li>
+            <a style="display: none" href="#"
+               th:onclick="|location.href='@{/test/join}'|"
+               type="button">>회원가입</a>
+            <a href='#'>정보수정</a>
+        </li>
+        <li>
+            <a href="#"
+               th:onclick="|location.href='@{/test/mypage-customer}'|"
+               type="button">마이페이지</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- 주제 로고 및 설명 -->
+<section class="top-topic">
+    <div>
+        <h>경북에서 제일 저렴한 농산물</h>
+    </div>
+    <div class="logo">
+        <img src="../static/img/로고.PNG"
+             th:src="@{/img/로고.PNG}"/>
+    </div>
+</section>
+
+<!-- 내용 -->
+<section class="contents">
+
+    <!-- 계약거래, 헌딩-->
+    <div class="top-contents">
+        <div>
+            <a href="#">
+                <h>최상의 품질을 저렴한 가격에 만나보세요.</h>
+                <br>
+                <h>계약거래</h>
+            </a>
+        </div>
+        <div>
+            <a>
+                <h>맛있고 신선한 경북 농산물을 만나보세요</h>
+                <br>
+                <h>펀딩</h>
+
+            </a>
+        </div>
+    </div>
+
+    <!-- 플랫폼 소개, 데이터센터-->
+    <div class="middle-contents">
+        <div>
+            <a>
+                <h>플랫폼소개</h>
+            </a>
+        </div>
+        <div>
+            <a>
+                <h>데이터센터</h>
+            </a>
+        </div>
+    </div>
+
+    <!-- news / 곡물,채소,과일-->
+    <div class="bottom-contents">
+        <div>
+            <a>
+                <h>NEWS</h>
+                <hr>
+            </a>
+        </div>
+        <div>
+            <div>
+                <a>
+                    곡물
+                </a>
+            </div>
+            <div>
+                <a>
+                    채소
+                </a>
+            </div>
+            <div>
+                <a>
+                    과일
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<div>
+
+
+</div>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div><i class="fas fa-globe fa-2x"></i> 한국어</div>
+        <ul>
+            <li><a href="#">농넷</a></li>
+            <li><a href="#">KAMIS</a></li>
+            <li><a href="#">한국농어촌공사</a></li>
+            <li><a href="#">영남대학교</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>
