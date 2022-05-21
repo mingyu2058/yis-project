@@ -6,6 +6,9 @@ build/
 !**/src/test/**/build/
 
 .DatabaseConfig.java
+DatabaseConfig.java
+
+config/DatabaseConfig.java
 
 ### STS ###
 .apt_generated
