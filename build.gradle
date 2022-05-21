@@ -24,6 +24,8 @@ dependencies {
 
 	//스프링 시큐리티
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+	//타임리프 시큐리티
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 
 	//실시간 업데이트 반영
 	implementation 'org.springframework.boot:spring-boot-devtools'

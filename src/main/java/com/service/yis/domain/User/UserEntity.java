@@ -1,66 +1,61 @@
 package com.service.yis.domain.User;
 
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
-@Table(name="usert")
-@Getter
+@Table(name="user")
+@Getter @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserEntity {
     @Id
+    @Column(name="user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long user_id;
+    private Long userId;
 
     @Column(name="user_name")
     private String userName;
 
-    @Column(name="user_pw")
-    private String user_pw;
+    @Column(name="user_email")
+    private String userEmail;
 
+    @Column(name="user_password")
+    private String userPw;
+
+    @Column(name="mobile_number")
+    private String mobileNumber;
+
+    @Column(name="role")
+    private Long role;
+
+    @Column(name="created_at")
+    private Date createdAt;
+
+    @Column(name="changed_at")
+    private Date changedAt;
+
+    @Column(name="score")
+    private Long score;
+
+/*
     @Builder
     public UserEntity(String user_name, String user_pw) {
         this.userName = user_name;
         this.user_pw = user_pw;
-    }
-
-    /*
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long user_id;
-
-    private String userName;
-
-    private String user_password;
-
-    private String mobile_number;
-
-    private String email;
-
-    private int service_agreement;
-
-    private String created_at;
-
-    private String changed_at;
-
-    private int score;
+    }*/
 
     @Builder
-    public UserEntity(String userName, String user_password, String mobile_number, String email, int service_agreement, String created_at, String changed_at, int score) {
+    public UserEntity(String userName, String userEmail, String userPw, String mobileNumber, Long role,  Date createdAt, Date changedAt, Long score) {
         this.userName = userName;
-        this.user_password = user_password;
-        this.mobile_number = mobile_number;
-        this.email = email;
-        this.service_agreement = service_agreement;
-        this.created_at = created_at;
-        this.changed_at = changed_at;
+        this.userEmail = userEmail;
+        this.userPw = userPw;
+        this.mobileNumber = mobileNumber;
+        this.role = role;
+        this.createdAt = createdAt;
+        this.changedAt = changedAt;
         this.score = score;
     }
-
- */
 }

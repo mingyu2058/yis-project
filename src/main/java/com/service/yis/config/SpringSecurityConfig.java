@@ -14,8 +14,6 @@ import org.springframework.security.core.Authentication;
 @Configuration
 @EnableWebSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
-//    @Autowired
-//    LoginIDValidator loginIDValidator; // 유저가 id,pw입력한 후 form이 발송되면 vaildator로 감
 
     @Autowired
     BackedLoginService loginService;
@@ -25,7 +23,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                        .antMatchers("/chk","/account/join","/account/signup").permitAll() // LoadBalancer chk -> 클라우드 사용
+                        .antMatchers("/chk","/","/account/*","/search/**","/funding/**").permitAll() // LoadBalancer chk -> 클라우드 사용
                         .anyRequest()
                         .authenticated() // 어떠한 요청들을 다 로그인 필요
                 .and()
@@ -44,10 +42,12 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                         .logoutSuccessUrl("/account/login");
     }
 
+
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/static/css/*","static/img/*"); //css,img 사용 위해 추후 js도 추가 필요
+        web.ignoring().antMatchers("/css/**","/img/**","/js/**");
     }
+
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception{

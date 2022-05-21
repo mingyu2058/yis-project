@@ -5,12 +5,19 @@ import com.service.yis.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.SimpleFormatter;
 
 @Controller
 @RequestMapping("/account")
 public class Account {
+
+    Date date = new Date();
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd");
 
     @Autowired
     private UserRepository userRepository;
@@ -19,27 +26,21 @@ public class Account {
     private PasswordEncoder passwordEncoder;
 
     @GetMapping("/signup")
-    public String singUp(){
+    public String singUp(Model model){
         UserEntity user = UserEntity.builder()
-                .user_name("ab")
-                .user_pw(passwordEncoder.encode("123"))
+                .userName("abc")
+                .userPw(passwordEncoder.encode("1234"))
+                .userEmail("qwe")
+                .mobileNumber("01020")
+                .role(1L)
+                .createdAt(date)
+                .changedAt(date)
+                .score(3L)
                 .build();
 
         userRepository.save(user);
         return "redirect:/account/login";
 
-        /*
-        UserEntity user = UserEntity.builder()
-                .userName("a")
-                .user_password("1234")
-                .mobile_number("123")
-                .email("sad")
-                .service_agreement(1)
-                .created_at("2021.01.01")
-                .changed_at("2021.01.01")
-                .score(3)
-                .build();
-*/
 
     }
 
@@ -58,6 +59,14 @@ public class Account {
         return "user/join";
     }
 
+    @PostMapping("/join")
+    public String joinRun(UserEntity userEntity){
+        userEntity.setUserPw(passwordEncoder.encode(userEntity.getUserPw()));
+        userEntity.setCreatedAt(date);
+        userEntity.setChangedAt(date);
+        userRepository.save(userEntity);
+        return "redirect:/account/login";
+    }
 
 
 }

@@ -27,10 +27,10 @@ public class BackedLoginService implements UserDetailsService {
     private UserRepository userRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserEntity user = userRepository.findByUserName(username).orElseThrow(()->new IllegalArgumentException("존재하지 않는 유저"));
+    public UserDetails loadUserByUsername(String userEmail) throws UsernameNotFoundException {
+        UserEntity user = userRepository.findByUserEmail(userEmail).orElseThrow(()->new IllegalArgumentException("존재하지 않는 유저"));
 
         //return user;
-        return new User(user.getUserName(), user.getUser_pw(), Collections.emptyList());
+        return new User(user.getUserName(), user.getUserPw(), Collections.emptyList());
     }
 }

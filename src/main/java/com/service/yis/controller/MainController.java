@@ -9,10 +9,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 
     @GetMapping("")
+    public String index(){
+        return "index";
+    }
+    @GetMapping("/search")
+    public String search(){
+        return "search/search";
+    }
+    /*
+    @GetMapping("")
     public String selectForm(){
         return "main/select";
     }
 
     @GetMapping("main")
     public String mainForm(){ return "main/main";}
+*/
 }
