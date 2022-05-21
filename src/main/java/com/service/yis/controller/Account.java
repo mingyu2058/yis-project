@@ -64,6 +64,8 @@ public class Account {
         userEntity.setUserPw(passwordEncoder.encode(userEntity.getUserPw()));
         userEntity.setCreatedAt(date);
         userEntity.setChangedAt(date);
+        userEntity.setRole(0L);
+        userEntity.setScore(0L);
         userRepository.save(userEntity);
         return "redirect:/account/login";
     }

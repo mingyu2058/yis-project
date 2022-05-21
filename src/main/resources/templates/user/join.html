@@ -77,65 +77,56 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
 <div class="join">
     <section>
         <!-- e-mail / id -->
-        <form  method="post">
-            <div>
-                <p>아이디(이메일)</p>
-                <input id="userEmail" name="userEmail" title="email">
+        <form method="post">
+            <div class="input-form">
+                <div>
+                    <p>아이디(이메일)</p>
+                    <input type="text" id="userEmail" name="userEmail" title="email">
+                </div>
+
+                <!-- 패스워드 -->
+                <div>
+                    <p>비밀번호</p>
+                    <input type="password" id="userPw" name="userPw" title="password">
+                </div>
+
+                <!-- 이름 -->
+                <div>
+                    <p>이름</p>
+                    <input type="text" id="userName" name="userName" title="name">
+                </div>
+
+                <!-- 전화번호 -->
+                <div>
+                    <p>전화번호</p>
+                    <input type="text" id="mobileNumber" name="mobileNumber" title="phone_number">
+                </div>
+
+                <!-- 생산자 체크 -->
+                <div class="check">
+                    <p>생산자여부</p>
+                    <button>해당있음</button>
+                    <button>해당없음</button>
+                </div>
+                <div class="input-farm">
+                    <input placeholder="사업자 번호 입력">
+                </div>
             </div>
 
-            <!-- 패스워드 -->
-            <div>
-                <p>비밀번호</p>
-                <input id="userPw" name="userPw" title="password">
-            </div>
-
-            <!-- 이름 -->
-            <div>
-                <p>이름</p>
-                <input id="userName" name="userName" title="name">
-            </div>
-
-            <!-- 전화번호 -->
-            <div>
-                <p>전화번호</p>
-                <input id="mobileNumber" name="mobileNumber" title="phone_number">
-            </div>
-
-            <!-- 생산자 체크 -->
-            <div>
-                <p>생산자여부</p>
-                <button>해당있음</button>
-                <button>해당없음</button>
-            </div>
-
-            <!-- 기업,개인-->
-            <div>
-                <p>사업자번호</p>
-                <button>해당있음</button>
-                <button>해당없음</button>
-                <!--<input title="사업자번호">-->
-            </div>
-
-            <div>
-                <button type="submit">
-                    회원 등록
+            <div class="bottom">
+                <button class="back-btn"
+                        th:onclick="|location.href='@{/}'|">
+                    <h>이전으로</h>
+                </button>
+                <button class="join-btn"
+                        type="submit">
+                    <h>가입하기</h>
                 </button>
             </div>
         </form>
 
     </section>
 
-</div>
-
-<div class="bottom">
-    <button class="back"
-            th:onclick="|location.href='@{/test}'|"
-            type="button">이전으로
-    </button>
-    <button class="join-btn"
-            th:onclick="|location.href='@{/account/signup}'|"
-            type="button">가입하기
-    </button>
 </div>
 
 

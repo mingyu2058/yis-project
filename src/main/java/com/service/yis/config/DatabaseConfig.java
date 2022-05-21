@@ -12,9 +12,16 @@ public class DatabaseConfig {
     public DataSource dataSource(){
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName("com.mysql.cj.jdbc.Driver");
-        dataSourceBuilder.username("root");
-        dataSourceBuilder.password("20582962");
-        dataSourceBuilder.url("jdbc:mysql://localhost:3333/yis?useSSL=false&serverTimezone=UTC");
+
+        dataSourceBuilder.username("yis");
+        dataSourceBuilder.password("1234");
+        dataSourceBuilder.url("jdbc:mysql://13.209.15.230:3306/yis?useSSL=false&serverTimezone=UTC");
+
+
+        /* 로컬 */
+        //dataSourceBuilder.username("root");
+        //dataSourceBuilder.password("20582962");
+        //dataSourceBuilder.url("jdbc:mysql://localhost:3333/yis?useSSL=false&serverTimezone=UTC");
         return dataSourceBuilder.build();
     }
 }
