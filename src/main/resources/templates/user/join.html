@@ -14,6 +14,17 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
 
     <script src="../static/js/join.js" rel="script"></script>
 
+    <script>
+        function doDisplay(){
+            var con = document.getElementById("input_farm_form");
+            if(con.style.display=='none'){
+                con.style.display = 'block';
+            }else{
+                con.style.display = 'none';
+            }
+        }
+
+    </script>
 
     <title>Title</title>
 
@@ -106,23 +117,26 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
                 <div class="check">
                     <p>생산자여부</p>
                     <button>해당있음</button>
-                    <button>해당없음</button>
+                    <button
+                            href="javascript:doDisplay();">해당없음</button>
                 </div>
                 <div class="input-farm">
-                    <input placeholder="사업자 번호 입력">
+                    <input id="input_farm_form"placeholder="사업자 번호 입력">
                 </div>
             </div>
 
             <div class="bottom">
                 <button class="back-btn"
+                        href="../"
                         th:onclick="|location.href='@{/}'|">
                     <h>이전으로</h>
                 </button>
-                <button class="join-btn"
+                <input class="join-btn"
                         type="submit">
                     <h>가입하기</h>
-                </button>
+                </input>
             </div>
+
         </form>
 
     </section>
