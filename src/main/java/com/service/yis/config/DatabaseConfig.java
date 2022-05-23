@@ -16,12 +16,12 @@ public class DatabaseConfig {
         /*aws*/
         //dataSourceBuilder.username("yis");
         //dataSourceBuilder.password("1234");
-        //dataSourceBuilder.url("jdbc:mysql://:3306/yis?useSSL=false&serverTimezone=UTC");
+        //dataSourceBuilder.url("jdbc:mysql://localhost:3306/yis?useSSL=false&serverTimezone=UTC");
 
 
         /* 로컬 */
-        dataSourceBuilder.username("root");
-        dataSourceBuilder.password("20582962");
+        dataSourceBuilder.username("yis");
+        dataSourceBuilder.password("1234");
         dataSourceBuilder.url("jdbc:mysql://localhost:3333/yis?useSSL=false&serverTimezone=UTC");
         return dataSourceBuilder.build();
     }
