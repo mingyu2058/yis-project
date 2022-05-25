@@ -692,3 +692,6 @@ Caused by: java.net.SocketTimeoutException: connect timed out
 	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.29.jar!/:8.0.29]
 	... 17 common frames omitted
 
+Unrecognized option: -yis-0.0.1-SNAPSHOT.jar
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.

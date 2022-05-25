@@ -15,7 +15,6 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
     <script src="../static/js/join.js" rel="script"></script>
 
 
-
     <title>Title</title>
 
 </head>
@@ -108,11 +107,14 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
                     <p>생산자여부</p>
                     <button
                             type="button"
+                            id="checkOK"
                             onclick="doDisplay()">해당있음</button>
                     <button
-                            type="button">해당없음</button>
+                            type="button"
+                            id="checkNO"
+                            onclick="dontDisplay()">해당없음</button>
                 </div>
-                <div id = "input-farm" class="input-farm">
+                <div id = "inputFarm" class="input-farm">
                     <input id="input_farm_form"placeholder="사업자 번호 입력">
                 </div>
             </div>
@@ -153,7 +155,18 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
 </body>
 <script type="text/javascript">
     function doDisplay(){
-        document.getElementById("input_farm").style.display = 'block';
+        document.getElementById('checkOK').style.background="#12b564";
+        document.getElementById('checkOK').style.color="#ffffff";
+        document.getElementById('checkNO').style.background="#ffffff";
+        document.getElementById('checkNO').style.color="#000000";
+        document.getElementById('inputFarm').style.display ="block";
+    }
+    function dontDisplay(){
+        document.getElementById('checkOK').style.background="#ffffff";
+        document.getElementById('checkOK').style.color="#000000";
+        document.getElementById('checkNO').style.background="#12b564";
+        document.getElementById('checkNO').style.color="#ffffff";
+        document.getElementById('inputFarm').style.display = "none";
     }
 
 </script>
