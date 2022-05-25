@@ -13,16 +13,16 @@ public class DatabaseConfig {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName("com.mysql.cj.jdbc.Driver");
 
-        /*aws*/
-        //dataSourceBuilder.username("yis");
-        //dataSourceBuilder.password("1234");
-        //dataSourceBuilder.url("jdbc:mysql://localhost:3306/yis?useSSL=false&serverTimezone=UTC");
+        /*azure*/
+        dataSourceBuilder.username("yis");
+        dataSourceBuilder.password("1234");
+        dataSourceBuilder.url("jdbc:mysql://20.214.186.164:3306/yis?useSSL=false&serverTimezone=UTC");
 
 
         /* 로컬 */
-        dataSourceBuilder.username("yis");
-        dataSourceBuilder.password("1234");
-        dataSourceBuilder.url("jdbc:mysql://localhost:3306/yis?useSSL=false&serverTimezone=UTC");
+        //dataSourceBuilder.username("yis");
+        //dataSourceBuilder.password("1234");
+        //dataSourceBuilder.url("jdbc:mysql://localhost:3306/yis?useSSL=false&serverTimezone=UTC");
         
 
         return dataSourceBuilder.build();
