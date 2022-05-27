@@ -15,8 +15,4 @@ public class CrowdFunding {
         return "/crowdFunding/main-crowdFunding";
     }
 
-    @GetMapping("/test")
-    public String test(){
-        return "/test/main-test";
-    }
 }

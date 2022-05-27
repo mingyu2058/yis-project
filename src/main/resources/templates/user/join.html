@@ -23,10 +23,9 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
     <i class="fas fa-bars fa-2x"></i>
 </div>
 
+<!--
 <div class="container">
-    <!-- Nav -->
     <nav class="main-nav">
-        <!--<img src="https://i.ibb.co/wwLhz98/logo.png" alt="Microsoft" class="logo">-->
 
         <ul class="main-menu">
             <li><a href="../index.html"
@@ -62,21 +61,176 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
         </ul>
     </nav>
 </div>
+-->
 
+<!-- nav bar -->
+<nav>
+    <div>
+        <ul>
+            <li>
+                <a href="../DataCenter/html/DataCenter.html"
+                   th:href="@{/datacenter}">
+                    <img
+                            class="datacenter-img"
+                            src="../../static/img/datacenter.png"
+                            th:src="@{/img/datacenter.png}"/>
+                    <h>데이터 센터</h>
+                </a>
 
-<div class="img">
-    <img
-            th:src="@{/img/로고.PNG}"/>
+            </li>
+            <li>
+                <a href="../index.html"
+                   th:href="@{/}">
+                    <img
+                            class="news-img"
+                            src="../../static/img/trade.png"
+                            th:src="@{/img/trade.png}"/>
+                    <h>선물거래</h>
+                </a>
+            </li>
+            <li>
+                <a href="../index.html"
+                   th:href="@{/}">
+                    <img
+                            class="trade-img"
+                            src="../../static/img/news.png"
+                            th:src="@{/img/news.png}"/>
+                    <h>뉴스</h>
+                </a>
+            </li>
+            <li>
+                <a href="../funding/main-crowdFunding.html"
+                   th:href="@{/crowd}">
+                    <img
+                            class="funding-img"
+                            src="../../static/img/crowdfunding.png"
+                            th:src="@{/img/crowdfunding.png}"/>
+                    <h>크라우드 펀딩</h>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+</nav>
+<!-- login top -->
+<div class="login-top">
+    <div class="login-top-left">
+        <img
+                th:onclick="|location.href='@{/}'|"
+                src="../../static/img/logo_white.png"
+                th:src="@{/img/logo_white.png}"/>
+    </div>
+    <div class="login-top-right">
+        <img
+                src="../../static/img/table.png"
+                th:src="@{/img/table.png}"/>
+        <img
+                src="../../static/img/person.png"
+                th:src="@{/img/person.png}"/>
+
+        <a sec:authorize="isAnonymous()"
+           href="user/login.html"
+           th:href="@{/account/login}">로그인</a>
+
+        <h>또는</h>
+
+        <a sec:authorize="isAnonymous()"
+           href="/doLogout">회원가입</a>
+    </div>
 </div>
 
-<div class="title">
-    <p>회원가입</p>
+<!-- login center-->
+<div class="login-center">
+
+    <!-- login background image(left)-->
+    <div class="login-background">
+        <div>
+            <p class="login-title">
+                회원가입
+            </p>
+            <p class="login-explain">
+                1분만에 가입하고 <br> 농부아지야에서 저렴한 농산물을 둘러보세요.
+            </p>
+        </div>
+    </div>
+
+
+    <!--login content(right)-->
+    <div class="login">
+        <section>
+            <!-- e-mail / id -->
+            <div class=form>
+                <div>
+                    <img
+                            th:onclick="|location.href='@{/}'|"
+                            class="previous-img"
+                            src="../../static/img/previous_arrow.png"
+                            th:src="@{/img/previous_arrow.png}"/>
+                </div>
+                <!-- e-mail / id -->
+                <form method="post">
+                    <div class="input-form">
+                        <div>
+                            <p>아이디(이메일)</p>
+                            <input type="text" id="userEmail" name="userEmail" title="email">
+                        </div>
+
+                        <!-- 패스워드 -->
+                        <div>
+                            <p>비밀번호</p>
+                            <input type="password" id="userPw" name="userPw" title="password">
+                        </div>
+
+                        <!-- 이름 -->
+                        <div>
+                            <p>이름</p>
+                            <input type="text" id="userName" name="userName" title="name">
+                        </div>
+
+                        <!-- 전화번호 -->
+                        <div>
+                            <p>전화번호</p>
+                            <input type="text" id="mobileNumber" name="mobileNumber" title="phone_number">
+                        </div>
+
+                        <!-- 생산자 체크 -->
+                        <div class="check">
+                            <p>생산자여부</p>
+                            <button
+                                    type="button"
+                                    id="checkOK"
+                                    onclick="doDisplay()">해당있음</button>
+                            <button
+                                    type="button"
+                                    id="checkNO"
+                                    onclick="dontDisplay()">해당없음</button>
+                        </div>
+                        <div id = "inputFarm" class="input-farm">
+                            <input id="input_farm_form"placeholder="사업자 번호 입력">
+                        </div>
+                    </div>
+
+                    <div class="bottom">
+                        <button class="join-btn"
+                                type="submit">
+                            <h>가입완료</h>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+        </section>
+    </div>
+
 </div>
 
-<!--item content-->
+
+
+<!--i
 <div class="join">
     <section>
-        <!-- e-mail / id -->
         <form method="post">
             <div class="input-form">
                 <div>
@@ -84,25 +238,21 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
                     <input type="text" id="userEmail" name="userEmail" title="email">
                 </div>
 
-                <!-- 패스워드 -->
                 <div>
                     <p>비밀번호</p>
                     <input type="password" id="userPw" name="userPw" title="password">
                 </div>
 
-                <!-- 이름 -->
                 <div>
                     <p>이름</p>
                     <input type="text" id="userName" name="userName" title="name">
                 </div>
 
-                <!-- 전화번호 -->
                 <div>
                     <p>전화번호</p>
                     <input type="text" id="mobileNumber" name="mobileNumber" title="phone_number">
                 </div>
 
-                <!-- 생산자 체크 -->
                 <div class="check">
                     <p>생산자여부</p>
                     <button
@@ -120,12 +270,6 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
             </div>
 
             <div class="bottom">
-                <button
-                        type="button"
-                        class="back-btn"
-                        th:onclick="|location.href='@{/}'|">
-                    <h>이전으로</h>
-                </button>
                 <button class="join-btn"
                         type="submit">
                     <h>가입하기</h>
@@ -137,12 +281,13 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
     </section>
 
 </div>
-
+-->
 
 <!-- Footer -->
 <footer class="footer">
     <div class="footer-inner">
-        <div><i class="fas fa-globe fa-2x"></i> 한국어</div>
+        <p>경북협동조합 농부아지야</p>
+        <hr/>
         <ul>
             <li><a href="#">농넷</a></li>
             <li><a href="#">KAMIS</a></li>
