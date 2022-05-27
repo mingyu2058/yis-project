@@ -60,30 +60,28 @@ nav li{
 
 
 /* join-top */
-.login-top{
+.join-top{
     overflow: hidden;
 }
-.login-top-left{
+.join-top-left{
     float: left;
     background: #00853E 0% 0%;
     width: 872px;
 }
-.login-top-left img{
+.join-top-left img{
     float: left;
     margin-top: 30px;
     margin-left: 430px;
     width: 150px;
     height: 30px;
 }
-.login-top-right{
-}
-.login-top-right img:nth-child(1){
+.join-top-right img:nth-child(1){
     margin-top: 26px;
     margin-left: 408px;
     width: 15px;
     height: 10px;
 }
-.login-top-right img:nth-child(2){
+.join-top-right img:nth-child(2){
     margin-top: 28px;
     margin-left: 32px;
     width: 15px;
@@ -91,29 +89,28 @@ nav li{
 }
 
 
-/* login center */
-.login-center{
+
+/* join center */
+.join-center{
     overflow: hidden;
     height: 1080px;
 }
 
-/* login background*/
-.login-background{
-    /* Layout Properties */
+
+/* login background  ( left) */
+.join-background{
     top: 0px;
     left: 0px;
     width: 872px;
     height: 1080px;
-    /* UI Properties */
     background: #00853E 0% 0% no-repeat padding-box;
     opacity: 1;
-    /**/
     float: left;
 }
-.login-background div{
+.join-background div{
     margin-left: 430px;
 }
-.login-title{
+.join-title{
     margin-top: 483px;
     /* UI Properties */
     text-align: left;
@@ -122,38 +119,34 @@ nav li{
     color: #FFC400;
     opacity: 1;
 }
-.login-explain{
+.join-explain{
     margin-top: 74px;
     text-align: left;
     font: normal normal normal 16px/21px AppleSDGothicNeoM00;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
-
 }
 
-
-/* login */
-.login{
+/* join (right) */
+.join{
     height: 1080px;
     /* UI Properties */
     background: #F5F5F7 0% 0% no-repeat padding-box;
     opacity: 1;
-
     border: 1px solid #e1dedf;
 
 }
 
-.login div{
+.join div{
     overflow: hidden;
 }
 
-.login p{
+.join p{
     font-size: 24px;
-
 }
 
-/* form */
+/* join form */
 form{
     margin-top: 80px;
     margin-left: 104px;
@@ -168,6 +161,63 @@ form{
 }
 input{
     width: 100%;
+}
+
+.input-form div{
+    overflow: hidden;
+}
+.input-form input{
+    border: 1px solid #e1dedf;
+    border-radius: 23px;
+    height: 45px;
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+
+/* 사업자 체크 */
+.check button:hover{
+    background: #12b564;
+    color: black;
+}
+
+/* 사업자 번호 */
+.input-farm{
+    text-align: center;
+    padding-bottom: 15px;
+    display: none;
+
+}
+
+.check{
+    margin-bottom: 20px;
+}
+
+.check button{
+    background: #F5F5F7 ;
+    border: 1px solid #000000;
+    border-radius: 23px;
+    width: 250px;
+    height: 45px;
+    font-size: 20px;
+}
+
+.bottom{
+    max-width: 1000px;
+    overflow: hidden;
+    margin: 20px auto;
+}
+.bottom button{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    border: 1px solid #e1dedf;
+    border-radius: 32px;
+    background: #000000;
+    color: white;
+    height: 63px;
+}
+.bottom h{
+    font-size: 25px;
 }
 
 
@@ -207,6 +257,7 @@ input{
     max-width: 1100px;
     margin: 0 auto;
 }
+
 
 
 @media(max-width: 700px) {
@@ -286,102 +337,4 @@ input{
     }
 }
 
-.title{
-    font-size: 32px;
-    margin-top: 100px;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-.join{
-    margin-top: 120px;
-    max-width: 1000px;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.join input{
-    margin-left: 50px;
-    float: left;
-    width: 550px;
-    border: 1px solid #e1dedf;
-    height: 60px;
-    margin-top: 10px;
-    border: 1px solid #e1dedf;
-    border-radius: 23px;
-}
-
-.input-form div{
-    overflow: hidden;
-}
-.input-form input{
-    border: 1px solid #e1dedf;
-    border-radius: 23px;
-    height: 45px;
-    padding-left: 30px;
-    margin-bottom: 20px;
-}
-
-/* 사업자 체크 */
-.check button:hover{
-    background: #12b564;
-    color: black;
-}
-
-/* 사업자 번호 */
-.input-farm{
-    text-align: center;
-    padding-bottom: 15px;
-    display: none;
-
-}
-
-.check{
-    margin-bottom: 20px;
-}
-
-.check button{
-    background: #F5F5F7 ;
-    border: 1px solid #000000;
-    border-radius: 23px;
-    width: 250px;
-
-}
-
-.join p{
-    background: #f7f7f7;
-    width: 240px;
-    height: 80px;
-    float: left;
-    font-size: 24px;
-    line-height: 68px;
-
-}
-
-.join button{
-    background: #ffffff;
-    border-radius: 15px;
-    width: 220px;
-    height: 50px;
-    margin: 15px;
-}
-
-.bottom{
-    max-width: 1000px;
-    overflow: hidden;
-    margin: 20px auto;
-}
-.bottom button{
-    width: 100%;
-    text-align: center;
-    font-size: 30px;
-    border: 1px solid #e1dedf;
-    border-radius: 32px;
-    background: #000000;
-    color: white;
-    height: 63px;
-}
-.bottom h{
-    font-size: 25px;
-}
 

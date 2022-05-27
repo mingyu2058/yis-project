@@ -10,18 +10,16 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
           href="../../static/css/user/login.css" rel="stylesheet">
 
 
-    <title>Title</title>
-    <!--
-    <script>
-        document.querySelector('.menu-btn').addEventListener('click', () => document.querySelector('.main-menu').classList.toggle('show'));
-    </script>-->
+    <title>농부아지야</title>
+
 </head>
 <body>
+
+
+<!--
 <div class="menu-btn">
     <i class="fas fa-bars fa-2x"></i>
 </div>
-
-<!--
 <div class="container">
     <nav class="main-nav">
         <ul class="main-menu">
@@ -110,6 +108,7 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
 <div class="login-top">
     <div class="login-top-left">
         <img
+                th:onclick="|location.href='@{/}'|"
                 src="../../static/img/logo_white.png"
                 th:src="@{/img/logo_white.png}"/>
     </div>
@@ -122,13 +121,14 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
                 th:src="@{/img/person.png}"/>
 
         <a sec:authorize="isAnonymous()"
-           href="user/login.html"
+           href="login.html"
            th:href="@{/account/login}">로그인</a>
 
         <h>또는</h>
 
         <a sec:authorize="isAnonymous()"
-           href="/doLogout">회원가입</a>
+           href="join.html"
+           th:href="@{/account/join}">회원가입</a>
     </div>
 </div>
 
@@ -142,7 +142,7 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
                 로그인
             </p>
             <p class="login-explain">
-                1분만에 가입하고 <br> 농부아지야에서 저렴한 농산물을 둘러보세요.
+                1분만에 로그인하고 <br> 농부아지야에서 저렴한 농산물을 둘러보세요.
             </p>
         </div>
     </div>

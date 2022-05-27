@@ -111,17 +111,20 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
         </ul>
 
     </div>
-
 </nav>
+
+
 <!-- login top -->
-<div class="login-top">
-    <div class="login-top-left">
+
+
+<div class="join-top">
+    <div class="join-top-left">
         <img
                 th:onclick="|location.href='@{/}'|"
                 src="../../static/img/logo_white.png"
                 th:src="@{/img/logo_white.png}"/>
     </div>
-    <div class="login-top-right">
+    <div class="join-top-right">
         <img
                 src="../../static/img/table.png"
                 th:src="@{/img/table.png}"/>
@@ -130,34 +133,35 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
                 th:src="@{/img/person.png}"/>
 
         <a sec:authorize="isAnonymous()"
-           href="user/login.html"
+           href="login.html"
            th:href="@{/account/login}">로그인</a>
 
         <h>또는</h>
 
         <a sec:authorize="isAnonymous()"
-           href="/doLogout">회원가입</a>
+           href="join.html"
+           th:href="@{/account/join}">회원가입</a>
     </div>
 </div>
 
-<!-- login center-->
-<div class="login-center">
+<!-- join center-->
+<div class="join-center">
 
-    <!-- login background image(left)-->
-    <div class="login-background">
+    <!-- join background image(left)-->
+    <div class="join-background">
         <div>
-            <p class="login-title">
+            <p class="join-title">
                 회원가입
             </p>
-            <p class="login-explain">
+            <p class="join-explain">
                 1분만에 가입하고 <br> 농부아지야에서 저렴한 농산물을 둘러보세요.
             </p>
         </div>
     </div>
 
 
-    <!--login content(right)-->
-    <div class="login">
+    <!--join content(right)-->
+    <div class="join">
         <section>
             <!-- e-mail / id -->
             <div class=form>
@@ -171,6 +175,13 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
                 <!-- e-mail / id -->
                 <form method="post">
                     <div class="input-form">
+                        <!-- 이름 -->
+                        <div>
+                            <p>이름</p>
+                            <input type="text" id="userName" name="userName" title="name">
+                        </div>
+
+                        <!-- id -->
                         <div>
                             <p>아이디(이메일)</p>
                             <input type="text" id="userEmail" name="userEmail" title="email">
@@ -182,11 +193,6 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
                             <input type="password" id="userPw" name="userPw" title="password">
                         </div>
 
-                        <!-- 이름 -->
-                        <div>
-                            <p>이름</p>
-                            <input type="text" id="userName" name="userName" title="name">
-                        </div>
 
                         <!-- 전화번호 -->
                         <div>
@@ -200,14 +206,16 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
                             <button
                                     type="button"
                                     id="checkOK"
-                                    onclick="doDisplay()">해당있음</button>
+                                    onclick="doDisplay()">해당있음
+                            </button>
                             <button
                                     type="button"
                                     id="checkNO"
-                                    onclick="dontDisplay()">해당없음</button>
+                                    onclick="dontDisplay()">해당없음
+                            </button>
                         </div>
-                        <div id = "inputFarm" class="input-farm">
-                            <input id="input_farm_form"placeholder="사업자 번호 입력">
+                        <div id="inputFarm" class="input-farm">
+                            <input id="input_farm_form" placeholder="사업자 번호 입력">
                         </div>
                     </div>
 
@@ -225,7 +233,6 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
     </div>
 
 </div>
-
 
 
 <!--i
@@ -299,18 +306,19 @@ https://codepen.io/bradtraversy/pen/ZEGGNRb
 
 </body>
 <script type="text/javascript">
-    function doDisplay(){
-        document.getElementById('checkOK').style.background="#12b564";
-        document.getElementById('checkOK').style.color="#ffffff";
-        document.getElementById('checkNO').style.background="#ffffff";
-        document.getElementById('checkNO').style.color="#000000";
-        document.getElementById('inputFarm').style.display ="block";
+    function doDisplay() {
+        document.getElementById('checkOK').style.background = "#12b564";
+        document.getElementById('checkOK').style.color = "#ffffff";
+        document.getElementById('checkNO').style.background = "#ffffff";
+        document.getElementById('checkNO').style.color = "#000000";
+        document.getElementById('inputFarm').style.display = "block";
     }
-    function dontDisplay(){
-        document.getElementById('checkOK').style.background="#ffffff";
-        document.getElementById('checkOK').style.color="#000000";
-        document.getElementById('checkNO').style.background="#12b564";
-        document.getElementById('checkNO').style.color="#ffffff";
+
+    function dontDisplay() {
+        document.getElementById('checkOK').style.background = "#ffffff";
+        document.getElementById('checkOK').style.color = "#000000";
+        document.getElementById('checkNO').style.background = "#12b564";
+        document.getElementById('checkNO').style.color = "#ffffff";
         document.getElementById('inputFarm').style.display = "none";
     }
 
