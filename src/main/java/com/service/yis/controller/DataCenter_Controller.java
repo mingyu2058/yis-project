@@ -2,7 +2,6 @@ package com.service.yis.controller;
 
 import com.service.yis.service.Data_Center_Service;
 import com.service.yis.domain.item.Item_Entity;
-import com.service.yis.service.Data_Center_Service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -25,7 +24,7 @@ public class DataCenter_Controller {
     @GetMapping("/datacenter")
     public String Data_Center(Model model) {
 
-        return "DataCenter/html/DataCenter.html";
+        return "DataCenter/html/DataCenter";
     }
 
     @RequestMapping(value = "getItems.do", method = RequestMethod.POST)

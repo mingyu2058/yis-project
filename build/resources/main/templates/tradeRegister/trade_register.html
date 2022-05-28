@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>농부아지야 - 계약재배 물품등록</title>
+    <meta name="description">
+    <meta name="author" content="The IMC">
+    <link rel="stylesheet" type="text/css" href="jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="/tradeRegister/css/css.css" />
+
+    <script type="text/javascript">
+        // 자바스크립트에서 사용하는 전역변수 선언
+        var cb_charset = "UTF-8";
+        var cb_time_ymd = "2022-05-27";
+        var is_member = "1";
+        var is_admin = "";
+		var editMode = "";
+    </script>
+
+    <script type="text/javascript" src="/tradeRegister/_layout/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/tradeRegister/_layout/js/jquery-ui-1.11.2.custom/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="/tradeRegister/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/tradeRegister/assets/js/common.js"></script>
+    <script type="text/javascript" src="/tradeRegister/assets/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/tradeRegister/assets/js/jquery.validate.extension.js"></script>
+    <script type="text/javascript" src="/tradeRegister/assets/js/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="/tradeRegister/assets/js/sideview.js"></script>
+    <script type="text/javascript" src="/tradeRegister/assets/js/js.cookie.js"></script>
+
+    <!-- service modified -->
+    <script type="text/javascript" src="/tradeRegister/_layout/js/util.js"></script>
+    <script type="text/javascript" src="/tradeRegister/_layout/js/layout.js"></script>
+    <script type="text/javascript" src="/tradeRegister/_layout/js/member.js"></script>
+    <script type="text/javascript" src="/tradeRegister/_layout/placeholders.min.js"></script>
+    <script type="text/javascript" src="/tradeRegister/_layout/js/design.js"></script>
+
+</head>
+
+<body>
+
+
+    <div id="wrap">
+        <!-- S : header -->
+        <header id="header">
+            <div class="wr_left">
+                <div class="menu">
+                    <img src="/tradeRegister/images/datacenter.png" height="15px" style="margin: 0px 5px 5px 50px">데이터 센터
+                    <img src="/tradeRegister/images/trade.png" height="12px" style="margin: 0px 5px 0px 20px">선물거래
+                    <img src="/tradeRegister/images/news.png" height="12px" style="margin: 0px 5px 2px 20px">뉴스
+                    <img src="/tradeRegister/images/crowdfunding.png" height="12px" style="margin: 0px 5px 0px 20px">크라우드 펀딩
+                </div>
+            </div>
+            <div class="floatr">
+                <div style="padding: 0px 50px 0px 0px">
+                    <span>안녕하세요 user님</span>
+                </div>
+            </div>
+        </header>
+        <!-- E : header -->
+
+        <!-- content start -->
+        <div id="container">
+            <div id="searchareaCommon" class="searcharea">
+                <div class="">
+                    <logo id="logo"><a href="http://20.214.186.164:8080/"><img src="/tradeRegister/logo.png" alt="" height="100px"></a>
+                    </logo>
+                    <span id="searchform_common" class="searchform logo" style="margin: 30px 0px 0px 0px">
+                        <input type="text" value="" placeholder="검색">
+                        <a href="#"><i class="fas fa-search"></i></a>
+                    </span>
+                    <a href="#" class="detailsearch disinblock" style="margin: 30px 0px 0px 0px">상세검색<i
+                            class="fas fa-chevron-down"></i></a>
+                </div>
+            </div>
+            <div class="contents" style="background-image: url('../img/background.png'); background-size: cover">
+                <div class="wrap_cont">
+                    <section class="dicwrite mt12">
+                        <div class="tit">
+                            <h2>계약재배 거래등록</h2>
+                        </div>
+                        <div class="nomargin mt15">
+                            <div class="stit">
+                                <h3><i class="fas fa-angle-right"></i>농가 정보</h3>
+                                <div class="floatr">
+                                    <a href="#" id="formareaEnable" class="btn round mcolor"
+                                        title="의미/용례, 이미지 입력 필드를 활성화 시킵니다.">활성화</a>
+                                    <a href="#" id="formareaDisable" class="btn round scolor"
+                                        title="의미/용례, 이미지 입력 필드를 비활성화 시킵니다.">비활성화</a>
+                                </div>
+                            </div>
+                            <div class="contarea">
+                                <table class="tbl02 column2 shortinput">
+                                    <tbody>
+                                        <tr>
+                                            <th>농가 주소</th>
+                                            <td><input type="text" id="acronym" name="acronym" value="" placeholder=""
+                                                    onClick="setInputField(this, 'acronym'); return false;"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>농부 이름</th>
+                                            <td><input type="text" id="acronym_radical" name="acronym_radical" value=""
+                                                    placeholder=""
+                                                    onClick="setInputField(this, 'acronym_radical'); return false;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>소속 협동조합</th>
+                                            <td><input type="text" id="acronym_radical" name="acronym_radical" value=""
+                                                    placeholder=""
+                                                    onClick="setInputField(this, 'acronym_radical'); return false;">
+                                            </td>
+                                        </tr>
+                                        <tr class="meInfo">
+                                            <th>농가 설명</th>
+                                            <td>
+                                                <div contenteditable class="imginput big"
+                                                    onClick="setInputField(this, 'meaningText'); return false;">
+                                                </div>
+                                                <table class="tbl02 sm mt8">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>농부 이미지</th>
+                                                            <td class="withbtn01 delete"><input type="file"
+                                                                    name="meaningImgFile" style="display: none;"
+                                                                    onchange="meaningImgChangeHandler(this); return false;"><input
+                                                                    type="text" name="meaningSelectedImg" value=""
+                                                                    data-type="" data-size="0"
+                                                                    placeholder="이미지 파일을 선택해 주세요" disabled><a href="#"
+                                                                    class="disinblock trash" title="삭제"
+                                                                    onclick="trashSelClick(this); return false;"><i
+                                                                        class="fas fa-trash-alt"></i></a><a href="#"
+                                                                    class="btn grey"
+                                                                    onclick="meaningFileSelClick(this); return false;">파일선택</a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="formarea" class="formarea">
+                            <div id="form_meExamInfo">
+                                <div class="meExamInfo">
+                                    <div class="stit over">
+                                        <h3><i class="fas fa-angle-right"></i>상품 기본정보</h3>
+                                    </div>
+                                    <div class="contarea">
+                                        <table class="tbl02 column2">
+                                            <tbody>
+                                                <tr>
+                                                    <th>상품명</th>
+                                                    <td><input type="text" id="acronym_radical" name="acronym_radical"
+                                                            value="" placeholder=""
+                                                            onClick="setInputField(this, 'acronym_radical'); return false;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>상품 구성</th>
+                                                    <td><input type="text" id="acronym_radical" name="acronym_radical"
+                                                            value="" placeholder=""
+                                                            onClick="setInputField(this, 'acronym_radical'); return false;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>판매 시기</th>
+                                                    <td><input type="text" id="acronym_radical" name="acronym_radical"
+                                                            value="" placeholder=""
+                                                            onClick="setInputField(this, 'acronym_radical'); return false;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>배송 조건</th>
+                                                    <td><input type="text" id="acronym_radical" name="acronym_radical"
+                                                            value="" placeholder=""
+                                                            onClick="setInputField(this, 'acronym_radical'); return false;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>지역</th>
+                                                    <td><input type="text" id="acronym_radical" name="acronym_radical"
+                                                            value="" placeholder=""
+                                                            onClick="setInputField(this, 'acronym_radical'); return false;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>과세 여부</th>
+                                                    <td><input type="text" id="acronym_radical" name="acronym_radical"
+                                                            value="" placeholder=""
+                                                            onClick="setInputField(this, 'acronym_radical'); return false;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>상품 이미지</th>
+                                                    <td class="withbtn01 delete"><input type="file"
+                                                            name="meaningImgFile" style="display: none;"
+                                                            onchange="meaningImgChangeHandler(this); return false;"><input
+                                                            type="text" name="meaningSelectedImg" value="" data-type=""
+                                                            data-size="0" placeholder="이미지 파일을 선택해 주세요" disabled><a
+                                                            href="#" class="disinblock trash" title="삭제"
+                                                            onclick="trashSelClick(this); return false;"><i
+                                                                class="fas fa-trash-alt"></i></a><a href="#"
+                                                            class="btn grey"
+                                                            onclick="meaningFileSelClick(this); return false;">파일선택</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="form_imgInfo">
+                            <div class="imgInfo">
+                                <div class="stit">
+                                    <h3><i class="fas fa-angle-right"></i>상품 상세설명 이미지</h3>
+                                    <div class="floatr">
+                                        <a href="#" onclick="formInfoHandler(this, 'add'); return false;"
+                                            class="btn round mcolor"><i class="fas fa-plus"></i>추가</a>
+                                        <a href="#" onclick="formInfoHandler(this, 'del'); return false;"
+                                            class="btn round scolor"><i class="fas fa-minus"></i>삭제</a>
+                                        <a href="#" onclick="formInfoHandler(this, 'up'); return false;"
+                                            class="btn_basic ml5"><i class="fas fa-chevron-up mr0"></i></a>
+                                        <a href="#" onclick="formInfoHandler(this, 'down'); return false;"
+                                            class="btn_basic"><i class="fas fa-chevron-down mr0"></i></a>
+                                    </div>
+                                </div>
+                                <div class="contarea">
+                                    <table class="tbl02 imgedit">
+                                        <tbody>
+                                            <tr>
+                                                <th>이미지 파일&nbsp;&nbsp;
+                                                    <span class="tooltip_info">
+                                                        <i class="fas fa-question-circle"></i>
+                                                        <span class="right"><b>'jpg', 'png'</b> 확장자만 등록 가능합니다.</span>
+                                                    </span>
+                                                </th>
+
+                                                <td colspan="3" class="withbtn01">
+                                                    <form class="imgUpload" method="post" enctype="multipart/form-data">
+                                                        <input type="file" name="imgfile" style="display: none;"
+                                                            onchange="imgChangeHandler(this); return false;"><input
+                                                            type="text" name="selectedImg" value="" data-type=""
+                                                            data-size="0" placeholder="이미지 파일을 선택해 주세요" disabled><a
+                                                            href="#" class="btn grey"
+                                                            onclick="imgSelClick(this); return false;">파일선택</a>
+                                                    </form>
+                                                </td>
+                                                <td rowspan="2" class="img_review">
+                                                    <div><img class="thumbnail_img" src="" /></div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="overh nomargin mt8">
+                <div class="floatr mr24">
+                    <a href="#" class="btn_basic" onClick="openPopupPreview(this); return false;"><i
+                            class="fas fa-eye"></i>미리보기</a>
+                    <a href="#" id="submitTemp" class="btn_basic"><i class="fas fa-save"></i>임시저장</a>
+                </div>
+            </div>
+            </section>
+        </div>
+    </div>
+</body>
+<script>
+
+// 이미지 파일 선택 버튼
+function imgSelClick(e) {
+	//e.preventDefault();
+    $(e).prev().prev().click();
+}
+
+// 의미 해설 파일 선택 버튼
+function meaningFileSelClick(e) {
+	$(e).prev().prev().prev().click();
+}
+
+// 이미지 파일 선택 시 이벤트
+function imgChangeHandler(e) {
+	var file = $(e)[0].files[0];
+	
+	if(typeof file != "undefined") {		
+		var fileObj = getFileNameExt(file.name);
+
+		var fileName = file.name;
+		var fileType = file.type;
+		var fileSize = file.size;
+		var fileExt = fileType.split("/")[1];
+		
+		// 확장자 체크
+		if(fileExt != "jpeg" && fileExt != "jpg" && fileExt != "png") {
+			$(e).val("");
+			alert("올바른 확장자가 아닙니다.\n'jpg', 'png' 확장자만 등록 가능합니다.");
+			
+			return false;
+		}
+		
+		// 등록된 이미지 파일 중복 확인
+		var url = "/textomi/service/dicService/getVocabImgList";
+		var param = {fileName: fileObj.fname};
+	
+		$.getJSON(url, param, function(json) {
+			if(json.total > 0) {
+				alert("동일한 파일이름이 존재합니다.\n다시 선택해 주세요.");
+			} else {
+				// 선택한 압력 필드에서 파일 이름 중복 확인
+				var flag = false;
+				$("input[name='selectedImg']").each(function(i, el) {
+					console.log("i = ", i);
+					console.log("el = ", el);
+					console.log("el = ", $(el).val());
+					if (fileName == $(el).val()) {
+						alert("동일한 파일이름이 존재합니다.\n다시 선택해 주세요.");
+					 	$(e).val("");
+					 	flag = true;
+					}
+					// if(fileName == $(this).find(".imgUpload > input:eq(1)").val()) {
+					// 	alert("동일한 파일이름이 존재합니다.\n다시 선택해 주세요.");
+					// 	$(e).val("");
+					// 	flag = true;
+					// }
+				});
+
+				if(!flag) {
+					// 등록된 이미지가 있다면 이미지 삭제
+					if(editMode) {
+						var fileObj = getFileNameExt($(e).next().val());
+						if(fileObj.fnam != "") {
+							var imgFileList = new Array();
+							var imgObj = new Object();
+							
+							imgObj.fileName = fileObj.fname;
+							imgObj.fullFileName = $(e).next().val();
+							imgObj.type = $(e).next().attr("data-type");
+							imgObj.size = $(e).next().attr("data-size");
+							imgFileList.push(imgObj);
+							
+							// 이미지 삭제
+							delVocabImgData(imgFileList);
+						}
+					}
+					
+					// 파일 이름 표시
+					$(e).next().val(fileName);
+					$(e).next().attr("data-type", fileType);
+					$(e).next().attr("data-size", fileSize);
+					$(e).closest("div").find(".selectedItemSrc").val("");
+					$(e).closest("div").find(".imgExhibit").val("");
+					$(e).closest("div").find(".imgRexhibit").val("");
+					
+					
+					
+					// 이미지 썸네일 표시
+					if(e.files && e.files[0]){
+                		var reader = new FileReader();
+                		reader.onload = function(event) {
+                			$(e).closest("div").find(".thumbnail_img").attr('src',event.target.result);
+                		}
+                		reader.readAsDataURL(e.files[0]);		
+                	}
+				}
+			}
+		});
+	} else {
+		$(e).val("");
+		$(e).next().val("");
+		$(e).next().attr("data-type", "");
+		$(e).next().attr("data-size", 0);
+	}
+}
+
+// 입력 폼 이벤트 처리
+function formInfoHandler(e, action) {
+	var cls = $(e).closest("div[class$='Info']").attr("class");
+	var clsFilter = cls.split(" ");
+	cls = (clsFilter.length == 1)? cls: clsFilter[clsFilter.length - 1];
+	var id = "form_" + cls;
+	
+	// 추가
+	if(action === "add") {
+		var div = $("<div class=\"mt15 "+cls+"\"></div>");
+		var last = $(e).closest("." + cls);
+		
+		// form 추가
+		if(last.is("." + cls)) {
+			var html = last.html();
+			div.append(html).insertAfter(last);
+			
+			// 의미&용례 신규 추가 시 기존 용례 폼이 하나 이상이면 하나만 남기고 전부 삭제
+			if(cls === "meExamInfo") {
+				div.find(".examInfo").each(function(i, e) {
+					if(i != 0) { // 첫번째 제외 나머지 form 삭제
+						e.remove();
+					}
+				});
+			}	
+			
+			// 입력된 문자 초기화(편집)
+			if(cls === "meExamInfo") { // 의미해설&용례
+				div.find(".stit h3").hide();
+				div.find(".meInfo > td:eq(0) > div").html("");			
+				div.find(".meInfo").find("input[name='meaningImgFile']").val("");
+				div.find(".meInfo").find("input[name='meaningSelectedImg']").val("");
+				div.find(".meInfo").find("input[name='meaningSelectedImg']").attr("data-type", "");
+				div.find(".meInfo").find("input[name='meaningSelectedImg']").attr("data-size", 0);
+				div.find(".meInfo").find("input[name='meaningPdfFile']").val("");
+				div.find(".meInfo").find("input[name='meaningSelectedPdf']").val("");
+				div.find(".meInfo").find("input[name='meaningSelectedPdf']").attr("data-type", "");
+				div.find(".meInfo").find("input[name='meaningSelectedPdf']").attr("data-size", 0);
+				div.find(".examInfo td:eq(0) > div").html("");
+				div.find(".examInfo td:eq(1) > input").val("");
+				div.find(".examInfo td:eq(2) > input").val("");
+			} else if(cls === "examInfo") { // 용례
+				div.find("td:eq(0) > div").html("");
+				div.find("td:eq(1) > input").val("");
+				div.find("td:eq(2) > input").val("");
+			} else if(cls === "imgInfo") { // 이미지
+				div.find(".stit h3").hide();
+				div.find("td:eq(0) > form > input:eq(0)").val("");
+				div.find("td:eq(0) > form > input:eq(1)").val("");
+				div.find("td:eq(0) > form > input:eq(1)").attr("data-type", "");
+				div.find("td:eq(0) > form > input:eq(1)").attr("data-size", 0);
+				
+				if (techDivision === "일본" || currentDivision === "일본"){
+					div.find("td:eq(1) > input:eq(0)").val("");
+	    			div.find("td:eq(2) > div > img").attr("src","");	
+					div.find("td:eq(3) > input").val("");
+					div.find("td:eq(4) > input").val("");
+					}
+				else{
+        			div.find("td:eq(1) > div > img").attr("src","");	
+     				div.find("td:eq(2) > input").val("");
+    				div.find("td:eq(3) > input").val("");
+				}
+			}
+		}
+	}
+
+	// 삭제
+	if(action === "del") {
+		var infoLength = (cls === "examInfo")? $(e).closest("td").find("." + cls).length: $("#" + id + " ." + cls).length;
+
+		// 등록된 이미지가 있다면 의미해설 이미지 삭제
+		if(editMode && cls === "meExamInfo") {
+			var img_fileName = $(e).closest("." + cls).find("input[name='meaningSelectedImg']").val();
+			var pdf_fileName = $(e).closest("." + cls).find("input[name='meaningSelectedPdf']").val();
+
+			if(img_fileName != "") {
+				var imgFileList = new Array();
+				var imgObj = new Object();
+				var fileObj = getFileNameExt(img_fileName);
+				
+				imgObj.fileName = fileObj.fname;
+				imgObj.fullFileName = img_fileName;
+				imgObj.type = $(e).closest("." + cls).find("input[name='meaningSelectedImg']").attr("data-type");
+				imgObj.size = $(e).closest("." + cls).find("input[name='meaningSelectedImg']").attr("data-size");
+				imgFileList.push(imgObj);
+
+				// 이미지 삭제
+				delVocabMeaningImgData(imgFileList);
+			}
+			if(pdf_fileName != "") {
+				var pdfFileList = new Array();
+				var pdfObj = new Object();
+				var fileObj = getFileNameExt(pdf_fileName);
+				
+				pdfObj.fileName = fileObj.fname;
+				pdfObj.fullFileName = pdf_fileName;
+				pdfObj.type = $(e).closest("." + cls).find("input[name='meaningSelectedPdf']").attr("data-type");
+				pdfObj.size = $(e).closest("." + cls).find("input[name='meaningSelectedPdf']").attr("data-size");
+				pdfFileList.push(pdfObj);
+				
+				// pdf 삭제
+				delVocabMeaningFileData(pdfFileList);
+			}
+		}
+
+		// 등록된 이미지가 있다면 이미지 삭제
+		if(editMode && cls === "imgInfo") {
+			var fileName = $(e).closest("." + cls).find(".imgUpload > input:eq(1)").val();
+
+			if(fileName != "") {
+				var imgFileList = new Array();
+				var imgObj = new Object();
+				var fileObj = getFileNameExt(fileName);
+				
+				imgObj.fileName = fileObj.fname;
+				imgObj.fullFileName = fileName;
+				imgObj.type = $(e).closest("." + cls).find(".imgUpload > input:eq(1)").attr("data-type");
+				imgObj.size = $(e).closest("." + cls).find(".imgUpload > input:eq(1)").attr("data-size");
+				imgFileList.push(imgObj);
+				
+				// 이미지 삭제
+				delVocabImgData(imgFileList);
+			}
+		}
+		
+		if(infoLength > 1) {
+			$(e).closest("." + cls).remove();
+
+			// 첫번째 필드에는 타이트 항상 표시
+			$("#" + id + " ." + cls).eq(0).find(".stit h3").show();
+			
+			// 첫번째 폼 삭제 시 'mt15' class 제거
+			if(cls === "examInfo") {
+				$("#form_meExamInfo").find(".meExamInfo").each(function(i, e) {
+					var first = $(e).find(".examInfo").eq(0);
+					$(first).removeClass().addClass(cls);
+				});
+			}
+			else {
+				var first = $("#" + id + " ." + cls).eq(0);
+				$(first).removeClass().addClass(cls);
+			}
+		} else {
+			alert("입력 필드가 하나 밖에 없으므로 삭제할 수 없습니다.");
+
+			// 입력된 내용은 초기화 시키자..
+			if(cls === "meExamInfo") {
+				$(e).closest("." + cls).find(".meInfo > td:eq(0) > div").html("");
+				$(e).closest("." + cls).find(".meInfo").find("input[name='meaningImgFile']").val("");
+				$(e).closest("." + cls).find(".meInfo").find("input[name='meaningSelectedImg']").val("");
+				$(e).closest("." + cls).find(".meInfo").find("input[name='meaningSelectedImg']").attr("data-type", "");
+				$(e).closest("." + cls).find(".meInfo").find("input[name='meaningSelectedImg']").attr("data-size", 0);
+				$(e).closest("." + cls).find(".meInfo").find("input[name='meaningPdfFile']").val("");
+				$(e).closest("." + cls).find(".meInfo").find("input[name='meaningSelectedPdf']").val("");
+				$(e).closest("." + cls).find(".meInfo").find("input[name='meaningSelectedPdf']").attr("data-type", "");
+				$(e).closest("." + cls).find(".meInfo").find("input[name='meaningSelectedPdf']").attr("data-size", 0);			
+				$(e).closest("." + cls).find(".examInfo td:eq(0) > div").html("");
+				$(e).closest("." + cls).find(".examInfo td:eq(1) > input").val("");
+				$(e).closest("." + cls).find(".examInfo td:eq(2) > input").val("");
+			} else if(cls === "examInfo") {
+				$(e).closest("." + cls).find("td:eq(0) > div").html("");
+				$(e).closest("." + cls).find("td:eq(1) > input").val("");
+				$(e).closest("." + cls).find("td:eq(2) > input").val("");
+			} else if(cls === "imgInfo") {
+				$(e).closest("." + cls).find(".imgUpload > input:eq(0)").val("");
+				$(e).closest("." + cls).find(".imgUpload > input:eq(1)").val("");
+				$(e).closest("." + cls).find(".imgUpload > input:eq(1)").attr("data-type", "");
+				$(e).closest("." + cls).find(".imgUpload > input:eq(1)").attr("data-size", 0);
+				$(e).closest("." + cls).find(".thumbnail_img").attr("src", "");				
+				
+				if (currentDivision === "일본"){
+					console.log("japan current division",current_division);
+					$(e).closest("." + cls).find("td:eq(1) > input:eq(0)").val("");
+    				$(e).closest("." + cls).find("td:eq(2) > div > img").attr("src","");
+					$(e).closest("." + cls).find("td:eq(3) > input").val("");
+					$(e).closest("." + cls).find("td:eq(4) > input").val("");
+					
+					}
+				else{
+					console.log("current division",current_division);
+    				$(e).closest("." + cls).find("td:eq(1) > div > img").attr("src","");
+					$(e).closest("." + cls).find("td:eq(2) > input").val("");
+					$(e).closest("." + cls).find("td:eq(3) > input").val("");
+				}
+			}
+		}
+	}
+
+	// 입력 폼 위&아래 이동
+	if(action === "up" || action === "down") {
+		var index = (cls === "examInfo")? $(e).closest("td").find("." + cls).index($(e).closest("." + cls)): $("." + cls).index($(e).closest("." + cls));
+		var infoLength = (cls === "examInfo")? $(e).closest("td").find("." + cls).length: $("#" + id + " ." + cls).length;
+		var section = null;
+
+		//console.log(index, infoLength);
+		if(action === "up") {
+			if(index == 0) {
+				alert("첫번째 입력 필드 입니다.");
+				return false;
+			}
+
+			if(index > 0) {
+				section = (cls === "examInfo")? $(e).closest("td").find("." + cls).eq(index): $("#" + id + " ." + cls).eq(index);
+
+				if(index == 1) {
+					section.removeClass().addClass(cls);
+					section.prev().removeClass().addClass("mt15 " + cls);
+					section.prev().find(".stit h3").hide();	// 타이틀 숨김
+				}
+				section.after(section.prev());
+				
+				// 첫번째 필드에는 타이트 항상 표시
+				if(index == 1) {
+					$("#" + id + " ." + cls).eq(0).find(".stit h3").show();
+				}
+			}
+		} else {
+			if((index + 1) == infoLength) {
+				alert("마지막 입력 필드 입니다.");
+				return false;
+			}
+
+			if(index >= 0 && (index + 1) < infoLength) {
+				section = (cls === "examInfo")? $(e).closest("td").find("." + cls).eq(index): $("#" + id + " ." + cls).eq(index);
+
+				if(index == 0) {
+					section.removeClass().addClass("mt15 " + cls);
+					section.next().removeClass().addClass(cls);
+					section.find(".stit h3").hide();	// 타이틀 숨김
+				}
+				section.before(section.next());
+				
+				// 첫번째 필드에는 타이트 항상 표시
+				if(index == 0) {
+					$("#" + id + " ." + cls).eq(0).find(".stit h3").show();
+				}
+			}
+		}
+	}
+}
+
+</script>
+
+
+</html>
