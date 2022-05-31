@@ -294,8 +294,10 @@ hr{
 
 /* swiper*/
 .swiper-container{
-    overflow: scroll;
-    width: 1600px;
+    display: none;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    width: 1400px !important;
 
 }
 .swiper-wrapper{
@@ -316,7 +318,7 @@ hr{
 
 
 .swiper-slide img{
-    margin-left: 40px;
+    margin-left: 60px;
     width: 700px;
     height: 700px;
 }

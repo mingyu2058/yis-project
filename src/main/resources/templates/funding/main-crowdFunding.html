@@ -1,54 +1,77 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
 
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <link   th:href="@{/css/mainpage.css}"
-            href="/css/mainpage.css" rel="stylesheet">
+    <link th:href="@{/css/user/join.css}"
+          href="../../static/css/user/join.css" rel="stylesheet">
+    <link th:href="@{/css/item-test.css}"
+          href="../../static/css/item-test.css" rel="stylesheet">
 
     <title>Title</title>
 </head>
 <body>
 <div style="margin: 20px;">
-    <div> <text>YBOT</text> </div>
-    <div class="top">
-        <div class="top-left">
-            <button class="top-button">고객센터</button>
+    <!-- nav bar -->
+    <nav>
+        <div>
+            <ul>
+                <li>
+                    <a href="DataCenter/html/datacenter.html"
+                       th:href="@{/datacenter}">
+                        <img
+                                class="datacenter-img"
+                                src="../../static/img/datacenter.png"
+                                th:src="@{/img/datacenter.png}"/>
+                        <h>데이터 센터</h>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="../index.html"
+                       th:href="@{/}">
+                        <img
+                                class="news-img"
+                                src="../../static/img/trade.png"
+                                th:src="@{/img/trade.png}"/>
+                        <h>선물거래</h>
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.html"
+                       th:href="@{/}">
+                        <img
+                                class="trade-img"
+                                src="../../static/img/news.png"
+                                th:src="@{/img/news.png}"/>
+                        <h>뉴스</h>
+                    </a>
+                </li>
+                <li>
+                    <a href="../funding/main-crowdFunding.html"
+                       th:href="@{/crowd}">
+                        <img
+                                class="funding-img"
+                                src="../../static/img/crowdfunding.png"
+                                th:src="@{/img/crowdfunding.png}"/>
+                        <h>크라우드 펀딩</h>
+                    </a>
+                </li>
+            </ul>
+
         </div>
-        <div class="top-right">
-            <button class="top-button"
-                    th:onclick="|location.href='@{/join}'|"
-                    type="button">로그인</button>
-            <button class="top-button"
-                    th:onclick="|location.href='@{/join}'|"
-                    type="button">회원가입</button>
-            <button class="top-button"
-                    th:onclick="|location.href='@{/join}'|"
-                    type="button">마이페이지</button>
-        </div>
-    </div>
+    </nav>
 
 
-    <div class="top">
-        <button class="top-button"
-                th:onclick="|location.href='@{/data}'|">데이터확인</button>
-        <button class="top-button"
-                th:onclick="|location.href='@{/main}'|"
-                type="button">선물거래</button>
-        <button class="top-button"
-                th:onclick="|location.href='@{/crowd}'|"
-                type="button">크라우드펀딩</button>
-        <button class="top-button">현물거래</button>
-    </div>
 
 
     <div style="text-align: center; margin-top: 30px;">
-        <img style = "width: 65%" th:src="@{/img/크라우드펀딩.PNG}"/>
+        <img style = "width: 65%"
+             src=src="../static/img/news.png"
+             th:src="@{/img/funding1.PNG}"/>
     </div>
 
-    <div style="text-align: center; margin-top: 30px;">
-        <img style = "width: 65%" th:src="@{/img/크라우드펀딩2.PNG}"/>
-    </div>
 
 
 </div>

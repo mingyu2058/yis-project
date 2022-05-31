@@ -8,10 +8,20 @@
     <link th:href="@{/css/index.css}"
           href="../static/css/index.css" rel="stylesheet">
 
+    <!-- 설명 css -
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+-->
+
     <title>Title</title>
+
+
 </head>
 
 <body>
+
+
+<!-- 설명 숨기기 -->
+
 
 <!--
 <nav class="main-nav">
@@ -56,12 +66,13 @@
     <div>
         <ul>
             <li>
-                <a href="../DataCenter/html/DataCenter.html"
+                <a href="DataCenter/html/datacenter.html"
                    th:href="@{/datacenter}">
                     <img
                             class="datacenter-img"
                             src="../../static/img/datacenter.png"
-                            th:src="@{/img/datacenter.png}"/>
+                            th:src="@{/img/datacenter.png}"
+                    />
                     <h>데이터 센터</h>
                 </a>
 
@@ -171,6 +182,7 @@
                                     src="../../static/img/trade_start.png"
                                     th:src="@{/img/trade_start.png}">
                         </div>
+
                     </a>
                 </div>
                 <div>
@@ -189,15 +201,39 @@
                 </div>
             </div>
         </div>
+
+        <!-- 소개 -->
+        <div    id="explanation"
+                class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img
+                            src="../../static/img/explanation01.png"
+                            th:src="@{/img/explanation01.png}"/>
+                </div>
+                <div class="swiper-slide">
+                    <img
+                            src="../../static/img/explanation02.png"
+                            th:src="@{/img/explanation02.png}"/>
+                </div>
+                <div class="swiper-slide">
+                    <img
+                            src="../../static/img/explanation03.png"
+                            th:src="@{/img/explanation03.png}"/>
+                </div>
+            </div>
+        </div>
+
         <!-- 플랫폼 소개, 데이터센터-->
         <div class="middle-contents">
             <div>
-                <a href="https://lopsided-offer-da4.notion.site/8ce0100624b449a29a389a073fa308e5">
+                <a  href="javascript:onclick=show">
                     <img
                             src="../../static/img/news.png"
                             th:src="@{/img/news.png}">
                     <h>플랫폼소개</h>
                 </a>
+
             </div>
             <div>
                 <a          href="DataCenter/html/datacenter.html"
@@ -254,6 +290,7 @@
         </div>
     </div>
 
+
 </section>
 
 <!-- Footer -->
@@ -271,4 +308,15 @@
 </footer>
 
 </body>
+
+<!-- 설명 js-->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script type="text/javascript">
+    function show() {
+        document.getElementById('explanation').style.display="block";
+        document.querySelector('body').style.backgroundColor="black !important";
+    }
+
+
+</script>
 </html>

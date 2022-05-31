@@ -66,12 +66,13 @@
     <div>
         <ul>
             <li>
-                <a href="../DataCenter/html/DataCenter.html"
+                <a href="DataCenter/html/datacenter.html"
                    th:href="@{/datacenter}">
                     <img
                             class="datacenter-img"
                             src="../../static/img/datacenter.png"
-                            th:src="@{/img/datacenter.png}"/>
+                            th:src="@{/img/datacenter.png}"
+                    />
                     <h>데이터 센터</h>
                 </a>
 
@@ -200,9 +201,10 @@
                 </div>
             </div>
         </div>
-e
+
         <!-- 소개 -->
-        <div class="swiper-container">
+        <div    id="explanation"
+                class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <img
@@ -225,7 +227,7 @@ e
         <!-- 플랫폼 소개, 데이터센터-->
         <div class="middle-contents">
             <div>
-                <a href="https://lopsided-offer-da4.notion.site/8ce0100624b449a29a389a073fa308e5">
+                <a  href="javascript:onclick=show">
                     <img
                             src="../../static/img/news.png"
                             th:src="@{/img/news.png}">
@@ -309,5 +311,12 @@ e
 
 <!-- 설명 js-->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script type="text/javascript">
+    function show() {
+        document.getElementById('explanation').style.display="block";
+        document.querySelector('body').style.backgroundColor="black !important";
+    }
 
+
+</script>
 </html>
