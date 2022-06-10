@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 @Controller
 @RequestMapping("/")
 public class MainController {
@@ -12,11 +13,12 @@ public class MainController {
     public String index(){
         return "index";
     }
+    /*
     @GetMapping("/search")
     public String search(){
         return "search/search";
     }
-    /*
+    
     @GetMapping("")
     public String selectForm(){
         return "main/select";
