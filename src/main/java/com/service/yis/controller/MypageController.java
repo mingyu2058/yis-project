@@ -26,16 +26,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.model.Files;
-import com.example.demo.model.User;
-import com.example.demo.repository.UserRepository;
-import com.example.demo.service.FilesService;
-import com.example.demo.service.ItemService;
-import com.example.demo.service.UserService;
-import com.example.demo.model.Room;
-
-
+@Controller
 public class MypageController{
+	
+	
 	@GetMapping("/mypage")
 	public String index() {
 

@@ -23,7 +23,7 @@
 			<div class="menu-area">
 				<img id="data" src="/resources/images/data.png"> <a href="#">데이터
 					센터</a> <img id="data" src="/resources/images/deal.png"> <a
-					href="#">선물 거래</a> <img id="data" src="/resources/images/news.png">
+					href="#">선물 거래</a> <img id="data" src="/resources/img/news.png">
 				<a href="#">뉴스</a> <img id="data"
 					src="/resources/images/funding.png"> <a href="#">크라우드 펀딩</a>
 			</div>
@@ -31,7 +31,7 @@
 		<div class="img-div">
 			<div class="img-area">
 				<div class="img-logo">
-					<img id="logo" src="/resources/images/ex1.png" alt="로고">
+					<img id="logo" src="/resources/img/logo_small.png" alt="로고">
 				</div>
 				<div class="user-area">
 					<img id="menu" src="/resources/images/ex2.png" alt="메뉴"> <img
@@ -64,7 +64,7 @@
 			<div class="userinfo">
 				<div class="userinfo2">개인정보</div>
 				<div class="userup">
-					<a href="/index/userupdate/${user.id}">수정</a>
+					<a href="/index/userupdate">수정</a>
 				</div>
 			</div>
 			<br>
@@ -75,21 +75,21 @@
 			<div class="userphone">
 				<div class="userphone2">연락처</div>
 				<div class="userup">
-					<a href="/index/userupdate/${user.id}">수정</a>
+					<a href="/index/userupdate">수정</a>
 				</div>
 			</div>
 			<br>
-			<p id="usernumber">82) </p>
-			<p id="useremail">Email: </p>
+			<p id="usernumber">82)</p>
+			<p id="useremail">Email:</p>
 		</div>
 
 		<div class="userupdate-div">
 			<div class="btn-area">
 				<button>
-					<a href="/mypage/${user.id}/iteminsert">등록</a>
+					<a href="/mypage//iteminsert">등록</a>
 				</button>
 				<button>
-					<a href="/mypage/${user.id}/insert">삭제</a>
+					<a href="/mypage//insert">삭제</a>
 				</button>
 			</div>
 			<div class="grade-area">
@@ -114,6 +114,7 @@
 		</div>
 		<div class="item-div">
 			<div id="tab1" data-tab-content class="items active">
+				<!-- 
 				<c:forEach var="item" items="${item}">
 					<c:if test="${user.id == item.user.id}">
 						<c:set var="i" value="${i+1}" />
@@ -132,6 +133,7 @@
 						</div>
 					</c:if>
 				</c:forEach>
+				 -->
 
 			</div>
 
@@ -174,7 +176,7 @@
 						<p>asd</p>
 
 						<button>
-							<a href="/mypage/${user.id}/room">채팅</a>
+							<a href="/mypage/room">채팅</a>
 						</button>
 						<button>게시글 수정</button>
 						<button>계약서 확인</button>

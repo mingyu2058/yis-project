@@ -66,14 +66,14 @@
 <!-- 주제 로고 및 설명 -->
 <div class="background">
     <!-- 로고 및 로그인,로그아웃,마이페이지-->
-    <div class="index-top1">
-        <div class="index-top-left1">
+    <div class="index-top">
+        <div class="index-top-left">
             <img
                     th:onclick="|location.href='@{/}'|"
                     src="img/logo_small.png"
                     th:src="@{/img/logo_small.png}"/>
         </div>
-        <div class="index-top-right1">
+        <div class="index-top-right">
             <img
                     src="../../static/img/table.png"
                     th:src="@{/img/table.png}"/>
@@ -107,7 +107,7 @@
     <hr>
 
     <!-- 폰트 로고 및 주제 -->
-    <div class="title1">
+    <div class="title">
         <p>
             경북에서 가장 저렴한 농산물 플랫폼
         </p>
@@ -194,7 +194,7 @@
 
     <!-- search info-->
     <div style="margin-top: 35px;">
-        <p style="margin-left: 35px;">
+        <p style="margin-left: 12px;">
             <b th:text="${categoryA}"></b> <b> > </b>
             <b th:text="${categoryB}"></b> <b> > </b>
             <b th:text="${date1}"></b> <b> ~ </b>

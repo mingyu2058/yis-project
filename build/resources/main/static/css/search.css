@@ -20,7 +20,7 @@ nav ul {
 
 .contents_section{
     background-color:transparent;
-    max-width: 1000px;
+    max-width: 1050px;
     max-height: 250px;
     margin: 0 auto;
     overflow: hidden;
@@ -29,7 +29,7 @@ nav ul {
 .search {
     position:relative;
     margin-top:55px;
-    width: 1000px;
+    width: 1050px;
     height: 60px;
     background-color: #ffffff;
     border-radius: 40px;
@@ -226,7 +226,6 @@ td {
 }
 
 
-
 .Rescontainer {
     margin: 10px auto;
     height: 1000px;
@@ -273,10 +272,6 @@ td {
 }
 
 
-
-
-
-
 .pageInfo{
     text-align: center;
 }
@@ -290,58 +285,4 @@ td {
 }
 .pageInfo active{
     color: #00853E;
-}
-
-
-
-
-/* index-top */
-.index-top1{
-    max-width: 1060px;
-    overflow: hidden;
-    margin: 0 auto;
-}
-.index-top-left1{
-    float: left;
-    margin-left:30px;
-}
-.index-top-left1 img{
-    float: left;
-    margin-top: 26px;
-    width: 150px;
-    height: 30px;
-}
-.index-top-right1{
-    float: right;
-    margin-right:33px;
-}
-.index-top-right1 img:nth-child(1){
-    margin-top: 26px;
-    margin-left: 408px;
-    width: 15px;
-    height: 10px;
-}
-.index-top-right1 img:nth-child(2){
-    margin-top: 28px;
-    margin-left: 32px;
-    width: 15px;
-    height: 15px;
-}
-/* title logo */
-.title1 p{
-    margin-top: 50px;
-    margin-left:30px;
-    width: 430px;
-    height: 31px;
-    font: normal normal normal 25px/34px AppleSDGothicNeoM00;
-    color: #00853E;
-}
-.title1 img{
-    margin-top: 10px;
-    margin-left:30px;
-    width: 430px;
-    height: 80px;
-}
-hr{
-    margin-top: 20px;
 }

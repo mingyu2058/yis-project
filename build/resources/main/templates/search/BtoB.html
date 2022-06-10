@@ -66,14 +66,14 @@
 <!-- 주제 로고 및 설명 -->
 <div class="background">
     <!-- 로고 및 로그인,로그아웃,마이페이지-->
-    <div class="index-top1">
-        <div class="index-top-left1">
+    <div class="index-top">
+        <div class="index-top-left">
             <img
                     th:onclick="|location.href='@{/}'|"
                     src="img/logo_small.png"
                     th:src="@{/img/logo_small.png}"/>
         </div>
-        <div class="index-top-right1">
+        <div class="index-top-right">
             <img
                     src="img/table.png"
                     th:src="@{/img/table.png}"/>
@@ -107,7 +107,7 @@
     <hr>
 
     <!-- 폰트 로고 및 주제 -->
-    <div class="title1">
+    <div class="title">
         <p>
             경북에서 가장 저렴한 농산물 플랫폼
         </p>
@@ -197,14 +197,14 @@
     <!-- 과일 -->
     <div class="slideshow-container"
          style="margin-top:50px; margin-left: auto; margin-right:auto; height:400px; width:1300px;">
-        <h2 style="margin-left:160px;"><b>과일</b></h2><br>
+        <h2 style="margin-left:130px;"><b>과일</b></h2><br>
         <a class="prev" onclick="plusFruitSlides(-1)">
-            <button class="previous_btn" style="margin-top: 100px; margin-left:155px;"> <</button>
+            <button class="previous_btn" style="margin-top: 100px; margin-left:130px;"> <</button>
         </a>
         <div class="fruitSlide fade2">
             <div class="text" style="text-overflow:ellipsis;">
                 <div th:each="fruitlist1 : ${fruitlist1}">
-                    <div style="float: left; margin-left:26px; margin-top:30px; display: block;">
+                    <div style="float: left; margin-left:39px; margin-top:30px; display: block;">
                         <a href="#">
                             <img src="" th:src="@{${fruitlist1.getImgsrc()}}"
                                  style="width:180px; height:180px; display:block; text-align: center;">
@@ -220,7 +220,7 @@
         <div class="fruitSlide fade2">
             <div class="text">
                 <div th:each="fruitlist2 : ${fruitlist2}">
-                    <div style="float: left; margin-left:26px; margin-top:30px; display: block;">
+                    <div style="float: left; margin-left:39px; margin-top:30px; display: block;">
                         <a href="#">
                             <img src="" th:src="@{${fruitlist2.getImgsrc()}}"
                                  style="width:180px; height:180px; display:block; text-align: center;">
@@ -236,7 +236,7 @@
         <div class="fruitSlide fade2">
             <div class="text">
                 <div th:each="fruitlist3 : ${fruitlist3}">
-                    <div style="float: left; margin-left:26px; margin-top:30px; display: block;">
+                    <div style="float: left; margin-left:39px; margin-top:30px; display: block;">
                         <a href="#">
                             <img src="" th:src="@{${fruitlist3.getImgsrc()}}"
                                  style="width:180px; height:180px; display:block; text-align: center;">
@@ -262,14 +262,14 @@
     <!-- 채소 -->
     <div class="slideshow-container"
          style="margin-top:50px; margin-left: auto; margin-right:auto; height:400px; width:1300px;">
-        <h2 style="margin-left:160px;"><b>채소</b></h2><br>
+        <h2 style="margin-left:130px;"><b>채소</b></h2><br>
         <a class="prev" onclick="plusFruitSlides(-1)">
-            <button class="previous_btn" style="margin-top: 100px; margin-left:155px;"> <</button>
+            <button class="previous_btn" style="margin-top: 100px; margin-left:130px;"> <</button>
         </a>
         <div class="vegetableSlide fade2">
             <div class="text">
                 <div th:each="vegetablelist1 : ${vegetablelist1}">
-                    <div style="float: left; margin-left:26px; margin-top:30px; display: block;">
+                    <div style="float: left; margin-left:39px; margin-top:30px; display: block;">
                         <a href="#">
                             <img src="" th:src="@{${vegetablelist1.getImgsrc()}}"
                                  style="width:180px; height:180px; display:block; text-align: center;">
@@ -285,7 +285,7 @@
         <div class="vegetableSlide fade2">
             <div class="text">
                 <div th:each="vegetablelist2 : ${vegetablelist2}">
-                    <div style="float: left; margin-left:26px; margin-top:30px; display: block;">
+                    <div style="float: left; margin-left:39px; margin-top:30px; display: block;">
                         <a href="#">
                             <img src="" th:src="@{${vegetablelist2.getImgsrc()}}"
                                  style="width:180px; height:180px; display:block; text-align: center;">
@@ -301,7 +301,7 @@
         <div class="vegetableSlide fade2">
             <div class="text">
                 <div th:each="vegetablelist3 : ${vegetablelist3}">
-                    <div style="float: left; margin-left:26px; margin-top:30px; display: block;">
+                    <div style="float: left; margin-left:39px; margin-top:30px; display: block;">
                         <a href="#">
                             <img src="" th:src="@{${vegetablelist3.getImgsrc()}}"
                                  style="width:180px; height:180px; display:block; text-align: center;">
@@ -327,14 +327,14 @@
     <!-- 작물 -->
     <div class="slideshow-container"
          style="margin-top:50px; margin-left: auto; margin-right:auto; height:400px; width:1300px;">
-        <h2 style="margin-left:160px;"><b>작물</b></h2><br>
+        <h2 style="margin-left:130px;"><b>작물</b></h2><br>
         <a class="prev" onclick="plusFruitSlides(-1)">
-            <button class="previous_btn" style="margin-top: 100px; margin-left:155px;"> <</button>
+            <button class="previous_btn" style="margin-top: 100px; margin-left:130px;"> <</button>
         </a>
         <div class="cropSlide fade2">
             <div class="text">
                 <div th:each="croplist1 : ${croplist1}">
-                    <div style="float: left; margin-left:26px; margin-top:30px; display: block;">
+                    <div style="float: left; margin-left:39px; margin-top:30px; display: block;">
                         <a href="#">
                             <img src="" th:src="@{${croplist1.getImgsrc()}}"
                                  style="width:180px; height:180px; display:block; text-align: center;">
@@ -350,7 +350,7 @@
         <div class="cropSlide fade2">
             <div class="text">
                 <div th:each="croplist2 : ${croplist2}">
-                    <div style="float: left; margin-left:26px; margin-top:30px; display: block;">
+                    <div style="float: left; margin-left:39px; margin-top:30px; display: block;">
                         <a href="#">
                             <img src="" th:src="@{${croplist2.getImgsrc()}}"
                                  style="width:180px; height:180px; display:block; text-align: center;">
@@ -366,7 +366,7 @@
         <div class="cropSlide fade2">
             <div class="text">
                 <div th:each="croplist3 : ${croplist3}">
-                    <div style="float: left; margin-left:26px; margin-top:30px; display: block;">
+                    <div style="float: left; margin-left:39px; margin-top:30px; display: block;">
                         <a href="#">
                             <img src="" th:src="@{${croplist3.getImgsrc()}}"
                                  style="width:180px; height:180px; display:block; text-align: center;">
