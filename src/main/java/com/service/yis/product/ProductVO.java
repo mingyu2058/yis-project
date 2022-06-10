@@ -5,9 +5,19 @@ import java.awt.*;
 public class ProductVO {
     private int product_id;
     private String product_name;
-    private String date;
+    private String date1;
+    private String date2;
     private int price;
     private int priceRange;
+    private String Imgsrc;
+
+    public void setImgsrc(String imgsrc) {
+        this.Imgsrc = imgsrc;
+    }
+
+    public String getImgsrc() {
+        return Imgsrc;
+    }
 
     public void setProduct_id(int product_id) {
         this.product_id = product_id;
@@ -16,9 +26,11 @@ public class ProductVO {
     public void setProduct_name(String product_name) {
         this.product_name = product_name;
     }
-
-    public void setDate(String date) {
-        this.date = date;
+    public void setDate1(String date1) {
+        this.date1 = date1;
+    }
+    public void setDate2(String date2) {
+        this.date2 = date2;
     }
 
     public void setPrice(int price) {
@@ -36,9 +48,11 @@ public class ProductVO {
     public String getProduct_name() {
         return product_name;
     }
-
-    public String getDate() {
-        return date;
+    public String getDate1() {
+        return date1;
+    }
+    public String getDate2() {
+        return date2;
     }
 
     public int getPrice() {

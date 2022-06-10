@@ -22,7 +22,8 @@ function doAction2() {
     var ds = document.detailSearch;
 
     if (isEmpty(ds.categoryB, "카테고리 입력")) return false;
-    if (isEmpty(ds.date, "날짜 입력")) return false;
+    if (isEmpty(ds.date1, "날짜 입력")) return false;
+    if (isEmpty(ds.date2, "날짜 입력")) return false;
     if (isEmpty(ds.price, "가격 입력")) return false;
 
     ds.submit();

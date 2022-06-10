@@ -27,20 +27,16 @@ nav ul {
 }
 
 .search {
-    position: relative;
+    position:relative;
+    margin-top:55px;
     width: 1000px;
     height: 60px;
     background-color: #ffffff;
     border-radius: 40px;
-    margin: 0 auto;
 }
 
 #searchbox {
-    background-image: url("/img/search.png");
-    background-repeat: no-repeat;
-    background-position: 30px center;
-    box-sizing: border-box;
-
+    position:absolute;
     width: 900px;
     height: 60px;
     border: 0px;
@@ -52,6 +48,25 @@ nav ul {
     padding-top: 12px;
     padding-left: 120px;
     text-align: left;
+    z-index: 1;
+}
+.detailSearchBtn{
+    position: absolute;
+    background-image: url("/img/search.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    box-sizing: border-box;
+
+    width:50px;
+    height:50px;
+    border: 0px;
+    outline: none;
+    border-radius: 40px;
+    background-color: white;
+    margin-top:5px;
+    margin-left:30px;
+    z-index: 2;
 }
 
 .searchBtn {
@@ -100,6 +115,7 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index:3;
 }
 
 .modal .bg {
@@ -232,7 +248,7 @@ td {
 
 .next_btn{
     background-color: #E6E6E6;
-    margin-left:90px;
+    margin-left:55px;
     width:40px;
     height:40px;
     border:0px;
@@ -274,4 +290,58 @@ td {
 }
 .pageInfo active{
     color: #00853E;
+}
+
+
+
+
+/* index-top */
+.index-top1{
+    max-width: 1060px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.index-top-left1{
+    float: left;
+    margin-left:30px;
+}
+.index-top-left1 img{
+    float: left;
+    margin-top: 26px;
+    width: 150px;
+    height: 30px;
+}
+.index-top-right1{
+    float: right;
+    margin-right:33px;
+}
+.index-top-right1 img:nth-child(1){
+    margin-top: 26px;
+    margin-left: 408px;
+    width: 15px;
+    height: 10px;
+}
+.index-top-right1 img:nth-child(2){
+    margin-top: 28px;
+    margin-left: 32px;
+    width: 15px;
+    height: 15px;
+}
+/* title logo */
+.title1 p{
+    margin-top: 50px;
+    margin-left:30px;
+    width: 430px;
+    height: 31px;
+    font: normal normal normal 25px/34px AppleSDGothicNeoM00;
+    color: #00853E;
+}
+.title1 img{
+    margin-top: 10px;
+    margin-left:30px;
+    width: 430px;
+    height: 80px;
+}
+hr{
+    margin-top: 20px;
 }

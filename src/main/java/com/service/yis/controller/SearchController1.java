@@ -10,10 +10,8 @@ import java.util.*;
 @Controller
 @RequestMapping("/search")
 public class SearchController1 {
-    String keyword = "";
     ProductVO productVO = new ProductVO();
     ProductDAO dao = new ProductDAO();
-    List productList = null;
     List fruitList1 = null;
     List fruitList2 = null;
     List fruitList3 = null;
@@ -45,7 +43,7 @@ public class SearchController1 {
         model.addAttribute("croplist1", cropList1);
         model.addAttribute("croplist2", cropList2);
         model.addAttribute("croplist3", cropList3);
-        
+
         dao.Fruitstart = 0;
         dao.Vegetablestart = 0;
         dao.Cropstart = 0;

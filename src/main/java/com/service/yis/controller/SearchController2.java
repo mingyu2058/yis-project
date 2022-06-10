@@ -21,9 +21,6 @@ public class SearchController2 {
     ProductVO productVO = new ProductVO();
     ProductDAO dao = new ProductDAO();
     List productList = null;
-    List fruitList = null;
-    List vegetableList = null;
-    List cropList = null;
 
     @GetMapping
     public String doB(HttpServletRequest request, Model model, Criteria cri) {

@@ -37,14 +37,14 @@ public class ProductDAO {
             while (rs.next()) {
                 int product_id = rs.getInt("product_id");
                 String product_name = rs.getString("product_name");
-                String date = rs.getString("D_date");
                 int price = rs.getInt("price");
+                String Imgsrc = rs.getString("imgsrc");
 
                 ProductVO vo = new ProductVO();
                 vo.setProduct_id(product_id);
                 vo.setProduct_name(product_name);
-                vo.setDate(date);
                 vo.setPrice(price);
+                vo.setImgsrc(Imgsrc);
 
                 fruitList.add(vo);
             }
@@ -70,7 +70,7 @@ public class ProductDAO {
         Fruitstart += 4;
         return fruitList;
     }
-    
+
     public List listVegetable(ProductVO productVO) {
         List<ProductVO> vegetableList = new ArrayList<>();
         try {
@@ -88,14 +88,14 @@ public class ProductDAO {
             while (rs.next()) {
                 int product_id = rs.getInt("product_id");
                 String product_name = rs.getString("product_name");
-                String date = rs.getString("D_date");
                 int price = rs.getInt("price");
+                String Imgsrc = rs.getString("imgsrc");
 
                 ProductVO vo = new ProductVO();
                 vo.setProduct_id(product_id);
                 vo.setProduct_name(product_name);
-                vo.setDate(date);
                 vo.setPrice(price);
+                vo.setImgsrc(Imgsrc);
 
                 vegetableList.add(vo);
             }
@@ -121,7 +121,7 @@ public class ProductDAO {
         Vegetablestart += 4;
         return vegetableList;
     }
-    
+
     public List listCrop(ProductVO productVO) {
         List<ProductVO> cropList = new ArrayList<>();
 
@@ -140,14 +140,14 @@ public class ProductDAO {
             while (rs.next()) {
                 int product_id = rs.getInt("product_id");
                 String product_name = rs.getString("product_name");
-                String date = rs.getString("D_date");
                 int price = rs.getInt("price");
+                String Imgsrc = rs.getString("imgsrc");
 
                 ProductVO vo = new ProductVO();
                 vo.setProduct_id(product_id);
                 vo.setProduct_name(product_name);
-                vo.setDate(date);
                 vo.setPrice(price);
+                vo.setImgsrc(Imgsrc);
 
                 cropList.add(vo);
             }
@@ -197,14 +197,14 @@ public class ProductDAO {
             while (rs.next()) {
                 int product_id = rs.getInt("product_id");
                 String product_name = rs.getString("product_name");
-                String date = rs.getString("D_date");
                 int price = rs.getInt("price");
+                String Imgsrc = rs.getString("imgsrc");
 
                 ProductVO vo = new ProductVO();
                 vo.setProduct_id(product_id);
                 vo.setProduct_name(product_name);
-                vo.setDate(date);
                 vo.setPrice(price);
+                vo.setImgsrc(Imgsrc);
 
                 keywordList.add(vo);
             }
@@ -229,19 +229,24 @@ public class ProductDAO {
         }
         return keywordList;
     }
-    
+
     public List listDetail(ProductVO productVO, Criteria cri) throws ParseException {
         List<ProductVO> detailList = new ArrayList<>();
-        String category = productVO.getProduct_name();
-        String dates = productVO.getDate();
+        String product_name = productVO.getProduct_name();
+        String date1 = productVO.getDate1();
+        String date2 = productVO.getDate2();
         int prices = productVO.getPrice();
 
         int pageNum = cri.pageNum - 1;
         int amount = cri.amount;
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        Date dateRes = formatter.parse(dates);
-        java.sql.Date sqlDate = new java.sql.Date(dateRes.getTime());
+        Date date1Res = formatter.parse(date1);
+        Date date2Res = formatter.parse(date2);
+        System.out.println(date1Res);
+        System.out.println(date2Res);
+        java.sql.Date sqlDate1 = new java.sql.Date(date1Res.getTime());
+        java.sql.Date sqlDate2 = new java.sql.Date(date2Res.getTime());
 
         try {
             int start = pageNum * 12;
@@ -257,22 +262,23 @@ public class ProductDAO {
             rs = stmt.executeQuery("select * " +
                     "from product_test " +
                     "where product_name " +
-                    "like '%" + category + "%'" +
-                    "and D_date = '" + sqlDate + "'" +
+                    "like '%" + product_name + "%'" +
+                    "and D_date >= '" + sqlDate1 + "'" +
+                    "and D_date <= '" + sqlDate2 + "'" +
                     "and price <= '" + prices + "'" +
                     "limit " + start + "," + amount);
 
             while (rs.next()) {
                 int product_id = rs.getInt("product_id");
-                String product_name = rs.getString("product_name");
-                String date = rs.getString("D_date");
+                String product_name1 = rs.getString("product_name");
                 int price = rs.getInt("price");
+                String Imgsrc = rs.getString("imgsrc");
 
                 ProductVO vo = new ProductVO();
                 vo.setProduct_id(product_id);
-                vo.setProduct_name(product_name);
-                vo.setDate(date);
+                vo.setProduct_name(product_name1);
                 vo.setPrice(price);
+                vo.setImgsrc(Imgsrc);
 
                 detailList.add(vo);
             }
@@ -297,7 +303,7 @@ public class ProductDAO {
         }
         return detailList;
     }
-    
+
     public int getKeywordTotal(ProductVO productVO){
         int total = 0;
         String keyword = productVO.getProduct_name();
@@ -336,16 +342,19 @@ public class ProductDAO {
         }
         return total;
     }
-    
+
     public int getDetailTotal(ProductVO productVO) throws ParseException {
         int total = 0;
         String product_name = productVO.getProduct_name();
-        String date = productVO.getDate();
+        String date1 = productVO.getDate1();
+        String date2 = productVO.getDate2();
         int prices = productVO.getPrice();
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        Date dateRes = formatter.parse(date);
-        java.sql.Date sqlDate = new java.sql.Date(dateRes.getTime());
+        Date date1Res = formatter.parse(date1);
+        Date date2Res = formatter.parse(date2);
+        java.sql.Date sqlDate1 = new java.sql.Date(date1Res.getTime());
+        java.sql.Date sqlDate2 = new java.sql.Date(date2Res.getTime());
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -361,7 +370,8 @@ public class ProductDAO {
                     "from product_test " +
                     "where product_name " +
                     "like '%" + product_name + "%'" +
-                    "and D_date = '" + sqlDate + "'" +
+                    "and D_date >= '" + sqlDate1 + "'" +
+                    "and D_date <= '" + sqlDate2 + "'" +
                     "and price <= '" + prices + "'");
 
             if(rs.next())

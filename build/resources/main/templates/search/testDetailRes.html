@@ -66,14 +66,14 @@
 <!-- 주제 로고 및 설명 -->
 <div class="background">
     <!-- 로고 및 로그인,로그아웃,마이페이지-->
-    <div class="index-top">
-        <div class="index-top-left">
+    <div class="index-top1">
+        <div class="index-top-left1">
             <img
                     th:onclick="|location.href='@{/}'|"
                     src="img/logo_small.png"
                     th:src="@{/img/logo_small.png}"/>
         </div>
-        <div class="index-top-right">
+        <div class="index-top-right1">
             <img
                     src="../../static/img/table.png"
                     th:src="@{/img/table.png}"/>
@@ -107,7 +107,7 @@
     <hr>
 
     <!-- 폰트 로고 및 주제 -->
-    <div class="title">
+    <div class="title1">
         <p>
             경북에서 가장 저렴한 농산물 플랫폼
         </p>
@@ -119,7 +119,8 @@
     <!-- 내용 -->
     <section class="contents_section">
         <!-- 검색-->
-        <div class="search" style="margin-top:50px;">
+        <div class="search">
+            <button class="detailSearchBtn"></button>
             <form action="./keywordSearch" method="get" name="keywordSearch">
                 <input id="searchbox" type="text" name="keyword" placeholder="검색어 입력"
                        onkeypress="if(event.keyCode == 13){doAction1(); return false;}"
@@ -129,79 +130,60 @@
         </div>
 
         <!--상세 검색 모달 페이지-->
-        <div style="margin-top:15px">
-            <button class="openBtn">상세 검색</button>
-            <div class="modal hidden">
-                <div class="bg"></div>
-                <span class="modalBox">
-                        <form action="./detailSearch" method="get" name="detailSearch">
-                            <table>
-                                <tr>
-                                    <th>카테고리</th>
-                                    <td>
-                                        <select class="form-control" id="categoryA" name="categoryA" autocomplete="off"
-                                                onchange="categoryChange(this)" style="width:120px; height:30px;">
-                                            <option>선택</option>
-                                            <option value="과일">과일</option>
-                                            <option value="채소">채소</option>
-                                            <option value="작물">작물</option>
-                                        </select>
-                                        &nbsp;
-                                        <select class="form-control" id="categoryB" name="categoryB"
-                                                style="width:120px; height:30px;"></select>
-                                    </td>
-                                </tr>
+        <div class="modal hidden">
+            <div class="bg"></div>
+            <span class="modalBox">
+                <form action="./detailSearch" method="get" name="detailSearch">
+                        <table>
+                            <tr>
+                                <th>카테고리</th>
+                                <td>
+                                    <select class="form-control" id="categoryA" name="categoryA" autocomplete="off"
+                                            onchange="categoryChange(this)" style="width:120px; height:30px;">
+                                        <option>선택</option>
+                                        <option value="과일">과일</option>
+                                        <option value="채소">채소</option>
+                                        <option value="작물">작물</option>
+                                    </select>
+                                    &nbsp;
+                                    <select class="form-control" id="categoryB" name="categoryB"
+                                            style="width:120px; height:30px;"></select>
+                                </td>
+                            </tr>
 
-                                <tr>
-                                    <th>예상 출하 시기</th>
-                                    <td>
-                                        <input type="text" id="datepicker1" name="date"
-                                               style="width:120px; height:30px;" autocomplete="off">
-                                    </td>
-                                </tr>
+                            <tr>
+                                <th>예상 출하 시기</th>
+                                <td>
+                                    <input type="text" id="datepicker1" name="date1"
+                                           style="width:120px; height:30px;" autocomplete="off">
+                                    <input type="text" id="datepicker2" name="date2"
+                                           style="width:120px; height:30px;" autocomplete="off">
+                                </td>
+                            </tr>
 
-                                <!--
-                                <tr>
-                                    <th>지역</th>
-                                    <td>
-                                        <select class="form-control" id="regionA" name="regionA"
-                                            onchange="regionChange(this)" style="width:80px; height:30px;">
-                                            <option>선택</option>
-                                            <option value="경상남도">경상남도</option>
-                                            <option value="경상북도">경상북도</option>
-                                            <option value="강원도">강원도</option>
-                                        </select>
-                                        &nbsp;
-                                        <select class="form-control" id="regionB" name="regionB"
-                                            style="width:80px; height:30px;"></select>
-                                    </td>
-                                </tr>
-                                -->
-
-                                <tr>
-                                    <th>kg당 가격(원)</th>
-                                    <td>
-                                        <select class="form-control" id="price" name="price" autocomplete="off"
-                                                style="width:120px; height:30px;">
-                                            <option>선택</option>
-                                            <option value="5000">5000원 이하</option>
-                                            <option value="10000">10000원 이하</option>
-                                            <option value="15000">15000원 이하</option>
-                                            <option value="20000">20000원 이하</option>
-                                            <option value="25000">25000원 이하</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                            </table>
-                            <button class="submit" type="reset" onclick="doAction2()">검색</button>
-                            <button class="closeBtn"></button>
-                        </form>
-                    </span>
-            </div>
+                            <tr>
+                                <th>kg당 가격(원)</th>
+                                <td>
+                                    <select class="form-control" id="price" name="price" autocomplete="off"
+                                            style="width:120px; height:30px;">
+                                        <option>선택</option>
+                                        <option value="5000">5000원 이하</option>
+                                        <option value="10000">10000원 이하</option>
+                                        <option value="15000">15000원 이하</option>
+                                        <option value="20000">20000원 이하</option>
+                                        <option value="25000">25000원 이하</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    <button class="submit" type="reset" onclick="doAction2()">검색</button>
+                    <button class="closeBtn"></button>
+                </form>
+            </span>
         </div>
 
         <!-- 해시태그-->
-        <div class="hash-tag">
+        <div class="hash-tag" style="margin-top:50px;">
             <ul>
                 <li><a>#사과</a></li>
                 <li><a>#쌀</a></li>
@@ -212,24 +194,23 @@
 
     <!-- search info-->
     <div style="margin-top: 35px;">
-        <div>
-            <p>
-                <b th:text="${categoryA}"></b> <b> > </b>
-                <b th:text="${categoryB}"></b> <b> > </b>
-                <b th:text="${date}"></b><b>, kg당</b>
-                <b th:text="${price}"></b><b>원 이하</b>
-            </p>
-        </div>
+        <p style="margin-left: 35px;">
+            <b th:text="${categoryA}"></b> <b> > </b>
+            <b th:text="${categoryB}"></b> <b> > </b>
+            <b th:text="${date1}"></b> <b> ~ </b>
+            <b th:text="${date2}"></b><b>, kg당</b>
+            <b th:text="${price}"></b><b>원 이하</b>
+        </p>
     </div>
 
     <!--content-->
     <div class="Rescontainer">
         <div th:each="detailList : ${detailList}">
-            <div class="filterDiv" style="margin-top: 80px;">
+            <div class="filterDiv" style="margin-top: 100px;">
                 <a href="#">
-                    <img src="img/test.PNG" th:src="@{/img/test.PNG}"
+                    <img src="" th:src="@{${detailList.getImgsrc()}}"
                          style="width:180px; height:180px; display:block; text-align: center;">
-                    <p style="clear:both; margin-top: 20px;"><b th:text="${detailList.getProduct_name()}"></b></p>
+                    <p style="clear:both; margin-top: 20px; width:180px;"><b th:text="${detailList.getProduct_name()}"></b></p>
                     <p style="clear:both; margin-top: 10px; color:green"><b>거래 가능</b></p>
                 </a>
             </div>
@@ -237,7 +218,7 @@
     </div>
 
     <!--Page-->
-    <div class="pageInfo_area">
+    <div class="pageInfo_area" style="margin-top:30px;">
         <ul id="pageInfo" class="pageInfo">
             <!-- 이전페이지 버튼 -->
             <div th:if="${pagingD.prev}">
@@ -258,7 +239,8 @@
     <form id="actionForm" method="get">
         <input type="hidden" name="categoryA" th:value="${categoryA}">
         <input type="hidden" name="categoryB" th:value="${categoryB}">
-        <input type="hidden" name="date" th:value="${date}">
+        <input type="hidden" name="date1" th:value="${date1}">
+        <input type="hidden" name="date2" th:value="${date2}">
         <input type="hidden" name="price" th:value="${price}">
         <input type="hidden" name="pageNum" th:value="${pagingD.cri.pageNum}">
     </form>
@@ -285,20 +267,9 @@
     <script type="text/javascript" src="/js/changer.js"></script>
     <script type="text/javascript" src="/js/datepicker.js"></script>
     <script type="text/javascript" src="/js/buttonCondition.js"></script>
+    <script type="text/javascript" src="/js/paging.js"></script>
 </div>
 </body>
-<script>
 
-    let actionForm = $('#actionForm');
-
-    $(".pageInfo_btn a").click(function (e) {
-        e.preventDefault();
-
-        actionForm.find("input[name='pageNum']").val($(this).attr("href"));
-        actionForm.submit();
-    });
-
-    window.scrollTo(0, 550);
-</script>
 </html>
 

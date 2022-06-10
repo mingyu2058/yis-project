@@ -21,21 +21,20 @@ public class SearchController3 {
     ProductVO productVO = new ProductVO();
     ProductDAO dao = new ProductDAO();
     List productList = null;
-    List fruitList = null;
-    List vegetableList = null;
-    List cropList = null;
 
     @GetMapping
     public String doC(HttpServletRequest request, Model model, Criteria cri) throws ParseException {
         keyword = request.getParameter("categoryB");
         String categoryA = request.getParameter("categoryA");
-        String dateS = request.getParameter("date");
+        String date1 = request.getParameter("date1");
+        String date2 = request.getParameter("date2");
         String priceS = request.getParameter("price");
+
         int priceF = Integer.parseInt(priceS);
         productVO.setProduct_name(keyword);
-        productVO.setDate(dateS);
+        productVO.setDate1(date1);
+        productVO.setDate2(date2);
         productVO.setPrice(priceF);
-        productVO.setPriceRange(priceF);
         productList = dao.listDetail(productVO, cri);
         int total = dao.getDetailTotal(productVO);
 
@@ -47,7 +46,8 @@ public class SearchController3 {
         model.addAttribute("pagingD", paging);
         model.addAttribute("categoryA", categoryA);
         model.addAttribute("categoryB", keyword);
-        model.addAttribute("date", dateS);
+        model.addAttribute("date1", date1);
+        model.addAttribute("date2", date2);
         model.addAttribute("price", priceS);
 
         return "search/testDetailRes";
