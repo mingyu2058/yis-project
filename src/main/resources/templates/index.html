@@ -112,6 +112,31 @@
     </div>
 </nav>
 
+<section style="width: 100%; height: 100%; z-index: 1; float: left; background: #000000">
+    <div    id="explanation1"
+            class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img
+                        src="../../static/img/explanation01.png"
+                        th:src="@{/img/explanation01.png}"/>
+            </div>
+            <div class="swiper-slide">
+                <img
+                        src="../../static/img/explanation02.png"
+                        th:src="@{/img/explanation02.png}"/>
+            </div>
+            <div class="swiper-slide">
+                <img
+                        src="../../static/img/explanation03.png"
+                        th:src="@{/img/explanation03.png}"/>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
 
 <section>
     <!-- 백그라운드 이미지 -->
@@ -315,8 +340,13 @@
 <script type="text/javascript">
     function show() {
         document.getElementById('explanation').style.display="block";
+        document.getElementById('explanation').style.display="block";
         document.querySelector('body').style.backgroundColor="black !important";
+        document.querySelector('body').style.background="black !important";
     }
+
+
+
 
 
 </script>

@@ -139,7 +139,8 @@ hr{
 /* top contents */
 
 .contents{
-    margin-top: 40px;
+    width: 1060px;
+    margin: 0 auto;
     overflow: hidden;
 }
 
