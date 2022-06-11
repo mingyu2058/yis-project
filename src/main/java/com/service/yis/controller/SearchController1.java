@@ -2,6 +2,7 @@ package com.service.yis.controller;
 
 import com.service.yis.product.ProductDAO;
 import com.service.yis.product.ProductVO;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,7 @@ public class SearchController1 {
     List cropList1 = null;
     List cropList2 = null;
     List cropList3 = null;
+    List johab = null;
 
     @GetMapping
     public String doA(Model model) {
@@ -33,6 +35,7 @@ public class SearchController1 {
         cropList1 = dao.listCrop(productVO);
         cropList2 = dao.listCrop(productVO);
         cropList3 = dao.listCrop(productVO);
+        johab = dao.getJohabList();
 
         model.addAttribute("fruitlist1", fruitList1);
         model.addAttribute("fruitlist2", fruitList2);
@@ -43,6 +46,7 @@ public class SearchController1 {
         model.addAttribute("croplist1", cropList1);
         model.addAttribute("croplist2", cropList2);
         model.addAttribute("croplist3", cropList3);
+        model.addAttribute("johab", johab);
 
         dao.Fruitstart = 0;
         dao.Vegetablestart = 0;

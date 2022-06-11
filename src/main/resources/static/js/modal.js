@@ -9,3 +9,4 @@ const close = () => {
 document.querySelector(".detailSearchBtn").addEventListener("click", open);
 document.querySelector(".closeBtn").addEventListener("click", close);
 document.querySelector(".bg").addEventListener("click", close);
+

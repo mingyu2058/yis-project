@@ -9,6 +9,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.Collections;
 
 public class ProductDAO {
     Connection conn = null;
@@ -39,12 +42,14 @@ public class ProductDAO {
                 String product_name = rs.getString("product_name");
                 int price = rs.getInt("price");
                 String Imgsrc = rs.getString("imgsrc");
+                String johab = rs.getString("johab");
 
                 ProductVO vo = new ProductVO();
                 vo.setProduct_id(product_id);
                 vo.setProduct_name(product_name);
                 vo.setPrice(price);
                 vo.setImgsrc(Imgsrc);
+                vo.setJohab(johab);
 
                 fruitList.add(vo);
             }
@@ -90,12 +95,14 @@ public class ProductDAO {
                 String product_name = rs.getString("product_name");
                 int price = rs.getInt("price");
                 String Imgsrc = rs.getString("imgsrc");
+                String johab = rs.getString("johab");
 
                 ProductVO vo = new ProductVO();
                 vo.setProduct_id(product_id);
                 vo.setProduct_name(product_name);
                 vo.setPrice(price);
                 vo.setImgsrc(Imgsrc);
+                vo.setJohab(johab);
 
                 vegetableList.add(vo);
             }
@@ -142,12 +149,14 @@ public class ProductDAO {
                 String product_name = rs.getString("product_name");
                 int price = rs.getInt("price");
                 String Imgsrc = rs.getString("imgsrc");
+                String johab = rs.getString("johab");
 
                 ProductVO vo = new ProductVO();
                 vo.setProduct_id(product_id);
                 vo.setProduct_name(product_name);
                 vo.setPrice(price);
                 vo.setImgsrc(Imgsrc);
+                vo.setJohab(johab);
 
                 cropList.add(vo);
             }
@@ -199,12 +208,14 @@ public class ProductDAO {
                 String product_name = rs.getString("product_name");
                 int price = rs.getInt("price");
                 String Imgsrc = rs.getString("imgsrc");
+                String johab = rs.getString("johab");
 
                 ProductVO vo = new ProductVO();
                 vo.setProduct_id(product_id);
                 vo.setProduct_name(product_name);
                 vo.setPrice(price);
                 vo.setImgsrc(Imgsrc);
+                vo.setJohab(johab);
 
                 keywordList.add(vo);
             }
@@ -235,7 +246,9 @@ public class ProductDAO {
         String product_name = productVO.getProduct_name();
         String date1 = productVO.getDate1();
         String date2 = productVO.getDate2();
-        int prices = productVO.getPrice();
+        int price1 = productVO.getPrice1();
+        int price2 = productVO.getPrice2();
+        String johab = productVO.getJohab();
 
         int pageNum = cri.pageNum - 1;
         int amount = cri.amount;
@@ -243,8 +256,6 @@ public class ProductDAO {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         Date date1Res = formatter.parse(date1);
         Date date2Res = formatter.parse(date2);
-        System.out.println(date1Res);
-        System.out.println(date2Res);
         java.sql.Date sqlDate1 = new java.sql.Date(date1Res.getTime());
         java.sql.Date sqlDate2 = new java.sql.Date(date2Res.getTime());
 
@@ -265,13 +276,16 @@ public class ProductDAO {
                     "like '%" + product_name + "%'" +
                     "and D_date >= '" + sqlDate1 + "'" +
                     "and D_date <= '" + sqlDate2 + "'" +
-                    "and price <= '" + prices + "'" +
+                    "and price >= " + price1 + " " +
+                    "and price <= " + price2 + " " +
+                    "and johab = '" + johab + "'" +
                     "limit " + start + "," + amount);
 
             while (rs.next()) {
                 int product_id = rs.getInt("product_id");
                 String product_name1 = rs.getString("product_name");
                 int price = rs.getInt("price");
+                String johabb = rs.getString("johab");
                 String Imgsrc = rs.getString("imgsrc");
 
                 ProductVO vo = new ProductVO();
@@ -279,6 +293,7 @@ public class ProductDAO {
                 vo.setProduct_name(product_name1);
                 vo.setPrice(price);
                 vo.setImgsrc(Imgsrc);
+                vo.setJohab(johabb);
 
                 detailList.add(vo);
             }
@@ -348,7 +363,9 @@ public class ProductDAO {
         String product_name = productVO.getProduct_name();
         String date1 = productVO.getDate1();
         String date2 = productVO.getDate2();
-        int prices = productVO.getPrice();
+        int price1 = productVO.getPrice1();
+        int price2 = productVO.getPrice2();
+        String johab = productVO.getJohab();
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         Date date1Res = formatter.parse(date1);
@@ -372,7 +389,9 @@ public class ProductDAO {
                     "like '%" + product_name + "%'" +
                     "and D_date >= '" + sqlDate1 + "'" +
                     "and D_date <= '" + sqlDate2 + "'" +
-                    "and price <= '" + prices + "'");
+                    "and price >= " + price1 + " " +
+                    "and price <= " + price2 + " " +
+                    "and johab = '" + johab + "'");
 
             if(rs.next())
                 total = rs.getInt(1);
@@ -397,4 +416,50 @@ public class ProductDAO {
         }
         return total;
     }
+
+    public List getJohabList() {
+        List<String> johabList = new ArrayList<>();
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            String jdbcDriver = "jdbc:mysql://20.214.186.164:3306/yis?" +
+                    "useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+            String dbUser = "yis";
+            String dbPass = "1234";
+
+            conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("select johab from product_test");
+
+            while (rs.next()) {
+                String johab = rs.getString("johab");
+                johabList.add(johab);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } finally {
+            if (rs != null) try {
+                rs.close();
+            } catch (SQLException ex) {
+            }
+            if (stmt != null) try {
+                stmt.close();
+            } catch (SQLException ex) {
+            }
+            if (conn != null) try {
+                conn.close();
+            } catch (SQLException ex) {
+            }
+        }
+        Set<String> set = new HashSet<String>(johabList);
+        List<String> NewjohabList = new ArrayList<String>(set);
+        Collections.sort(NewjohabList);
+
+        return NewjohabList;
+    }
 }
+
