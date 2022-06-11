@@ -19,10 +19,6 @@
 
 <body>
 
-
-<!-- 설명 숨기기 -->
-
-
 <!--
 <nav class="main-nav">
 
@@ -64,6 +60,12 @@
 <!-- nav bar -->
 <nav>
     <div>
+
+            <img
+                    class="nav-logo"
+                    th:onclick="|location.href='@{/}'|"
+                    src="../../static/img/logo_small.png"
+                    th:src="@{/img/logo_small.png}"/>
         <ul>
             <li>
                 <a href="DataCenter/html/datacenter.html"
@@ -108,10 +110,52 @@
                 </a>
             </li>
         </ul>
+        <div class="nav-right">
+            <img
+                    src="../../static/img/table.png"
+                    th:src="@{/img/table.png}"/>
+            <img
+                    src="../../static/img/person.png"
+                    th:src="@{/img/person.png}"/>
 
+            <a sec:authorize="isAnonymous()"
+               href="login.html"
+               th:href="@{/account/login}">로그인</a>
+
+            <h
+                    sec:authorize="isAnonymous()">또는</h>
+
+            <a sec:authorize="isAnonymous()"
+               href="join.html"
+               th:href="@{/account/join}">회원가입</a>
+
+            <h
+                    sec:authorize="isAuthenticated()"
+            >안녕하세요! </h>
+            <h
+                    th:text="${name}">
+            </h>
+            <h
+                    sec:authorize="isAuthenticated()">
+                님
+            </h>
+
+            <a
+                    sec:authorize="isAuthenticated()"
+                    href="/doLogout">
+                로그아웃
+            </a>
+
+            <a
+                    sec:authorize="isAuthenticated()"
+                    href="login.html"
+                    th:href="@{/account/login}">
+            </a>
+        </div>
     </div>
 </nav>
 
+<!-- 플랫폼 소개 -->
 <section style="width: 100%; height: 100%; z-index: 1; float: left; background: #000000">
     <div    id="explanation1"
             class="swiper-container">
@@ -141,7 +185,11 @@
 <section>
     <!-- 백그라운드 이미지 -->
     <div class="background">
+        <div class="background-real">
+
+        </div>
         <!-- 로고 및 로그인,로그아웃,마이페이지-->
+        <!--
         <div class="index-top">
             <div class="index-top-left">
                 <img
@@ -171,6 +219,20 @@
                 <h
                         sec:authorize="isAuthenticated()"
                         >안녕하세요! </h>
+                <h
+                    th:text="${name}">
+                </h>
+                <h
+                    sec:authorize="isAuthenticated()">
+                    님
+                </h>
+
+                <a
+                    sec:authorize="isAuthenticated()"
+                    href="/doLogout">
+                    로그아웃
+                </a>
+
                 <a
                         sec:authorize="isAuthenticated()"
                         href="login.html"
@@ -180,9 +242,9 @@
                 </a>
             </div>
         </div>
-        <hr>
+        -->
 
-        <!-- 폰트 로고 및 주제 -->
+        <!-- 폰트 로고 및 주제
         <div class="title">
             <p>
                 경북에서 가장 저렴한 농산물 플랫폼
@@ -191,6 +253,7 @@
                  th:src="@{/img/logo_font.png}"
             >
         </div>
+        -->
 
         <!-- 내용 - 계약거래, 펀딩 -->
         <div class="contents">
@@ -214,9 +277,9 @@
                     <a
                             class="funding-start"
                             href="#"
-                            th:href="@{/funding}">
+                            th:href="@{/crowd}">
                         <p>맛있고 신선한 경북 농산물을 만나보세요. ></p>
-                        <h>펀딩</h>
+                        <h>크라우드 펀딩</h>
                         <div>
                             <img
                                     src="../../static/img/funding_start.png"
@@ -227,7 +290,7 @@
             </div>
         </div>
 
-        <!-- 소개 -->
+        <!-- 소개
         <div    id="explanation"
                 class="swiper-container">
             <div class="swiper-wrapper">
@@ -248,6 +311,7 @@
                 </div>
             </div>
         </div>
+	-->
 
         <!-- 플랫폼 소개, 데이터센터-->
         <div class="middle-contents">
@@ -314,8 +378,6 @@
             </div>
         </div>
     </div>
-
-
 </section>
 
 <!-- Footer -->
@@ -339,8 +401,14 @@
 <script type="text/javascript">
     function show() {
         document.getElementById('explanation').style.display="block";
+        document.getElementById('explanation').style.display="block";
         document.querySelector('body').style.backgroundColor="black !important";
+        document.querySelector('body').style.background="black !important";
     }
+
+
+
+
 
 
 </script>

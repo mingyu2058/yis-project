@@ -12,7 +12,7 @@ public class CrowdFunding {
 
     @GetMapping
     public String crowdFundingMain(){
-        return "/crowdFunding/main-crowdFunding";
+        return "/funding/main-crowdFunding";
     }
 
 }

@@ -4,8 +4,8 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <link th:href="@{/css/funding.css}"
-          href="../../static/css/funding.css" rel="stylesheet">
+    <link th:href="@{/css/funding/funding.css}"
+          href="../../static/css/funding/funding.css" rel="stylesheet">
 
     <title>Title</title>
 </head>
@@ -147,7 +147,6 @@
                    th:href="@{/}">
                     <img
                             src="../../static/img/fruit.png"
-                            th:src="@{/img/datacenter.png}"
                             th:src="@{/img/trade.png}"/>
                     <h>제목2</h>
                     <div class="funding-contents">
@@ -161,7 +160,49 @@
                    th:href="@{/}">
                     <img
                             src="../../static/img/fruit.png"
+                            th:src="@{/img/news.png}"/>
+                    <h>제목3</h>
+                    <div class="funding-contents">
+                        <h>100만원</h>
+                        <h>26%</h>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="DataCenter/html/datacenter.html"
+                   th:href="@{/datacenter}">
+                    <img
+                            src="../../static/img/fruit.png"
                             th:src="@{/img/datacenter.png}"
+                    />
+                    <h>제목1</h>
+                    <div class="funding-contents">
+                        <h>100만원</h>
+                        <h>26%</h>
+                    </div>
+                </a>
+
+            </li>
+            <li>
+                <a href="../index.html"
+                   th:href="@{/}">
+                    <img
+                            src="../../static/img/fruit.png"
+                            th:src="@{/img/trade.png}"/>
+                    <h>제목2</h>
+                    <div class="funding-contents">
+                        <h>100만원</h>
+                        <h>26%</h>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="../index.html"
+                   th:href="@{/}">
+                    <img
+                            src="../../static/img/fruit.png"
                             th:src="@{/img/news.png}"/>
                     <h>제목3</h>
                     <div class="funding-contents">

@@ -126,11 +126,13 @@ nav ul {
 
 .modalBox {
     position: absolute;
-    background-color: #fff;
-    width: 700px;
-    height: 400px;
+    background-color: #F5F5F7;
+    width: 900px;
+    height: 700px;
     padding: 15px;
     font-size: 16px;
+    border-radius: 15px;
+    margin: 0 auto;
 }
 
 .modalBox button {
@@ -163,26 +165,59 @@ td {
     height: 35px;
     display: block;
     background-color: #00853E;
-    border-radius: 10px;
+    border-radius: 30px;
     border: 0px;
     outline: none;
-    color: black;
+    color: white;
     font-size: 15px;
-    box-shadow: 0px 0px 2.5px gray;
     padding: 0px;
-    margin: auto;
-    margin-top: 100px;
+    margin-top: 20px;
+    margin-left: 412px;
+    float:left;
 }
 
 .submit:hover {
-    color: white;
+    box-shadow: 0px 0px 5px gray;
 }
 
 .closeBtn {
+    width: 10px;
+    height: 35px;
+    display: block;
     background-color: white;
+    border-radius: 30px;
     border: 0px;
+    outline: none;
+    color: black;
+    float:left;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-left: 30px;
+    padding: 0px;
 }
 
+.closeBtn:hover{
+    box-shadow: 0px 0px 3.5px gray;
+}
+
+.resetBtn {
+    background-color: #F5F5F7;
+    font-size: 12px;
+    color: black;
+    border: 0px;
+    width:10px;
+    height:20px;
+    float:left;
+    margin-top: 37px;
+}
+
+.redoImg {
+    width:15px;
+    height:15px;
+    float:left;
+    margin-top: 40px;
+    margin-left: 85px;
+}
 
 .hash-tag{
     overflow: visible;
@@ -225,7 +260,6 @@ td {
     color: white;
 }
 
-
 .Rescontainer {
     margin: 10px auto;
     height: 1000px;
@@ -241,6 +275,7 @@ td {
     float: left;
     box-sizing: border-box;
 }
+
 .show {
     display: block;
 }
@@ -285,4 +320,211 @@ td {
 }
 .pageInfo active{
     color: #00853E;
+}
+
+
+
+
+.form-control {
+    overflow-y: scroll;
+    width: 180px;
+    height: 130px;
+    float: left;
+    margin-top:20px;
+    border: none;
+}
+.form-control::-webkit-scrollbar {
+    padding-right:10px;
+    width: 5px;
+    background-color: #00853E;
+}
+.form-control::-webkit-scrollbar-thumb {
+    background-color: #00853E;
+    border-radius: 10px;
+}
+.form-control::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+.form-control p {
+    float: left;
+    margin-left:50px;
+}
+.form-control option{
+    margin-left:30px;
+    border: none;
+}
+
+
+#datepicker1 {
+    float: left;
+    margin-top:50px;
+    margin-left:10px;
+    width:130px;
+    border-top:1px;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size:16px;
+}
+#datepicker1:focus {
+    outline: none;
+}
+#datepicker2 {
+    float: left;
+    margin-top:5px;
+    margin-left:10px;
+    width:130px;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size:16px;
+}
+#datepicker2:focus {
+    outline: none;
+}
+
+
+.firstFilter {
+    width: 700px;
+    height: 250px;
+    background-color: white;
+    margin-left:85px;
+    border-radius: 15px;
+    margin-top:20px;
+}
+
+.secondFilter {
+    width: 700px;
+    height: 250px;
+    background-color: white;
+    margin-left:85px;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.firstDiv1{
+    border-right: 2px solid #E6E6E6;
+    float: left;
+    width:30%;
+    box-sizing: border-box;
+    height:80%;
+    margin-top:30px;
+}
+.firstDiv2{
+    border-right: 2px solid #E6E6E6;
+    float: left;
+    margin-left: 5%;
+    width:30%;
+    height:80%;
+    box-sizing: border-box;
+    margin-top:30px;
+}
+.firstDiv3{
+    border: 0;
+    float: right;
+    width:30%;
+    height:100%;
+    box-sizing: border-box;
+    margin-top:30px;
+}
+.calender1{
+    float:left;
+    width:17px;
+    height:17px;
+    margin-top:45px;
+}
+.calender2{
+    float:left;
+    width:17px;
+    height:17px;
+    margin-top:0px;
+}
+
+
+.secondDiv1{
+    border-right: 2px solid #E6E6E6;
+    float: left;
+    width:30%;
+    box-sizing: border-box;
+    height:80%;
+    margin-top:30px;
+}
+.secondDiv2{
+    border-right: 2px solid #E6E6E6;
+    float: left;
+    margin-left: 5%;
+    width:30%;
+    height:80%;
+    box-sizing: border-box;
+    margin-top:30px;
+}
+.secondDiv3{
+    border: 0;
+    float: right;
+    width:30%;
+    height:100%;
+    box-sizing: border-box;
+}
+.secondDiv3 img {
+    width:100px;
+    height:100px;
+    margin-top:65px;
+    margin-left:35px;
+}
+
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+}
+select:focus {
+    outline: none;
+}
+option:checked {
+    color: #00853E;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+#price1 {
+    float: left;
+    margin-top:50px;
+    margin-left:20px;
+    width:130px;
+    border-top:1px;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size:16px;
+}
+#price1:focus {
+    outline: none;
+}
+#price2 {
+    float: left;
+    margin-top:5px;
+    margin-left:20px;
+    width:130px;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size:16px;
+}
+#price2:focus {
+    outline: none;
+}
+
+.JohabTag{
+    position: absolute;
+    width:80px;
+    height: 25px;
+    color:black;
+    background-color:#E6E6E6;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 4px;
+    font-size:12px;
+    font-weight: 600;
+    margin-top:10px;
 }

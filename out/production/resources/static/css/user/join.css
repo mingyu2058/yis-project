@@ -60,6 +60,9 @@ nav li{
 
 
 /* join-top */
+.join{
+    height: 887px;
+}
 .join-top{
     overflow: hidden;
 }
@@ -93,7 +96,7 @@ nav li{
 /* join center */
 .join-center{
     overflow: hidden;
-    height: 1080px;
+    height: 887px;
 }
 
 
@@ -102,10 +105,11 @@ nav li{
     top: 0px;
     left: 0px;
     width: 872px;
-    height: 1080px;
+    height: 887px;
     background: #00853E 0% 0% no-repeat padding-box;
     opacity: 1;
     float: left;
+    line-height: 887px;
 }
 .join-background div{
     margin-left: 430px;
@@ -227,6 +231,7 @@ input{
     color: #616161;
     font-size: 18px;
     padding: 20px 0;
+    height: 93px;
 }
 
 .footer-inner {
@@ -259,7 +264,7 @@ input{
 }
 
 
-
+/*
 @media(max-width: 700px) {
     .menu-btn {
         display: block;
@@ -336,5 +341,5 @@ input{
         margin-bottom: 20px;
     }
 }
-
+*/
 

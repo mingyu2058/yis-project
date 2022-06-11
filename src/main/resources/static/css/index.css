@@ -27,29 +27,57 @@ a:hover{
 
 section{
     background: #F5F5F7 0% 0% no-repeat padding-box;
-    height: 987px;
+    height: 923px;
 }
 
 /* nav */
 nav a{
-    color: #ffffff;
+    color: black;
     text-decoration: none;
 }
 
 nav{
-    height: 40px;
-    background: #444444 0% 0% no-repeat padding-box;
+    height: 64px;
+    background: #F5F4F3 0% 0% no-repeat padding-box;
     overflow: hidden;
 }
-nav div{
+nav h{
+    color: black;
+}
+nav > div{
+    padding-top: 10px;
+    width: 1060px;
     margin: 8px auto;
     display: table;
     color: #ffffff;
+}
+nav ul{
+    margin-left: 200px;
 }
 nav li{
     float: left;
     margin-left: 40px;
 }
+.nav-logo{
+    float: left;
+    width: 151px;
+}
+.nav-right{
+    margin-top: 1px;
+    float: right;
+}
+
+.nav-right img:nth-child(1){
+    width: 15px;
+    height: 10px;
+}
+.nav-right img:nth-child(2){
+    margin-left: 32px;
+    width: 15px;
+    height: 15px;
+}
+
+
 .datacenter-img{
     width: 20px;
     height: 20px;
@@ -112,17 +140,30 @@ hr{
 }
 /* background */
 .background{
-    background-image: url('../img/background.png');
-    background-size: cover;
-
+    /*background-image: url('../img/background.jpg');*/
+    /*background-size: cover;*/
+    position: relative;
+    z-index: 1;
     height: 500px;
 }
-.background > div{
-    width: 1060px;
-    margin: 0 auto;
+.background:before{
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    z-index: -1;
+    opacity: 0.3;
+    background-size: cover;
+    background-image: url('../img/background.jpg');
 }
 
 /* title logo */
+.title{
+    margin: 0 auto;
+    width: 1060px;
+
+}
+
 .title p{
     margin-top: 50px;
     width: 430px;
@@ -148,18 +189,17 @@ hr{
 
 .trade-start img{
     margin: 0 auto;
-    width: 260px;
-    height: 210px;
     object-fit: contain;
+    float: right;
 }
 
 .funding-start img{
-    width: 510px;
-    height: 190px;
     object-fit: fill;
+    float: right;
 }
 
 .top-contents{
+    margin-top: 144px;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -180,7 +220,7 @@ hr{
     display: inline-block;
 
     box-shadow: 4px 3px 4px #00000008;
-    border-radius: 8px;
+    border-radius: 28px;
 
     background: #ffffff;
 }
@@ -192,6 +232,7 @@ hr{
     letter-spacing: 0px;
     color: #00853E;
     height: 24px;
+    font-weight: bold;
 }
 .top-contents h{
     margin-left: 10px;
@@ -215,7 +256,6 @@ hr{
     overflow: hidden;
 }
 .middle-contents div{
-
     margin: 20px;
     font-size: 18px;
     font-weight: bold;
@@ -226,16 +266,18 @@ hr{
     line-height: 56px;
     height: 56px;
     width: 510px;
-    box-shadow: 4px 3px 6px #0000000D;
+    box-shadow: 5px 4px 6px #0000000D;
     border-radius: 28px;
-    background: #00853E 0% 0% no-repeat padding-box;
-    color: white;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    color: black;
+    z-index: -1;
 }
 
 .middle-contents img{
     width: 25px;
     height: 15px;
     object-fit: contain;
+    z-index: 1;
 }
 
 /* bottom contents news / grain fruit vegetable */
@@ -248,45 +290,55 @@ hr{
 .bottom-contents > div{
     font-size: 18px;
     font-weight: bold;
-    margin: 0 20px;
+    margin: 0 0;
 }
 .news{
-    padding: 10px;
-    height: 250px;
-    width: 510px;
+    float: left;
+    padding: 10px 39px;
+    height: 205px;
+    width: 439px;
     background: #FAFAFA 0% 0% no-repeat padding-box;
-    box-shadow: 4px 3px 6px #00000008;
-    border-radius: 7px;
+    box-shadow: 5px 4px 6px #0000000D;
+    opacity: 1;
+    border-radius: 17px;
     margin-top: 20px;
 }
 .news p{
-    margin-top: 20px;
+    margin-top: 18px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 /* grain vegetable fruit */
+.bottom-contents{
+    margin-top: 47px;
+}
+
 .bottom-contents > div:nth-child(2){
     text-align: center;
     font-size: 18px;
-    height: 250px;
+    height: 205px;
     line-height: 100px;
-    width: 510px;
     overflow: hidden;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
 }
 .bottom-contents > div:nth-child(2) a{
     float: left;
-    width: 130px;
-    height: 250px;
+    width: 172px;
+    height: 205px;
     background: #FAFAFA 0% 0% no-repeat padding-box;
     box-shadow: 5px 4px 6px #0000000D;
-    border-radius: 8px;
+    border-radius: 17px;
     margin: 0 20px;
 }
+
+.bottom-contents > div:nth-child(2) div :hover{
+    background: #12b564 0% 0% no-repeat padding-box;
+    color: white;
+}
+
 
 .bottom-contents img{
     height: 65px;
@@ -294,11 +346,27 @@ hr{
 }
 
 /* swiper*/
-.swiper-container{
+/* 소개 */
+.introduction{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     display: none;
+    position: fixed;
+    z-index: 2;
+    float: left;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-container{
     overflow-y: hidden;
     overflow-x: scroll;
     width: 1400px !important;
+    height: 750px;
+
 
 }
 .swiper-wrapper{
@@ -332,7 +400,9 @@ hr{
     background: #F9F9FA 0% 0% no-repeat padding-box;
     color: #000000;
     font-size: 18px;
-    padding: 20px 0;
+    padding: 10px 0;
+    height: 93px;
+
 }
 
 .footer-inner {

@@ -1,5 +1,6 @@
 package com.service.yis.controller;
 
+import com.service.yis.service.Data_Center_Service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +9,8 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -15,16 +18,12 @@ import java.util.List;
 @RequestMapping("/tradeRegister")
 @RequiredArgsConstructor
 public class TradeRegister {
+    Data_Center_Service data_center_service;
 
     @GetMapping
     public String tradeRegisterMain(){
         return "tradeRegister/trade_register";
     }
+//    @Query(value = "insert ", nativeQuery = true);
 
-	@RequestMapping(value = "productRegister.do", method = RequestMethod.POST)
-	@ResponseBody
-    public Object productRegister() {
-        int is_register = data_Center_Service.getItem();
-        return list;
-    }
 }

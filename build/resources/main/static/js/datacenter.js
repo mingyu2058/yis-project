@@ -251,16 +251,16 @@ function itemRank(){
 	$(".rankByVolumeTable").empty();  // 태그 요소 초기화
 	let insert=""
 	insert += "<table class=\"table\"><tbody>"
-	insert += "<tr><td>1</td><td class=\"td-name\">"+ rankInfo[0].name +"</td><td style=\"text-align: right\">"+ (rankInfo[0].totalAmt/1000).toFixed(0) +'억원</td></tr>'
-	insert += "<tr><td>2</td><td class=\"td-name\">"+ rankInfo[1].name +"</td><td style=\"text-align: right\">"+ (rankInfo[1].totalAmt/1000).toFixed(0) +'억원</td></tr>'
-	insert += "<tr><td>3</td><td class=\"td-name\">"+ rankInfo[2].name +"</td><td style=\"text-align: right\">"+ (rankInfo[2].totalAmt/1000).toFixed(0) +'억원</td></tr>'
-	insert += "<tr><td>4</td><td class=\"td-name\">"+ rankInfo[3].name +"</td><td style=\"text-align: right\">"+ (rankInfo[3].totalAmt/1000).toFixed(0) +'억원</td></tr>'
-	insert += "<tr><td>5</td><td class=\"td-name\">"+ rankInfo[4].name +"</td><td style=\"text-align: right\">"+ (rankInfo[4].totalAmt/1000).toFixed(0) +'억원</td></tr>'
-	insert += "<tr><td>6</td><td class=\"td-name\">"+ rankInfo[5].name +"</td><td style=\"text-align: right\">"+ (rankInfo[5].totalAmt/1000).toFixed(0) +'억원</td></tr>'
-	insert += "<tr><td>7</td><td class=\"td-name\">"+ rankInfo[6].name +"</td><td style=\"text-align: right\">"+ (rankInfo[6].totalAmt/1000).toFixed(0) +'억원</td></tr>'
-	insert += "<tr><td>8</td><td class=\"td-name\">"+ rankInfo[7].name +"</td><td style=\"text-align: right\">"+ (rankInfo[7].totalAmt/1000).toFixed(0) +'억원</td></tr>'
-	insert += "<tr><td>9</td><td class=\"td-name\">"+ rankInfo[8].name +"</td><td style=\"text-align: right\">"+ (rankInfo[8].totalAmt/1000).toFixed(0) +'억원</td></tr>'
-	insert += "<tr><td>10</td><td class=\"td-name\">"+ rankInfo[9].name +"</td><td style=\"text-align: right\">"+ (rankInfo[9].totalAmt/1000).toFixed(0) +'억원</td></tr>'
+	insert += "<tr><td class=\"rank rank1\">1</td><td class=\"td-name\">"+ rankInfo[0].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ (rankInfo[0].totalAmt/1000).toFixed(0) +'억원</td></tr>'
+	insert += "<tr><td class=\"rank rank2\">2</td><td class=\"td-name\">"+ rankInfo[1].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ (rankInfo[1].totalAmt/1000).toFixed(0) +'억원</td></tr>'
+	insert += "<tr><td class=\"rank rank3\">3</td><td class=\"td-name\">"+ rankInfo[2].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ (rankInfo[2].totalAmt/1000).toFixed(0) +'억원</td></tr>'
+	insert += "<tr><td class=\"rank\">4</td><td class=\"td-name\">"+ rankInfo[3].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ (rankInfo[3].totalAmt/1000).toFixed(0) +'억원</td></tr>'
+	insert += "<tr><td class=\"rank\">5</td><td class=\"td-name\">"+ rankInfo[4].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ (rankInfo[4].totalAmt/1000).toFixed(0) +'억원</td></tr>'
+	insert += "<tr><td class=\"rank\">6</td><td class=\"td-name\">"+ rankInfo[5].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ (rankInfo[5].totalAmt/1000).toFixed(0) +'억원</td></tr>'
+	insert += "<tr><td class=\"rank\">7</td><td class=\"td-name\">"+ rankInfo[6].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ (rankInfo[6].totalAmt/1000).toFixed(0) +'억원</td></tr>'
+	insert += "<tr><td class=\"rank\">8</td><td class=\"td-name\">"+ rankInfo[7].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ (rankInfo[7].totalAmt/1000).toFixed(0) +'억원</td></tr>'
+	insert += "<tr><td class=\"rank\">9</td><td class=\"td-name\">"+ rankInfo[8].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ (rankInfo[8].totalAmt/1000).toFixed(0) +'억원</td></tr>'
+	insert += "<tr><td class=\"rank\">10</td><td class=\"td-name\">"+ rankInfo[9].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ (rankInfo[9].totalAmt/1000).toFixed(0) +'억원</td></tr>'
     insert += "</tbody></table>"
     $(".rankByVolumeTable").append(insert);
 
@@ -284,12 +284,34 @@ function itemRank(){
     let downCount =1;
     for(i=0; i<10; i++){
         if(rankInfo[i].rate <=0 || rankInfo[i].rate == null) {break}
-        insert1 += "<tr><td>"+ upCount +"</td><td class=\"td-name\">"+ rankInfo[i].name +"</td><td style=\"text-align: right\">"+ rankInfo[i].rate +'</td><td ><img src=\"/img/rank-up.png\"></td></tr>'
+        if(upCount == 1){
+            insert1 += "<tr><td class=\"rank rank1\">"+ upCount +"</td><td class=\"td-name\">"+ rankInfo[i].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ rankInfo[i].rate +'%</td><td><img class=\"rank_img\" src=\"/img/rank-up.png\"></td></tr>'
+        }
+        else if(upCount == 2){
+            insert1 += "<tr><td class=\"rank rank2\">"+ upCount +"</td><td class=\"td-name\">"+ rankInfo[i].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ rankInfo[i].rate +'%</td><td><img class=\"rank_img\" src=\"/img/rank-up.png\"></td></tr>'
+        }
+        else if(upCount == 3){
+            insert1 += "<tr><td class=\"rank rank3\">"+ upCount +"</td><td class=\"td-name\">"+ rankInfo[i].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ rankInfo[i].rate +'%</td><td><img class=\"rank_img\" src=\"/img/rank-up.png\"></td></tr>'
+        }
+        else{
+            insert1 += "<tr><td class=\"rank\">"+ upCount +"</td><td class=\"td-name\">"+ rankInfo[i].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ rankInfo[i].rate +'%</td><td><img class=\"rank_img\" src=\"/img/rank-up.png\"></td></tr>'
+        }
         upCount +=1
     }
     for(i= rankInfo.length-1; i > rankInfo.length-10; i--){
         if(rankInfo[i].rate >=0 || rankInfo[i].rate == null) {break}
-        insert2 += "<tr><td>"+ downCount +"</td><td class=\"td-name\">"+ rankInfo[i].name +"</td><td style=\"text-align: right\">"+ rankInfo[i].rate +'</td><td ><img src=\"/img/rank-down.png\"></td></tr>'
+        if(downCount == 1){
+            insert2 += "<tr><td class=\"rank rank1\">"+ downCount +"</td><td class=\"td-name\">"+ rankInfo[i].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ rankInfo[i].rate +'%</td><td ><img class=\"rank_img\" src=\"/img/rank-down.png\"></td></tr>'
+        }
+        else if(downCount == 2){
+            insert2 += "<tr><td class=\"rank rank2\">"+ downCount +"</td><td class=\"td-name\">"+ rankInfo[i].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ rankInfo[i].rate +'%</td><td ><img class=\"rank_img\" src=\"/img/rank-down.png\"></td></tr>'
+        }
+        else if(downCount == 3){
+            insert2 += "<tr><td class=\"rank rank3\">"+ downCount +"</td><td class=\"td-name\">"+ rankInfo[i].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ rankInfo[i].rate +'%</td><td ><img class=\"rank_img\" src=\"/img/rank-down.png\"></td></tr>'
+        }
+        else{
+            insert2 += "<tr><td class=\"rank\">"+ downCount +"</td><td class=\"td-name\">"+ rankInfo[i].name +"</td><td style=\"text-align: right; font: normal normal normal 18px/40px AppleSDGothicNeoM00;\">"+ rankInfo[i].rate +'%</td><td ><img class=\"rank_img\" src=\"/img/rank-down.png\"></td></tr>'
+        }
         downCount +=1
     }
       insert1 += "</tbody></table>"
@@ -382,10 +404,11 @@ $(document).ready(function() {
     });
 });
 
+const now = new Date();
 function requestMarketData(itemName){
     $.ajax({
         url: "getMarketData.do",
-        data: { itemName: itemName, date: "2022-05-18"},
+        data: { itemName: itemName, date: now.getFullYear()+"-0"+(now.getMonth()+1)+"-0"+(now.getDate()-2)},
         type: "POST",
         success : function(data) { // controller에서 list를 return 받았음
             // 맵차트에 적용될 데이터
@@ -659,7 +682,7 @@ function setDetailChart(){
 	let insert2=""
 	insert2 += "<table id=\"MarketSelectedTable\" class=\"table\"><tbody>"
 
-    marketList = ['A 협동조합', 'B 협동조합', 'C 협동조합', 'D 협동조합', 'E 협동조합', 'F 협동조합', 'G 협동조합', 'H 협동조합', 'I 협동조합', 'J 협동조합', 'K 협동조합',]
+    marketList = ['가락', '강서', '수원', '구리', '안산', '안양', '구월', '삼산', '남촌', '강릉', '원주', '춘천', '천안', '노은', '오정', '청주', '충주', '익산', '정읍', '순천', '전주', '각화', '광주서부', '진주', '내서', '팔용','울산', '반여', '엄궁']
 	for(let i=0; i<marketList.length; i++){
 		insert2 += "<tr><td class=\"td-name\" style=\"font-weight:900;\">"+ marketList[i] +"</td></tr>"
 	}
@@ -669,29 +692,55 @@ function setDetailChart(){
 
 let isClicked = false
 let selectedItem
+let isClicked2 = false
+let selectedMarket
 // 상세 차트 그리기
-function DrawDetailChart(itemName, list){
+function DrawDetailChart(itemName, list, marketName){
     // html 구성
-    $("#graph-wrap").empty();
-    let insert = ""
-    insert += "<div id=\"selectedItem\" style=\"font-size: 30px; font-weight: 900;\">"+ itemName +"</div>"
-    insert += "<div id=\"detailGraph\"><div style=\" margin-top:20px; margin-left :520px; font-weight: 900; font-size: 20px;\">"+ itemName +" 일자별 도매가격 변화(원/kg)</div>"
-    insert += "<div class=\"detailChart scrollBar\"\"><canvas id=\"detailPrice\" width=\""+ list.length * 100 +"\" height=\"520\"></canvas></div>"
-    insert += "<canvas id=\"FixedLeftYAxis\" width=\"100\" height=\"520\"></canvas>"
-    insert += "<canvas id=\"FixedRightYAxis\" width=\"100\" height=\"520\"></canvas></div>"
-    $("#graph-wrap").append(insert);
+    if(marketName == ''){
+        $("#graph-wrap").empty();
+        let insert = ""
+        insert += "<div id=\"selectedItem\" style=\"font-size: 30px; font-weight: 900;\">"+ itemName +"</div>"
+        insert += "<div id=\"detailGraph\"><div style=\" margin-top:10px; margin-bottom:10px; margin-left : 10px; font-weight: 900; font-size: 20px; font: normal normal normal 25px/26px AppleSDGothicNeoM00; font-weight:bold\">"+ itemName +" 일자별 도매가격 변화(원/kg)</div>"
+        insert += "<div class=\"detailChart scrollBar\"\"><canvas id=\"detailPrice\" width=\""+ list.length * 50 +"\" height=\"520\"></canvas></div>"
+        insert += "<canvas id=\"FixedLeftYAxis\" width=\"100\" height=\"520\"></canvas>"
+        insert += "<canvas id=\"FixedRightYAxis\" width=\"100\" height=\"520\"></canvas></div>"
+        $("#graph-wrap").append(insert);
+    }
+    else{
+        $("#graph-wrap").empty();
+        let insert = ""
+        insert += "<div id=\"selectedItem\" style=\"font-size: 30px; font-weight: 900;\">"+ itemName +"["+marketName+"]</div>"
+        insert += "<div id=\"detailGraph\"><div style=\" margin-top:10px; margin-bottom:10px; margin-left : 10px; font-weight: 900; font-size: 20px; font: normal normal normal 25px/26px AppleSDGothicNeoM00; font-weight:bold\">"+ itemName +"["+marketName+"] 일자별 도매가격 변화(원/kg)</div>"
+        insert += "<div class=\"detailChart scrollBar\"\"><canvas id=\"detailPrice\" width=\""+ list.length * 50 +"\" height=\"520\"></canvas></div>"
+        insert += "<canvas id=\"FixedLeftYAxis\" width=\"100\" height=\"520\"></canvas>"
+        insert += "<canvas id=\"FixedRightYAxis\" width=\"100\" height=\"520\"></canvas></div>"
+        $("#graph-wrap").append(insert);
+    }
+
+    var leftPos = $('.detailChart').scrollLeft();    // 스크롤을 자동으로 오른쪽 끝으로 이동
+    $(".detailChart").animate({scrollLeft: leftPos + 1000000000}, 800);
 
     // 데이터 삽입
     let label =new Array()
     let priceData =new Array()
     let volumeData =new Array()
+    let predictPriceData = new Array();
 
     let j=0
     for(let i = list.length-1; i>=0; i--){
-        label[j] = list[i].date
-        priceData[j] = list[i].price
-        volumeData[j] = list[i].quantity
-        j +=1
+        if(!(list[i].date <=0) && !(volumeData[j] = list[i].quantity <=0)){
+            label[j] = list[i].date
+            priceData[j] = list[i].price
+            volumeData[j] = list[i].quantity
+            if(list[i].predict_price == 0 ){
+                predictPriceData[i] = null;
+            }
+            else{
+                predictPriceData[i] = list[i].predict_price;
+            }
+            j +=1
+        }
     }
 
     // 차트 구성
@@ -699,22 +748,33 @@ function DrawDetailChart(itemName, list){
       type: 'line',
       data: {
         labels: label,
-        datasets: [{
-            label: '가격 : ',
-            data: priceData,
-            borderColor: "#fe195b",   // 선 색깔
-            borderWidth: 3,
-            tension: 0.4,
-            yAxisID: 'priceY'
+        datasets: [
+            {
+                label: '가격 : ',
+                data: priceData,
+                borderColor: "#fe195b",   // 선 색깔
+                borderWidth: 3,
+                tension: 0.4,
+                yAxisID: 'priceY'
             },
-        {
-            label: '거래량 : ',
-	        type: 'bar',
-	        data: volumeData,
-		    backgroundColor: ["#c2b5ea", "#c2b5ea", "#c2b5ea", "#c2b5ea", "#c2b5ea", "#c2b5ea", "#c2b5ea", "#c2b5ea", "#c2b5ea", "#c2b5ea"],
-		    borderWidth: 1,
-            yAxisID: 'volumeY'
-		}],
+            {
+                label: '예측 가격 : ',
+                type: 'line',
+    	        data: predictPriceData,
+                borderColor: "#4a8af7",   // 선 색깔
+                borderWidth: 3,
+                tension: 0.4,
+    		    yAxisID: 'priceY'
+    		},
+            {
+                label: '거래량 : ',
+                type: 'bar',
+                data: volumeData,
+                backgroundColor: "#c2b5ea",
+                borderWidth: 1,
+                yAxisID: 'volumeY'
+            },
+        ],
       },
 	    options: {
 			responsive: false,  // 그래프 크기 조정가능
@@ -939,15 +999,20 @@ function DrawKindChart(itemName, list){
 }
 
 // 그냥 데이터 받아온다.
-function requestAllItems(itemName){
+function requestAllItems(itemName, marketName){
     $.ajax({
         url: "getAllItems.do",
-        data: "itemName=" + itemName,
+        data: { itemName: itemName, marketName: marketName},
         type: "POST",
         success : function(data) { // controller에서 list를 return 받았음
             //console.log(data)
 
-            DrawDetailChart(itemName, data)
+            if(isClicked ==true && isClicked2==false){
+                DrawDetailChart(itemName, data, '')
+            }
+            else if(isClicked ==true && isClicked2==true){
+                DrawDetailChart(itemName, data, marketName)
+            }
 
             // 기본 일봉버튼으로 세팅해준다.
             $("#interval6Month").css("backgroundColor", "#EFEFEF")  // 모든요소 배경 색상 변경
@@ -959,7 +1024,7 @@ function requestAllItems(itemName){
             $("#intervalYear").css("backgroundColor", "#EFEFEF")  // 모든요소 배경 색상 변경
             $("#intervalYear").css("color", "black")  // 모든요소 글자 색상 변경
 
-            $("#intervalDate").css("backgroundColor", "#217af4")  // 클릭요소 배경색상 변경
+            $("#intervalDate").css("backgroundColor", "#00853E")  // 클릭요소 배경색상 변경
             $("#intervalDate").css("color", "white")  // 클릭요소 글자 색상 변경
 
             //alert('success')
@@ -971,15 +1036,20 @@ function requestAllItems(itemName){
 }
 
 // 날짜1 ~ 날짜2 로 데이터 받아온다.
-function requestAllItemsDate(itemName, startDate, endDate){
+function requestAllItemsDate(itemName, startDate, endDate, marketName){
     $.ajax({
         url: "getAllItemsDate.do",
-        data: { itemName: itemName, StartDate: startDate, EndDate: endDate},
+        data: { itemName: itemName, StartDate: startDate, EndDate: endDate, marketName : marketName},
         type: "POST",
         success : function(data) { // controller에서 list를 return 받았음
             //console.log(data)
 
-            DrawDetailChart(itemName, data)
+            if(isClicked ==true && isClicked2==false){
+                DrawDetailChart(itemName, data, '')
+            }
+            else if(isClicked ==true && isClicked2==true){
+                DrawDetailChart(itemName, data, selectedMarket.text())
+            }
 
             // 기본 일봉버튼으로 세팅해준다.
             $("#interval6Month").css("backgroundColor", "#EFEFEF")  // 모든요소 배경 색상 변경
@@ -991,7 +1061,7 @@ function requestAllItemsDate(itemName, startDate, endDate){
             $("#intervalYear").css("backgroundColor", "#EFEFEF")  // 모든요소 배경 색상 변경
             $("#intervalYear").css("color", "black")  // 모든요소 글자 색상 변경
 
-            $("#intervalDate").css("backgroundColor", "#217af4")  // 클릭요소 배경색상 변경
+            $("#intervalDate").css("backgroundColor", "#00853E")  // 클릭요소 배경색상 변경
             $("#intervalDate").css("color", "white")  // 클릭요소 글자 색상 변경
 
 
@@ -1027,16 +1097,20 @@ function requestDataByKind(itemName){
 // 요소를 클릭하면 요소를 가져옴
 $("#itemSelectedTable tr").click(function(){
     isClicked = true
-    $("tr").css("backgroundColor", "white")  // 모든요소 배경 색상 변경
-    $("tr").css("color", "black")  // 모든요소 글자 색상 변경
+    $("#itemSelectedTable tr").css("backgroundColor", "white")  // 모든요소 배경 색상 변경
+    $("#itemSelectedTable tr").css("color", "black")  // 모든요소 글자 색상 변경
 
     // 현재 클릭된 Row
     selectedItem = $(this)
-    $(this).css("backgroundColor", "#217af4")  // 클릭요소 배경색상 변경
+    $(this).css("backgroundColor", "#00853E")  // 클릭요소 배경색상 변경
     $(this).css("color", "white")  // 클릭요소 글자 색상 변경
 
     // ajax 통신으로 데이터 가져옴
-    requestAllItems($(this).text())
+    if(!isClicked2){
+        requestAllItems($(this).text(), '')
+    }else if(isClicked2){
+        requestAllItems($(this).text(), selectedMarket.text())
+    }
     requestDataByKind($(this).text())
 });
 
@@ -1100,43 +1174,105 @@ function getSearchInputBoxVal(){
             $("#itemSelectedTable tr").css("backgroundColor", "white")  // 모든요소 배경 색상 변경
             $("#itemSelectedTable tr").css("color", "black")  // 모든요소 글자 색상 변경
 
-            $(this).css("backgroundColor", "#217af4")  // 클릭요소 배경색상 변경
+            $(this).css("backgroundColor", "#00853E")  // 클릭요소 배경색상 변경
             $(this).css("color", "white")  // 클릭요소 글자 색상 변경
 
-            // 테이블내에서 자동으로 스크롤 이동
-            const offset = $(this).position();
-            //$("html, body").animate({scrollTop: offset.top}, 0);
+
+            var offset = $(this).offset().top - $('#itemSelectedTable').offset().top;    // 스크롤을 자동으로 오른쪽 끝으로 이동
+            console.log(offset)
+            $(".searchItems").animate({scrollTop: offset}, 800);
 
             // ajax 통신으로 데이터 가져옴
-            requestAllItems($(this).text())
+            if(!isClicked2){
+                requestAllItems($(this).text(), '')
+            }else if(isClicked2){
+                requestAllItems($(this).text(), selectedMarket.text())
+            }
             requestDataByKind($(this).text())
             return
         }
     });
 }
 
-// 협동조합 검색///////////////////////////////
-// 요소를 클릭하면 요소를 가져옴
+// 시장 검색///////////////////////////////
 
-let selectedMarket
+// 시장이름과 품목을 넣어서  데이터 받아오는 함수
+function requestDataByMarket(itemName, marketName){
+    $.ajax({
+        url: "getMarketData2.do",
+        data: { itemName: itemName, marketName: marketName},
+        type: "POST",
+        success : function(data) { // controller에서 list를 return 받았음
+            //console.log(data)
+
+            DrawDetailChart(itemName, data, marketName)
+
+            // 기본 일봉버튼으로 세팅해준다.
+            $("#interval6Month").css("backgroundColor", "#EFEFEF")  // 모든요소 배경 색상 변경
+            $("#interval6Month").css("color", "black")  // 모든요소 글자 색상 변경
+            $("#intervalMonth").css("backgroundColor", "#EFEFEF")  // 모든요소 배경 색상 변경
+            $("#intervalMonth").css("color", "black")  // 모든요소 글자 색상 변경
+            $("#interval3Month").css("backgroundColor", "#EFEFEF")  // 모든요소 배경 색상 변경
+            $("#interval3Month").css("color", "black")  // 모든요소 글자 색상 변경
+            $("#intervalYear").css("backgroundColor", "#EFEFEF")  // 모든요소 배경 색상 변경
+            $("#intervalYear").css("color", "black")  // 모든요소 글자 색상 변경
+
+            $("#intervalDate").css("backgroundColor", "#00853E")  // 클릭요소 배경색상 변경
+            $("#intervalDate").css("color", "white")  // 클릭요소 글자 색상 변경
+
+            //alert('success')
+        },
+        error : function() {
+            alert("ajax error")
+        }
+      });
+}
+
+// 시장을 클릭하면 시장 가져옴
 $("#MarketSelectedTable tr").click(function(){
-    isClicked = true
-    $("tr").css("backgroundColor", "white")  // 모든요소 배경 색상 변경
-    $("tr").css("color", "black")  // 모든요소 글자 색상 변경
+    if(!isClicked2){
+        isClicked2 = true
+        $("#MarketSelectedTable tr").css("backgroundColor", "white")  // 모든요소 배경 색상 변경
+        $("#MarketSelectedTable tr").css("color", "black")  // 모든요소 글자 색상 변경
 
-    // 현재 클릭된 Row
-    selectedMarket = $(this)
-    $(this).css("backgroundColor", "#217af4")  // 클릭요소 배경색상 변경
-    $(this).css("color", "white")  // 클릭요소 글자 색상 변경
+        // 현재 클릭된 Row
+        selectedMarket = $(this)
+        $(this).css("backgroundColor", "#00853E")  // 클릭요소 배경색상 변경
+        $(this).css("color", "white")  // 클릭요소 글자 색상 변경
 
-    // ajax 통신으로 데이터 가져옴
-    //requestAllItems($(this).text())
-    //requestDataByKind($(this).text())
+
+        if(isClicked){
+            requestDataByMarket(selectedItem.text(), $(this).text())
+        }
+    }
+    else if(isClicked2){
+        if(selectedMarket.text() == $(this).text()){  // 똑같은 요소 클릭시
+            isClicked2 = false;
+            $("#MarketSelectedTable tr").css("backgroundColor", "white")  // 모든요소 배경 색상 변경
+            $("#MarketSelectedTable tr").css("color", "black")  // 모든요소 글자 색상 변경
+            if(isClicked){
+                requestAllItems(selectedItem.text(), '')
+            }
+            return;
+        }
+        $("#MarketSelectedTable tr").css("backgroundColor", "white")  // 모든요소 배경 색상 변경
+        $("#MarketSelectedTable tr").css("color", "black")  // 모든요소 글자 색상 변경
+
+        // 현재 클릭된 Row
+        selectedMarket = $(this)
+        $(this).css("backgroundColor", "#00853E")  // 클릭요소 배경색상 변경
+        $(this).css("color", "white")  // 클릭요소 글자 색상 변경
+
+
+        if(isClicked){
+            requestDataByMarket(selectedItem.text(), $(this).text())
+        }
+    }
 });
 
 // 마우스 오버시
 $('#MarketSelectedTable tr').mouseover(function(){
-    if(isClicked){
+    if(isClicked2){
         if(selectedMarket.text() == $(this).text()){}
         else{
         $(this).css("backgroundColor","#ccc");
@@ -1151,7 +1287,7 @@ $('#MarketSelectedTable tr').mouseover(function(){
 
 // 마우스 오버해제시
 $('#MarketSelectedTable tr').mouseout(function(){
-    if(isClicked){
+    if(isClicked2){
         if(selectedMarket.text() == $(this).text()){}
         else{
             $(this).css("backgroundColor","#fff");
@@ -1164,17 +1300,48 @@ $('#MarketSelectedTable tr').mouseout(function(){
     }
 });
 
+// input 박스에서 값 가져와 처리하는 함수
+function getSearchInputBoxVal2(){
+    // 품목검색 input에서 값 가져오기
+    var searchItem = $("#MarketSearchInput").val()
 
-// input박스 활성화상태에서 엔터버튼 클릭시
+    // table의 모든 tr행의 0번째 열(td)를 가져온다.
+    $('#MarketSelectedTable tr').each(function(){
+        var tr = $(this);
+        var td = tr.children();
+        var text = td.eq(0).text();   // 모든행의 값
+        if(searchItem == text){  // 입력한 품목이 테이블내에 있을경우
+            isClicked2 =true;
+            selectedMarket = $(this)
+
+            $("#MarketSelectedTable tr").css("backgroundColor", "white")  // 모든요소 배경 색상 변경
+            $("#MarketSelectedTable tr").css("color", "black")  // 모든요소 글자 색상 변경
+
+            $(this).css("backgroundColor", "#00853E")  // 클릭요소 배경색상 변경
+            $(this).css("color", "white")  // 클릭요소 글자 색상 변경
+
+            var offset = $(this).offset().top - $('#MarketSelectedTable').offset().top;    // 스크롤을 자동으로 오른쪽 끝으로 이동
+            console.log(offset)
+            $(".searchMarkets").animate({scrollTop: offset}, 800);
+
+            if(isClicked){
+                requestDataByMarket(selectedItem.text(), $(this).text())
+            }
+            return
+        }
+    });
+}
+
+// 시장 input박스 활성화상태에서 엔터버튼 클릭시
 $("#MarketSearchInput").keydown(function(key) {
     if( key.keyCode == 13 ){  // 엔터버튼 키코드
-        //getSearchInputBoxVal() // 차후 협동조합 DB 보고 작성
+        getSearchInputBoxVal2() // 차후 협동조합 DB 보고 작성
     }
 });
 
-// 품목검색버튼 클릭시
-$("#MarketSearchInput").click(function(){
-    //getSearchInputBoxVal() // 차후 협동조합 DB 보고 작성
+// 시장 검색버튼 클릭시
+$("#MarketSearchBtn").click(function(){
+    getSearchInputBoxVal2() // 차후 협동조합 DB 보고 작성
 });
 
 
@@ -1189,13 +1356,19 @@ $("#dateSearch").click(function(){
 
     if(startDate != "" && endDate != "" && selectedItem != null){
         // 날짜가 제대로 입력되면 이곳이 실행됨
-            requestAllItemsDate(selectedItem.text(), startDate, endDate)
+        if(isClicked && isClicked2){
+            requestAllItemsDate(selectedItem.text(), startDate, endDate, selectedMarket.text())
+        }
+        else if(isClicked && !isClicked2){
+            requestAllItemsDate(selectedItem.text(), startDate, endDate, "")
+        }
         return
     }
     else{
 
     }
 });
+
 
 
 // 일봉 버튼 클릭시
@@ -1209,24 +1382,34 @@ $("#intervalDate").click(function(){
     $("#intervalYear").css("backgroundColor", "#EFEFEF")  // 모든요소 배경 색상 변경
     $("#intervalYear").css("color", "black")  // 모든요소 글자 색상 변경
 
-    $(this).css("backgroundColor", "#217af4")  // 클릭요소 배경색상 변경
+    $(this).css("backgroundColor", "#00853E")  // 클릭요소 배경색상 변경
     $(this).css("color", "white")  // 클릭요소 글자 색상 변경
 
     if(isClicked){
-        requestAllItems(selectedItem.text());
+        // ajax 통신으로 데이터 가져옴
+        if(!isClicked2){
+            requestAllItems(selectedItem.text(), '')
+        }else if(isClicked2){
+            requestAllItems(selectedItem.text(), selectedMarket.text())
+        }
     }
 });
 
 // 순봉 데이터 받아오는 함수
-function requestDataBy6Month(itemName){
+function requestDataBy6Month(itemName, marketName){
     $.ajax({
         url: "get6MonthData.do",
-        data: "itemName=" + itemName,
+        data: { itemName: itemName, marketName: marketName},
         type: "POST",
         success : function(data) { // controller에서 list를 return 받았음
             //console.log(data)
 
-            DrawDetailChart(itemName, data)
+            if(isClicked ==true && isClicked2==false){
+                DrawDetailChart(itemName, data, '')
+            }
+            else if(isClicked ==true && isClicked2==true){
+                DrawDetailChart(itemName, data, selectedMarket.text())
+            }
 
 
             //alert('success')
@@ -1248,24 +1431,34 @@ $("#interval6Month").click(function(){
     $("#intervalYear").css("backgroundColor", "#EFEFEF")  // 모든요소 배경 색상 변경
     $("#intervalYear").css("color", "black")  // 모든요소 글자 색상 변경
 
-    $(this).css("backgroundColor", "#217af4")  // 클릭요소 배경색상 변경
+    $(this).css("backgroundColor", "#00853E")  // 클릭요소 배경색상 변경
     $(this).css("color", "white")  // 클릭요소 글자 색상 변경
 
     if(isClicked){
-        requestDataBy6Month(selectedItem.text());
+        if(!isClicked2){
+            requestDataBy6Month(selectedItem.text(), "");
+        }
+        else {
+            requestDataBy6Month(selectedItem.text(), selectedMarket.text())
+        }
     }
 });
 
 // 월봉 데이터 받아오는 함수
-function requestDataByMonth(itemName){
+function requestDataByMonth(itemName, marketName){
     $.ajax({
         url: "getMonthData.do",
-        data: "itemName=" + itemName,
+        data: { itemName: itemName, marketName: marketName},
         type: "POST",
         success : function(data) { // controller에서 list를 return 받았음
             //console.log(data)
 
-            DrawDetailChart(itemName, data)
+            if(isClicked ==true && isClicked2==false){
+                DrawDetailChart(itemName, data, '')
+            }
+            else if(isClicked ==true && isClicked2==true){
+                DrawDetailChart(itemName, data, selectedMarket.text())
+            }
 
 
             //alert('success')
@@ -1286,24 +1479,34 @@ $("#intervalMonth").click(function(){
     $("#intervalYear").css("backgroundColor", "#EFEFEF")  // 모든요소 배경 색상 변경
     $("#intervalYear").css("color", "black")  // 모든요소 글자 색상 변경
 
-    $(this).css("backgroundColor", "#217af4")  // 클릭요소 배경색상 변경
+    $(this).css("backgroundColor", "#00853E")  // 클릭요소 배경색상 변경
     $(this).css("color", "white")  // 클릭요소 글자 색상 변경
 
     if(isClicked){
-        requestDataByMonth(selectedItem.text())
+        if(!isClicked2){
+            requestDataByMonth(selectedItem.text(), "")
+        }
+        else {
+            requestDataByMonth(selectedItem.text(), selectedMarket.text())
+        }
     }
 });
 
 // 분기 데이터 받아오는 함수
-function requestDataBy3Month(itemName){
+function requestDataBy3Month(itemName, marketName){
     $.ajax({
         url: "getMonth3Month.do",
-        data: "itemName=" + itemName,
+        data: { itemName: itemName, marketName: marketName},
         type: "POST",
         success : function(data) { // controller에서 list를 return 받았음
             //console.log(data)
 
-            DrawDetailChart(itemName, data)
+            if(isClicked ==true && isClicked2==false){
+                DrawDetailChart(itemName, data, '')
+            }
+            else if(isClicked ==true && isClicked2==true){
+                DrawDetailChart(itemName, data, selectedMarket.text())
+            }
             //alert('success')
         },
         error : function() {
@@ -1323,24 +1526,34 @@ $("#interval3Month").click(function(){
     $("#intervalYear").css("backgroundColor", "#EFEFEF")  // 모든요소 배경 색상 변경
     $("#intervalYear").css("color", "black")  // 모든요소 글자 색상 변경
 
-    $(this).css("backgroundColor", "#217af4")  // 클릭요소 배경색상 변경
+    $(this).css("backgroundColor", "#00853E")  // 클릭요소 배경색상 변경
     $(this).css("color", "white")  // 클릭요소 글자 색상 변경
 
     if(isClicked){
-        requestDataBy3Month(selectedItem.text())
+        if(!isClicked2){
+             requestDataBy3Month(selectedItem.text(), "")
+        }
+        else {
+            requestDataBy3Month(selectedItem.text(), selectedMarket.text())
+        }
     }
 });
 
 // 연봉 데이터 받아오는 함수
-function requestDataByYear(itemName){
+function requestDataByYear(itemName, marketName){
     $.ajax({
         url: "getMonthYear.do",
-        data: "itemName=" + itemName,
+        data: { itemName: itemName, marketName: marketName},
         type: "POST",
         success : function(data) { // controller에서 list를 return 받았음
             //console.log(data)
 
-            DrawDetailChart(itemName, data)
+            if(isClicked ==true && isClicked2==false){
+                DrawDetailChart(itemName, data, '')
+            }
+            else if(isClicked ==true && isClicked2==true){
+                DrawDetailChart(itemName, data, selectedMarket.text())
+            }
             //alert('success')
         },
         error : function() {
@@ -1359,10 +1572,29 @@ $("#intervalYear").click(function(){
     $("#intervalDate").css("backgroundColor", "#EFEFEF")  // 모든요소 배경 색상 변경
     $("#intervalDate").css("color", "black")  // 모든요소 글자 색상 변경
 
-    $(this).css("backgroundColor", "#217af4")  // 클릭요소 배경색상 변경
+    $(this).css("backgroundColor", "#00853E")  // 클릭요소 배경색상 변경
     $(this).css("color", "white")  // 클릭요소 글자 색상 변경
 
     if(isClicked){
-        requestDataByYear(selectedItem.text())
+        if(!isClicked2){
+            requestDataByYear(selectedItem.text(), "")
+        }
+        else {
+            requestDataByYear(selectedItem.text(), selectedMarket.text())
+        }
     }
 });
+
+
+
+//$(function () {
+//  $('[data-toggle="tooltip1"]').tooltip()
+//})
+//
+//$(function () {
+//  $('[data-toggle="tooltip2"]').tooltip()
+//})
+//
+//$(function () {
+//  $('[data-toggle="tooltip3"]').tooltip()
+//})

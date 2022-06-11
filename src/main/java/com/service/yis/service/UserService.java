@@ -1,18 +1,18 @@
-package com.service.yis.service;
+//package com.service.yis.service;
 
 import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+//import org.springframework.stereotype.Service;
 
 
-import com.service.yis.repository.UserRepository;
+//import com.service.yis.repository.UserRepository;
 //스프링이 컴포넌트 스캔을 통해서 Bean에 등록해줌. IOC
 
-@Service
-public class UserService {
+//@Service
+//public class UserService {
 
 //	@Autowired
 //	private UserRepository userRepository;
@@ -74,4 +74,4 @@ public class UserService {
 //		userRepository.save(user);
 //	}
 
-}
+//}

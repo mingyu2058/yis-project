@@ -108,6 +108,7 @@ ul {
     color: #616161;
     font-size: 18px;
     padding: 20px 0;
+    height: 93px;
 }
 
 .footer-inner {
@@ -211,7 +212,7 @@ nav li{
 /* login center */
 .login-center{
     overflow: hidden;
-    height: 1080px;
+    height: 887px;
 }
 
 /* login background*/
@@ -252,7 +253,7 @@ nav li{
 
 /* login */
 .login{
-    height: 1080px;
+    height: 887px;
     /* UI Properties */
     background: #F5F5F7 0% 0% no-repeat padding-box;
     opacity: 1;
@@ -335,7 +336,7 @@ nav li{
 
 
 
-
+/*
 
 @media(max-width: 700px) {
     .menu-btn {
@@ -413,3 +414,4 @@ nav li{
         margin-bottom: 20px;
     }
 }
+*/
