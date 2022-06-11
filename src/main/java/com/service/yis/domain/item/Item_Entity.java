@@ -22,4 +22,5 @@ public class Item_Entity {
     int price;   // 평균 거래가격
     int total_quantity; // 총 거래량
     int quantity;   // 거래량
+    int predict_price;
 }

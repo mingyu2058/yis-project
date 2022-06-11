@@ -52,6 +52,7 @@ public class DataCenter_Controller {
         // 자바스크립트에서 요청받은 품목에 대한 데이터를 가져온다.
         String itemName = request.getParameter("itemName");
         String date = request.getParameter("date");
+        System.out.println(date);
 
         List<Item_Entity> list = data_Center_Service.getItemAvgByDateMarket(itemName, date);
         return list;
@@ -64,10 +65,17 @@ public class DataCenter_Controller {
 
         // 자바스크립트에서 요청받은 품목에 대한 데이터를 가져온다.
         String itemName = request.getParameter("itemName");
+        String marketName = request.getParameter("marketName");
 
-        List<Item_Entity> list = data_Center_Service.getItemAllAvgByDate(itemName);
+        if(marketName.isBlank()){
+            List<Item_Entity> list = data_Center_Service.getItemAllAvgByDate(itemName);
+            return list;
+        }
+        else{
+            List<Item_Entity> list = data_Center_Service.getItemAllAvgByDate2(itemName, marketName);
+            return list;
+        }
 
-        return list;
     }
 
     @RequestMapping(value = "getAllItemsDate.do", method = RequestMethod.POST)
@@ -78,9 +86,17 @@ public class DataCenter_Controller {
         String itemName = request.getParameter("itemName");
         String startDate = request.getParameter("StartDate");
         String endDate = request.getParameter("EndDate");
+        String marketName = request.getParameter("marketName");
 
-        List<Item_Entity> list = data_Center_Service.getItemByBtwDateAndDate(itemName, startDate, endDate);
-        return list;
+        if(marketName.isBlank()){
+            List<Item_Entity> list = data_Center_Service.getItemByBtwDateAndDate(itemName, startDate, endDate);
+            return list;
+        }
+        else{
+            List<Item_Entity> list = data_Center_Service.getItemByBtwDateAndDate2(itemName, startDate, endDate, marketName);
+            return list;
+        }
+
     }
 
     @RequestMapping(value = "getMonthData.do", method = RequestMethod.POST)
@@ -89,9 +105,16 @@ public class DataCenter_Controller {
 
         // 자바스크립트에서 요청받은 품목에 대한 데이터를 가져온다.
         String itemName = request.getParameter("itemName");
+        String marketName = request.getParameter("marketName");
 
-        List<Item_Entity> list = data_Center_Service.getItemAvgMonth(itemName);
-        return list;
+        if(marketName.isBlank()){
+            List<Item_Entity> list = data_Center_Service.getItemAvgMonth(itemName);
+            return list;
+        }
+        else{
+            List<Item_Entity> list = data_Center_Service.getItemAvgMonth2(itemName, marketName);
+            return list;
+        }
     }
 
     @RequestMapping(value = "getMonthYear.do", method = RequestMethod.POST)
@@ -100,9 +123,16 @@ public class DataCenter_Controller {
 
         // 자바스크립트에서 요청받은 품목에 대한 데이터를 가져온다.
         String itemName = request.getParameter("itemName");
+        String marketName = request.getParameter("marketName");
 
-        List<Item_Entity> list = data_Center_Service.getItemAvgYear(itemName);
-        return list;
+        if(marketName.isBlank()){
+            List<Item_Entity> list = data_Center_Service.getItemAvgYear(itemName);
+            return list;
+        }
+        else{
+            List<Item_Entity> list = data_Center_Service.getItemAvgYear2(itemName, marketName);
+            return list;
+        }
     }
 
     @RequestMapping(value = "getMonth3Month.do", method = RequestMethod.POST)
@@ -111,9 +141,16 @@ public class DataCenter_Controller {
 
         // 자바스크립트에서 요청받은 품목에 대한 데이터를 가져온다.
         String itemName = request.getParameter("itemName");
+        String marketName = request.getParameter("marketName");
 
-        List<Item_Entity> list = data_Center_Service.getItemAvg3Month(itemName);
-        return list;
+        if(marketName.isBlank()){
+            List<Item_Entity> list = data_Center_Service.getItemAvg3Month(itemName);
+            return list;
+        }
+        else{
+            List<Item_Entity> list = data_Center_Service.getItemAvg3Month2(itemName, marketName);
+            return list;
+        }
     }
 
     @RequestMapping(value = "get6MonthData.do", method = RequestMethod.POST)
@@ -122,9 +159,17 @@ public class DataCenter_Controller {
 
         // 자바스크립트에서 요청받은 품목에 대한 데이터를 가져온다.
         String itemName = request.getParameter("itemName");
+        String marketName = request.getParameter("marketName");
 
-        List<Item_Entity> list = data_Center_Service.getItemAvg6Month(itemName);
-        return list;
+        if(marketName.isBlank()){
+            List<Item_Entity> list = data_Center_Service.getItemAvg6Month(itemName);
+            return list;
+        }
+        else{
+            List<Item_Entity> list = data_Center_Service.getItemAvg6Month2(itemName, marketName);
+            return list;
+        }
+
     }
 
     @RequestMapping(value = "getKindData.do", method = RequestMethod.POST)
@@ -135,6 +180,20 @@ public class DataCenter_Controller {
         String itemName = request.getParameter("itemName");
 
         List<Item_Entity> list = data_Center_Service.getItemAvgByKind(itemName);
+        return list;
+    }
+
+    @RequestMapping(value = "getMarketData2.do", method = RequestMethod.POST)
+    @ResponseBody   //품종별로 데이터 받는 함수
+    public Object getMarketData2(HttpServletRequest request) {
+
+        // 자바스크립트에서 요청받은 품목에 대한 데이터를 가져온다.
+        String itemName = request.getParameter("itemName");
+        String marketName = request.getParameter("marketName");
+
+        List<Item_Entity> list = data_Center_Service.getItemAvgByMarket(itemName, marketName);
+
+
         return list;
     }
 }
