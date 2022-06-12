@@ -26,30 +26,62 @@ a:hover{
 }
 
 section{
-    background: #F5F5F7 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
     height: 987px;
+    padding-top: 40px;
 }
 
 /* nav */
 nav a{
-    color: #ffffff;
+    color: black;
     text-decoration: none;
 }
 
 nav{
-    height: 40px;
-    background: #444444 0% 0% no-repeat padding-box;
+    height: 64px;
+    background: #F5F4F3 0% 0% no-repeat padding-box;
     overflow: hidden;
 }
-nav div{
+nav h{
+    color: black;
+}
+nav > div{
+    padding-top: 10px;
+    width: 1060px;
     margin: 8px auto;
     display: table;
     color: #ffffff;
+}
+nav ul{
+    margin-left: 200px;
 }
 nav li{
     float: left;
     margin-left: 40px;
 }
+.nav-logo{
+    float: left;
+    width: 151px;
+}
+.nav-right{
+    margin-top: 1px;
+    float: right;
+}
+
+.nav-right img:nth-child(1){
+    width: 15px;
+    height: 10px;
+}
+.nav-right img:nth-child(2){
+    margin-left: 32px;
+    width: 15px;
+    height: 15px;
+}
+
+
+
+
+
 .datacenter-img{
     width: 20px;
     height: 20px;
@@ -121,6 +153,8 @@ hr{
     margin: 0 auto;
 }
 
+
+
 /* title logo */
 .title p{
     margin-top: 50px;
@@ -137,7 +171,7 @@ hr{
 
 .contents-title{
     width: 1060px;
-    margin: 30px auto;
+    margin: 0 auto;
 }
 .contents-title p{
     font-size: 40px;
@@ -150,11 +184,27 @@ hr{
     margin: 40px auto;
 }
 
+.contents ul{
+    height: 300px;
+}
+
 
 .contents li{
     width: 33.33333%;
+    height: 400px;
     float: left;
 }
+
+.contents li a{
+    height: 250px;
+}
+
+.contents-title-box{
+    margin-top: 20px;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
 .contents a{
     margin: 0 20px;
     border: 1px solid #eaebed;
@@ -173,10 +223,18 @@ hr{
 }
 
 .funding-contents{
+    margin-top: 10px;
     display: inline-block;
     margin-bottom: 20px;
     width: 100%;
 }
+.funding-contents h:nth-child(1){
+     color: red;
+ }
+.funding-contents h:nth-child(2){
+    color: #00b2b2;
+}
+
 .funding-contents h:nth-child(1){
     float: left;
 }

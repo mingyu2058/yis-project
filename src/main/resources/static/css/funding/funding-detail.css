@@ -126,10 +126,15 @@ nav li{
     margin: 50px auto;
     float: left;
 }
+.img-contents img{
+    width: 100%;
+    height: 100%;
+}
 .info-contents{
     width: 33%;
     margin-top: 50px;
     float: left;
+    padding-left: 60px;
 }
 
 /*내용 부분*/

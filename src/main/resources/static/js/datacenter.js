@@ -408,7 +408,7 @@ const now = new Date();
 function requestMarketData(itemName){
     $.ajax({
         url: "getMarketData.do",
-        data: { itemName: itemName, date: now.getFullYear()+"-0"+(now.getMonth()+1)+"-0"+(now.getDate()-2)},
+        data: { itemName: itemName, date: now.getFullYear()+"-0"+(now.getMonth()+1)+"-"+(now.getDate()-2)},
         type: "POST",
         success : function(data) { // controller에서 list를 return 받았음
             // 맵차트에 적용될 데이터
@@ -694,6 +694,7 @@ let isClicked = false
 let selectedItem
 let isClicked2 = false
 let selectedMarket
+
 // 상세 차트 그리기
 function DrawDetailChart(itemName, list, marketName){
     // html 구성
@@ -725,23 +726,29 @@ function DrawDetailChart(itemName, list, marketName){
     let label =new Array()
     let priceData =new Array()
     let volumeData =new Array()
-    let predictPriceData = new Array();
+    let borderColor = new Array();
+
 
     let j=0
+    let predict_count = 0;
     for(let i = list.length-1; i>=0; i--){
-        if(!(list[i].date <=0) && !(volumeData[j] = list[i].quantity <=0)){
-            label[j] = list[i].date
+        label[j] = list[i].date
+        if(list[i].market){
             priceData[j] = list[i].price
-            volumeData[j] = list[i].quantity
-            if(list[i].predict_price == 0 ){
-                predictPriceData[i] = null;
-            }
-            else{
-                predictPriceData[i] = list[i].predict_price;
-            }
-            j +=1
+            borderColor[j] = "#fe195b";
         }
+        else {
+            priceData[j] = list[i].price;
+            borderColor[j] = "#4a8af7";
+            predict_count +=1
+        }
+        volumeData[j] = list[i].quantity
+        j +=1
     }
+    //predictPriceData[j-1-predict_count] = priceData[j-1-predict_count];
+    //console.log(predictPriceData)
+
+    const changeColor = (ctx, value) => ctx.p0.parsed.x > j-2-predict_count ? value : undefined;
 
     // 차트 구성
     const config = {
@@ -752,20 +759,15 @@ function DrawDetailChart(itemName, list, marketName){
             {
                 label: '가격 : ',
                 data: priceData,
-                borderColor: "#fe195b",   // 선 색깔
+                borderColor: borderColor,  // 선 색깔
+                backgroundColor : borderColor,
+                segment: {
+                    borderColor: ctx => changeColor(ctx, "#4a8af7"),
+                },
                 borderWidth: 3,
                 tension: 0.4,
                 yAxisID: 'priceY'
             },
-            {
-                label: '예측 가격 : ',
-                type: 'line',
-    	        data: predictPriceData,
-                borderColor: "#4a8af7",   // 선 색깔
-                borderWidth: 3,
-                tension: 0.4,
-    		    yAxisID: 'priceY'
-    		},
             {
                 label: '거래량 : ',
                 type: 'bar',

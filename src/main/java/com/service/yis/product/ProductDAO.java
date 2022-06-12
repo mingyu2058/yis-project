@@ -17,35 +17,33 @@ public class ProductDAO {
     Connection conn = null;
     Statement stmt = null;
     ResultSet rs = null;
-
     public int Fruitstart = 0;
     public int Vegetablestart = 0;
     public int Cropstart = 0;
     int amount = 4;
+    String jdbcDriver = "jdbc:mysql://20.214.186.164:3306/yis?" +
+            "useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+    String dbUser = "yis";
+    String dbPass = "1234";
 
     public List listFruit(ProductVO productVO) {
         List<ProductVO> fruitList = new ArrayList<>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            String jdbcDriver = "jdbc:mysql://20.214.186.164:3306/yis?" +
-                    "useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-            String dbUser = "yis";
-            String dbPass = "1234";
-
             conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("select * " + "from product_test " + "where category = '" + "과일" + "'" + "limit " + Fruitstart + "," + amount);
+            rs = stmt.executeQuery("select * " + "from productList " + "where product_category = '" + "과일" + "'" + "limit " + Fruitstart + "," + amount);
 
             while (rs.next()) {
-                int product_id = rs.getInt("product_id");
+                int idx_num = rs.getInt("idx_num");
                 String product_name = rs.getString("product_name");
                 int price = rs.getInt("price");
-                String Imgsrc = rs.getString("imgsrc");
-                String johab = rs.getString("johab");
+                String Imgsrc = rs.getString("product_img_obj");
+                String johab = rs.getString("farmer_company");
 
                 ProductVO vo = new ProductVO();
-                vo.setProduct_id(product_id);
+                vo.setIdx_num(idx_num);
                 vo.setProduct_name(product_name);
                 vo.setPrice(price);
                 vo.setImgsrc(Imgsrc);
@@ -81,24 +79,19 @@ public class ProductDAO {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            String jdbcDriver = "jdbc:mysql://20.214.186.164:3306/yis?" +
-                    "useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-            String dbUser = "yis";
-            String dbPass = "1234";
-
             conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("select * " + "from product_test " + "where category = '" + "채소" + "'" + "limit " + Vegetablestart + "," + amount);
+            rs = stmt.executeQuery("select * " + "from productList " + "where product_category = '" + "채소" + "'" + "limit " + Vegetablestart + "," + amount);
 
             while (rs.next()) {
-                int product_id = rs.getInt("product_id");
+                int idx_num = rs.getInt("idx_num");
                 String product_name = rs.getString("product_name");
                 int price = rs.getInt("price");
-                String Imgsrc = rs.getString("imgsrc");
-                String johab = rs.getString("johab");
+                String Imgsrc = rs.getString("product_img_obj");
+                String johab = rs.getString("farmer_company");
 
                 ProductVO vo = new ProductVO();
-                vo.setProduct_id(product_id);
+                vo.setIdx_num(idx_num);
                 vo.setProduct_name(product_name);
                 vo.setPrice(price);
                 vo.setImgsrc(Imgsrc);
@@ -135,24 +128,19 @@ public class ProductDAO {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            String jdbcDriver = "jdbc:mysql://20.214.186.164:3306/yis?" +
-                    "useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-            String dbUser = "yis";
-            String dbPass = "1234";
-
             conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("select * " + "from product_test " + "where category = '" + "작물" + "'" + "limit " + Cropstart + "," + amount);
+            rs = stmt.executeQuery("select * " + "from productList " + "where product_category = '" + "작물" + "'" + "limit " + Cropstart + "," + amount);
 
             while (rs.next()) {
-                int product_id = rs.getInt("product_id");
+                int idx_num = rs.getInt("idx_num");
                 String product_name = rs.getString("product_name");
                 int price = rs.getInt("price");
-                String Imgsrc = rs.getString("imgsrc");
-                String johab = rs.getString("johab");
+                String Imgsrc = rs.getString("product_img_obj");
+                String johab = rs.getString("farmer_company");
 
                 ProductVO vo = new ProductVO();
-                vo.setProduct_id(product_id);
+                vo.setIdx_num(idx_num);
                 vo.setProduct_name(product_name);
                 vo.setPrice(price);
                 vo.setImgsrc(Imgsrc);
@@ -194,24 +182,19 @@ public class ProductDAO {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            String jdbcDriver = "jdbc:mysql://20.214.186.164:3306/yis?" +
-                    "useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-            String dbUser = "yis";
-            String dbPass = "1234";
-
             conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("select * from product_test where product_name like '%" + keyword + "%'" + "limit " + start + "," + amount);
+            rs = stmt.executeQuery("select * from productList where product_name like '%" + keyword + "%'" + "limit " + start + "," + amount);
 
             while (rs.next()) {
-                int product_id = rs.getInt("product_id");
+                int idx_num = rs.getInt("idx_num");
                 String product_name = rs.getString("product_name");
                 int price = rs.getInt("price");
-                String Imgsrc = rs.getString("imgsrc");
-                String johab = rs.getString("johab");
+                String Imgsrc = rs.getString("product_img_obj");
+                String johab = rs.getString("farmer_company");
 
                 ProductVO vo = new ProductVO();
-                vo.setProduct_id(product_id);
+                vo.setIdx_num(idx_num);
                 vo.setProduct_name(product_name);
                 vo.setPrice(price);
                 vo.setImgsrc(Imgsrc);
@@ -263,37 +246,32 @@ public class ProductDAO {
             int start = pageNum * 12;
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            String jdbcDriver = "jdbc:mysql://20.214.186.164:3306/yis?" +
-                    "useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-            String dbUser = "yis";
-            String dbPass = "1234";
-
             conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
             stmt = conn.createStatement();
             rs = stmt.executeQuery("select * " +
-                    "from product_test " +
+                    "from productList " +
                     "where product_name " +
                     "like '%" + product_name + "%'" +
-                    "and D_date >= '" + sqlDate1 + "'" +
-                    "and D_date <= '" + sqlDate2 + "'" +
+                    "and d_date >= '" + sqlDate1 + "'" +
+                    "and d_date <= '" + sqlDate2 + "'" +
                     "and price >= " + price1 + " " +
                     "and price <= " + price2 + " " +
-                    "and johab = '" + johab + "'" +
+                    "and farmer_company = '" + johab + "'" +
                     "limit " + start + "," + amount);
 
             while (rs.next()) {
-                int product_id = rs.getInt("product_id");
+                int idx_num = rs.getInt("idx_num");
                 String product_name1 = rs.getString("product_name");
                 int price = rs.getInt("price");
-                String johabb = rs.getString("johab");
-                String Imgsrc = rs.getString("imgsrc");
+                String Imgsrc = rs.getString("product_img_obj");
+                String johab1 = rs.getString("farmer_company");
 
                 ProductVO vo = new ProductVO();
-                vo.setProduct_id(product_id);
+                vo.setIdx_num(idx_num);
                 vo.setProduct_name(product_name1);
                 vo.setPrice(price);
                 vo.setImgsrc(Imgsrc);
-                vo.setJohab(johabb);
+                vo.setJohab(johab1);
 
                 detailList.add(vo);
             }
@@ -325,14 +303,9 @@ public class ProductDAO {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            String jdbcDriver = "jdbc:mysql://20.214.186.164:3306/yis?" +
-                    "useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-            String dbUser = "yis";
-            String dbPass = "1234";
-
             conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("select count(*) from product_test where product_name like '%" + keyword + "%'");
+            rs = stmt.executeQuery("select count(*) from productList where product_name like '%" + keyword + "%'");
 
             if(rs.next())
                 total = rs.getInt(1);
@@ -376,22 +349,17 @@ public class ProductDAO {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            String jdbcDriver = "jdbc:mysql://20.214.186.164:3306/yis?" +
-                    "useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-            String dbUser = "yis";
-            String dbPass = "1234";
-
             conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
             stmt = conn.createStatement();
             rs = stmt.executeQuery("select count(*) " +
-                    "from product_test " +
+                    "from productList " +
                     "where product_name " +
                     "like '%" + product_name + "%'" +
-                    "and D_date >= '" + sqlDate1 + "'" +
-                    "and D_date <= '" + sqlDate2 + "'" +
+                    "and d_date >= '" + sqlDate1 + "'" +
+                    "and d_date <= '" + sqlDate2 + "'" +
                     "and price >= " + price1 + " " +
                     "and price <= " + price2 + " " +
-                    "and johab = '" + johab + "'");
+                    "and farmer_company = '" + johab + "'");
 
             if(rs.next())
                 total = rs.getInt(1);
@@ -423,17 +391,12 @@ public class ProductDAO {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            String jdbcDriver = "jdbc:mysql://20.214.186.164:3306/yis?" +
-                    "useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-            String dbUser = "yis";
-            String dbPass = "1234";
-
             conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("select johab from product_test");
+            rs = stmt.executeQuery("select farmer_company from productList");
 
             while (rs.next()) {
-                String johab = rs.getString("johab");
+                String johab = rs.getString("farmer_company");
                 johabList.add(johab);
             }
         } catch (SQLException ex) {

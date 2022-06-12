@@ -3,24 +3,30 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
-<link th:href="@{/resources/css/mypage2.css}" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<link th:href="@{/css/mypage.css}" rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 </head>
 <body>
 	<div class="top-div">
 		<div class="main-nabar">
 			<div class="menu-area">
-				<img id="data" th:src="@{/img/datacenter.png}"> <a href="#">데이터 센터</a> <img id="data" th:src="@{/img/trade.png}"> <a href="#">선물 거래</a> <img id="data"
-					th:src="@{/img/news.png}"> <a href="#">뉴스</a> <img id="data" th:src="@{/img/crwodfunding.png}"> <a href="#">크라우드 펀딩</a>
+				<img id="data" th:src="@{/img/datacenter.png}"> <a href="#">데이터
+					센터</a> <img id="data" th:src="@{/img/trade.png}"> <a href="#">선물
+					거래</a> <img id="data" th:src="@{/img/news.png}"> <a href="#">뉴스</a>
+				<img id="data" th:src="@{/img/crowdfunding.png}"> <a href="#">크라우드
+					펀딩</a>
 			</div>
 		</div>
 		<div class="img-div">
 			<div class="img-area">
 				<div class="img-logo">
-					<img id="logo" th:src="@{/img/logo_font.png}" alt="로고">
+					<img id="logo" th:src="@{/img/logo_white.png}" alt="로고">
 				</div>
 				<div class="user-area">
-					<img id="menu" th:src="@{/img/table.png}" alt="메뉴"> <img id="user" th:src="@{/img/person.png}" alt="사용자"> <span>안녕하세요 username 님!</span>
+					<img id="menu" th:src="@{/img/table.png}" alt="메뉴"> <img
+						id="user" th:src="@{/img/person.png}" alt="사용자"> <span
+						th:text="|안녕하세요 ${user.userName} 님!|"></span>
 				</div>
 			</div>
 		</div>
@@ -32,9 +38,12 @@
 			</div>
 
 			<div class="producer-area2">
-				<div id="username" class="hi" th:text="|안녕하세요 ${user.username} 생산자님|"></div>
+				<div id="username" class="hi"
+					th:text="|안녕하세요 ${user.userName} 생산자님|"></div>
 				<div class="logout">
-					<button>로그아웃</button>
+					<button>
+						<a sec:authorize="isAuthenticated()" href="/doLogout"> 로그아웃 </a>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -42,42 +51,42 @@
 	</div>
 	<div class="mid-div">
 		<div class="userimg-div">
-			<img src="/resources/images/{name}(name=${user.files.filename})" th:src="@{/resources/images/{name}(name=${user.files.filename})}">
+			<img th:src="@{/img/table.png}">
 		</div>
 		<div class="userinfo-div">
 			<div class="userinfo">
 				<div class="userinfo2">개인정보</div>
 				<div class="userup">
-					<a th:href="@{/test/userupdate/{id}(id = ${user.id})}">수정</a>
+					<a>수정</a>
 				</div>
 			</div>
 			<br>
-			<p id="username" th:text=${user.username}></p>
-			<p id="userdate" th:text=${user.userdate}></p>
+			<p id="username" th:text=${user.userName}></p>
+			<p id="userdate" th:text=${user.userName}></p>
 		</div>
 		<div class="userphone-div">
 			<div class="userphone">
 				<div class="userphone2">연락처</div>
 				<div class="userup">
-					<a href="/index/userupdate/${user.id}">수정</a>
+					<a>수정</a>
 				</div>
 			</div>
 			<br>
-			<p id="usernumber" th:text=${user.usernumber}></p>
-			<p id="useremail" th:text=${user.useremail}></p>
+			<p id="usernumber" th:text=${user.userName}></p>
+			<p id="useremail" th:text=${user.userName}></p>
 		</div>
 
 		<div class="userupdate-div">
 			<div class="btn-area">
 				<button>
-					<a th:href="@{/test/productinsert/{id}(id=${user.id})}">등록</a>
+					<a>등록</a>
 				</button>
 				<button>
-					<a href="/mypage/${user.id}/insert">삭제</a>
+					<a>삭제</a>
 				</button>
 			</div>
 			<div class="grade-area">
-				<a href="#">등급정보</a>
+				<a>등급정보</a>
 			</div>
 		</div>
 	</div>
@@ -175,19 +184,19 @@
 	</div>
 	-->
 
-	<!-- Footer -->
-	<footer class="footer">
-		<div class="footer-inner">
-			<p>경북협동조합 농부아지야</p>
-			<hr />
-			<ul>
-				<li><a href="#">농넷</a></li>
-				<li><a href="#">KAMIS</a></li>
-				<li><a href="#">한국농어촌공사</a></li>
-				<li><a href="#">영남대학교</a></li>
-			</ul>
-		</div>
-	</footer>
-	<script src="/resources/js/tab.js" rel="script"></script>
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="footer-inner">
+				<p>경북협동조합 농부아지야</p>
+				<hr />
+				<ul>
+					<li><a href="#">농넷</a></li>
+					<li><a href="#">KAMIS</a></li>
+					<li><a href="#">한국농어촌공사</a></li>
+					<li><a href="#">영남대학교</a></li>
+				</ul>
+			</div>
+		</footer>
+		<script src="/js/tab.js" rel="script"></script>
 </body>
 </html>

@@ -1,16 +1,14 @@
 package com.service.yis.product;
 
 public class ProductVO {
-    private int product_id;
+    private int idx_num;
     private String product_name;
     private String date1;
     private String date2;
     private int price;
-
     private int price1;
     private int price2;
     private String Imgsrc;
-
     private String johab;
 
     public void setPrice(int price) {
@@ -27,10 +25,6 @@ public class ProductVO {
 
     public String getImgsrc() {
         return Imgsrc;
-    }
-
-    public void setProduct_id(int product_id) {
-        this.product_id = product_id;
     }
 
     public void setProduct_name(String product_name) {
@@ -61,8 +55,12 @@ public class ProductVO {
         return johab;
     }
 
-    public int getProduct_id() {
-        return product_id;
+    public void setIdx_num(int idx_num) {
+        this.idx_num = idx_num;
+    }
+
+    public int getIdx_num() {
+        return idx_num;
     }
 
     public String getProduct_name() {

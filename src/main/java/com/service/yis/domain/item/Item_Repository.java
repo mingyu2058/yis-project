@@ -17,69 +17,69 @@ public interface Item_Repository extends JpaRepository<Item_Entity, Long> {
     public List<Item_Entity> getItem();
 
     // 최근날짜별 가격, 거래량 평균 10개의 행을 가져오는 쿼리함수
-    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price from sold_items_table where item_name = :item_name group by date order by date DESC limit 10;", nativeQuery = true)
+    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity from sold_items_table where item_name = :item_name group by date order by date DESC limit 10;", nativeQuery = true)
     public List<Item_Entity> getItemAvgByDate(@Param("item_name")String item_name);
 
     // 날짜와 도매시장기준 데이터 가져온다.
-    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price from sold_items_table where item_name = :item_name and date= :date group by market order by date DESC", nativeQuery = true)
+    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity from sold_items_table where item_name = :item_name and date= :date group by market order by date DESC", nativeQuery = true)
     public List<Item_Entity> getItemAvgByDateMarket(@Param("item_name")String item_name, @Param("date")String date);
 
     // 모든 데이터 받아온느 함수
-    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price from sold_items_table where item_name = :item_name group by date order by date DESC", nativeQuery = true)
+    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity from sold_items_table where item_name = :item_name group by date order by date DESC", nativeQuery = true)
     public List<Item_Entity> getItemAllAvgByDate(@Param("item_name")String item_name);
 
-    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price from sold_items_table where item_name = :item_name group by date, market having market like CONCAT('%',:market,'%') order by date DESC", nativeQuery = true)
+    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity from sold_items_table where item_name = :item_name group by date, market having market like CONCAT('%',:market,'%') order by date DESC", nativeQuery = true)
     public List<Item_Entity> getItemAllAvgByDate2(@Param("item_name")String item_name,  @Param("market")String market);
 
     // 날짜 2개 입력받아서 그 사이에 있는 데이터 받아오는 함수
-    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price from sold_items_table where item_name = :item_name group by date having date between :startDate and :endDate order by date DESC", nativeQuery = true)
+    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity from sold_items_table where item_name = :item_name group by date having date between :startDate and :endDate order by date DESC", nativeQuery = true)
     public List<Item_Entity> getItemByBtwDateAndDate(@Param("item_name")String item_name,  @Param("startDate")String startDate,  @Param("endDate")String endDate);
 
-    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price from sold_items_table where item_name = :item_name group by date, market having (date between :startDate and :endDate) AND market like CONCAT('%',:market,'%') order by date DESC", nativeQuery = true)
+    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity from sold_items_table where item_name = :item_name group by date, market having (date between :startDate and :endDate) AND market like CONCAT('%',:market,'%') order by date DESC", nativeQuery = true)
     public List<Item_Entity> getItemByBtwDateAndDate2(@Param("item_name")String item_name,  @Param("startDate")String startDate,  @Param("endDate")String endDate,  @Param("market")String market);
 
     // 월 단위로 데이터 받는 함수
-    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price\n" +
-            "from (select sold_num, item_name, date_format(date, '%Y-%m') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price from sold_items_table where item_name = :item_name group by date) B\n" +
+    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity\n" +
+            "from (select sold_num, item_name, date_format(date, '%Y-%m') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity from sold_items_table where item_name = :item_name group by date) B\n" +
             "group by B.date order by B.date DESC", nativeQuery = true)
     public List<Item_Entity> getItemAvgMonth(@Param("item_name")String item_name);
 
-    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price\n" +
-            "from (select sold_num, item_name, date_format(date, '%Y-%m') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price from sold_items_table where item_name = :item_name group by date, market having market like CONCAT('%',:market,'%') ) B\n" +
+    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity\n" +
+            "from (select sold_num, item_name, date_format(date, '%Y-%m') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity from sold_items_table where item_name = :item_name group by date, market having market like CONCAT('%',:market,'%') ) B\n" +
             "group by B.date order by B.date DESC", nativeQuery = true)
     public List<Item_Entity> getItemAvgMonth2(@Param("item_name")String item_name,  @Param("market")String market);
 
     // 년 단위로 데이터 받는 함수
-    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price\n" +
-            "from (select sold_num, item_name, date_format(date, '%Y') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price from sold_items_table where item_name = :item_name group by date) B\n" +
+    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity\n" +
+            "from (select sold_num, item_name, date_format(date, '%Y') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity from sold_items_table where item_name = :item_name group by date) B\n" +
             "group by B.date order by B.date DESC", nativeQuery = true)
     public List<Item_Entity> getItemAvgYear(@Param("item_name")String item_name);
 
-    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price\n" +
-            "from (select sold_num, item_name, date_format(date, '%Y') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price from sold_items_table where item_name = :item_name group by date, market having market like CONCAT('%',:market,'%')) B\n" +
+    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantitye\n" +
+            "from (select sold_num, item_name, date_format(date, '%Y') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity from sold_items_table where item_name = :item_name group by date, market having market like CONCAT('%',:market,'%')) B\n" +
             "group by B.date order by B.date DESC", nativeQuery = true)
     public List<Item_Entity> getItemAvgYear2(@Param("item_name")String item_name,  @Param("market")String market);
 
     // 분기 단위로 데이터 받는 함수
-    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price \n" +
-            "from (select sold_num, item_name, concat(date_format(date, '%Y-'),quarter(date)) as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price \n" +
+    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity \n" +
+            "from (select sold_num, item_name, concat(date_format(date, '%Y-'),quarter(date)) as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity \n" +
             "from sold_items_table where item_name = :item_name \n" +
             "group by date) B\n" +
             "group by B.date \n" +
             "order by B.date DESC\n", nativeQuery = true)
     public List<Item_Entity> getItemAvg3Month(@Param("item_name")String item_name);
 
-    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price \n" +
-            "from (select sold_num, item_name, concat(date_format(date, '%Y-'),quarter(date)) as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price \n" +
+    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity \n" +
+            "from (select sold_num, item_name, concat(date_format(date, '%Y-'),quarter(date)) as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity \n" +
             "from sold_items_table where item_name = :item_name \n" +
             "group by date, market having market like CONCAT('%',:market,'%')) B\n" +
             "group by B.date \n" +
             "order by B.date DESC\n", nativeQuery = true)
     public List<Item_Entity> getItemAvg3Month2(@Param("item_name")String item_name,  @Param("market")String market);
 
-    @Query(value = "select sold_num, item_name, date, market, location, kind, price, total_quantity, quantity, predict_price\n" +
-            "            from ((select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price\n" +
-            "            from (select sold_num, item_name, date_format(date, '%Y-1') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price\n" +
+    @Query(value = "select sold_num, item_name, date, market, location, kind, price, total_quantity, quantity\n" +
+            "            from ((select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity\n" +
+            "            from (select sold_num, item_name, date_format(date, '%Y-1') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity\n" +
             "            from sold_items_table where item_name = :item_name\n" +
             "            group by date\n" +
             "            having quarter(date) = '1' OR quarter(date) = '2'\n" +
@@ -87,8 +87,8 @@ public interface Item_Repository extends JpaRepository<Item_Entity, Long> {
             "            group by B.date\n" +
             "            order by B.date DESC)\n" +
             "            Union\n" +
-            "            (select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price\n" +
-            "            from (select sold_num, item_name, date_format(date, '%Y-6') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price\n" +
+            "            (select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity\n" +
+            "            from (select sold_num, item_name, date_format(date, '%Y-6') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity\n" +
             "            from sold_items_table where item_name = :item_name\n" +
             "\t\t\tgroup by date\n" +
             "            having quarter(date) = '3' OR quarter(date) = '4'\n" +
@@ -98,9 +98,9 @@ public interface Item_Repository extends JpaRepository<Item_Entity, Long> {
             "            order by C.date desc", nativeQuery = true)
     public List<Item_Entity> getItemAvg6Month(@Param("item_name")String item_name);
 
-    @Query(value = "select sold_num, item_name, date, market, location, kind, price, total_quantity, quantity, predict_price\n" +
-            "            from ((select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price\n" +
-            "            from (select sold_num, item_name, date_format(date, '%Y-1') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price\n" +
+    @Query(value = "select sold_num, item_name, date, market, location, kind, price, total_quantity, quantity\n" +
+            "            from ((select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity\n" +
+            "            from (select sold_num, item_name, date_format(date, '%Y-1') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity\n" +
             "            from sold_items_table where item_name = :item_name\n" +
             "            group by date, market\n" +
             "            having quarter(date) = '1' OR quarter(date) = '2' AND market like CONCAT('%',:market,'%') \n" +
@@ -108,8 +108,8 @@ public interface Item_Repository extends JpaRepository<Item_Entity, Long> {
             "            group by B.date\n" +
             "            order by B.date DESC)\n" +
             "            Union\n" +
-            "            (select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price\n" +
-            "            from (select sold_num, item_name, date_format(date, '%Y-6') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price\n" +
+            "            (select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity\n" +
+            "            from (select sold_num, item_name, date_format(date, '%Y-6') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity\n" +
             "            from sold_items_table where item_name = :item_name\n" +
             "\t\t\tgroup by date, market\n" +
             "            having quarter(date) = '3' OR quarter(date) = '4' AND market like CONCAT('%',:market,'%') \n" +
@@ -121,10 +121,10 @@ public interface Item_Repository extends JpaRepository<Item_Entity, Long> {
 
 
     // 품종별로 데이터 받아온다.
-    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price from sold_items_table where item_name = :item_name group by kind order by price desc;", nativeQuery = true)
+    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity from sold_items_table where item_name = :item_name group by kind order by price desc;", nativeQuery = true)
     public List<Item_Entity> getItemAvgByKind(@Param("item_name")String item_name);
 
 
-    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity, avg(predict_price) as predict_price from sold_items_table where item_name = :item_name group by date, market having market like CONCAT('%',:market,'%') order by date DESC;", nativeQuery = true)
+    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity from sold_items_table where item_name = :item_name group by date, market having market like CONCAT('%',:market,'%') order by date DESC;", nativeQuery = true)
     public List<Item_Entity> getItemAvgByMarket(@Param("item_name")String item_name, @Param("market")String market);
 }

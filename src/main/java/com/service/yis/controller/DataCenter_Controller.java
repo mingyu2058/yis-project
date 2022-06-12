@@ -52,7 +52,6 @@ public class DataCenter_Controller {
         // 자바스크립트에서 요청받은 품목에 대한 데이터를 가져온다.
         String itemName = request.getParameter("itemName");
         String date = request.getParameter("date");
-        System.out.println(date);
 
         List<Item_Entity> list = data_Center_Service.getItemAvgByDateMarket(itemName, date);
         return list;

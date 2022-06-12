@@ -1,9 +1,8 @@
 package com.service.yis.controller;
 
-import com.service.yis.domain.User.UserEntity;
 import com.service.yis.domain.repository.UserRepository;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import com.service.yis.domain.User.UserEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,11 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
 @RequestMapping("/")
 public class MainController {
+    @Autowired private UserRepository userRepository;
 
     @GetMapping("")
     public String index(Authentication authentication, Model model) {
@@ -42,14 +42,16 @@ public class MainController {
 */
     }
 
-	@GetMapping("/mypage")
-   	 public String mypage(HttpServletRequest request, Model model) {
+   @GetMapping("/mypage")
+    public String mypage(Authentication authentication, Model model) {
        
-       HttpSession session = request.getSession();
-       UserEntity userEntity = (UserEntity)session.getAttribute("UserEntity");
+       String userName = authentication.getName();
+       
+       UserEntity userEntity = userRepository.findByUserName(userName);
        
        model.addAttribute("user", userEntity);
        
        return "user/mypage";
     }
+
 }

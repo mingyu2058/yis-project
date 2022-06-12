@@ -15,6 +15,7 @@
 body {
 	font: normal normal normal 15px/21px AppleSDGothicNeoM00;
 	background: #F5F5F7 0% 0% no-repeat padding-box;
+	margin:0px;
 }
 
 .menu-area {
@@ -117,6 +118,10 @@ body {
 	border-radius: 28px;
 	border: 0px;
 	font-weight: bold;
+}
+.logout a{
+	color: black;
+	text-decoration: none;
 }
 
 .mid-div {

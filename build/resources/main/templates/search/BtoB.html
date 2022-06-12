@@ -137,23 +137,25 @@
                 <h2 style="text-align:center; margin-top:10px;"><b>상세 검색</b></h2>
                 <form action="./detailSearch" method="get" name="detailSearch">
                     <div class="firstFilter">
+                        <div class="titleDiv">
+                            <p style="margin-left: 85px;"><b>품목 선택</b></p>
+                            <p style="margin-left: 200px;"><b>품종</b></p>
+                            <p style="margin-left: 215px;"><b>출하 기간</b></p>
+                        </div>
                         <div class="firstDiv1">
-                            <p style="font-size:20px; margin-left:25px;"><b>품목 선택</b></p>
                             <select multiple class="form-control" id="categoryA" name="categoryA" autocomplete="off"
                                     onchange="categoryChange(this)">
-                                <option value="과일" style="font-size:16px; margin-top:15px;">과일</option>
-                                <option value="채소" style="font-size:16px; margin-top:15px;">채소</option>
-                                <option value="작물" style="font-size:16px; margin-top:15px;">작물</option>
+                                <option value="과일" style="font-size:16px; margin-top:15px;"><b>과일</b></option>
+                                <option value="채소" style="font-size:16px; margin-top:15px;"><b>채소</b></option>
+                                <option value="작물" style="font-size:16px; margin-top:15px;"><b>작물</b></option>
                             </select>
                         </div>
 
                         <div class="firstDiv2">
-                            <p style="font-size:20px; margin-left:25px;"><b>품종</b></p>
                             <select multiple class="form-control" id="categoryB" name="categoryB"></select>
                         </div>
 
-                        <div class="firstDiv3">
-                            <p style="font-size:20px;"><b>출하 시기</b></p>
+                        <span class="firstDiv3">
                             <img src="/img/calender.png" class="calender1">
                             <input type="text" id="datepicker1" name="date1" autocomplete="off">
                             <p style="margin-top:45px;">부터</p>
@@ -161,12 +163,15 @@
                             <img src="/img/calender.png" class="calender2">
                             <input type="text" id="datepicker2" name="date2" autocomplete="off">
                             <p>까지</p>
-                        </div>
+                        </span>
                     </div>
 
                     <div class="secondFilter">
+                        <div class="titleDiv">
+                            <p style="margin-left: 87px;"><b>협동 조합</b></p>
+                            <p style="margin-left: 200px;"><b>가격</b></p>
+                        </div>
                         <div class="secondDiv1">
-                        <p style="font-size:20px; margin-left:25px;"><b>협동 조합</b></p>
                             <select multiple class="form-control" id="johab" name="johab" autocomplete="off">
                                 <option th:each="johab:${johab}" style="font-size:16px; margin-top:15px;" th:value="${johab}"
                                 th:text="${johab}">
@@ -175,7 +180,6 @@
                         </div>
 
                         <div class="secondDiv2">
-                        <p style="font-size:20px; margin-left:25px;"><b>가격</b></p>
                             <input type="number" id="price1" name="price1" autocomplete="off">
                             <p style="margin-top:45px;">원</p>
                             <br><br>
@@ -184,10 +188,10 @@
                         </div>
 
                         <div class="secondDiv3">
-                            <img src="/img/123.png">
-                        </div>
 
+                        </div>
                     </div>
+
                     <img src="img/redo.png" class="redoImg">
                     <button class="resetBtn" type="reset" onclick="reset()"><b>필터 초기화</b></button>
                     <button class="submit" type="reset" onclick="doAction2()">확인</button>
@@ -222,7 +226,7 @@
                         <div class="JohabTag" th:text="${fruitlist1.getJohab()}"></div>
                         <a href="#">
                             <img src="" th:src="@{${fruitlist1.getImgsrc()}}"
-                                 style="width:180px; height:180px; display:block; text-align: center;">
+                                 style="border-radius: 20px; width:180px; height:180px; display:block; text-align: center;">
                             <p style="clear:both; margin-top: 20px; width:180px;"><b
                                     th:text="${fruitlist1.getProduct_name()}"></b></p>
                             <p style="clear:both; margin-top: 10px; color:green"><b>거래 가능</b></p>
@@ -239,7 +243,7 @@
                         <div class="JohabTag" th:text="${fruitlist2.getJohab()}"></div>
                         <a href="#">
                             <img src="" th:src="@{${fruitlist2.getImgsrc()}}"
-                                 style="width:180px; height:180px; display:block; text-align: center;">
+                                 style="border-radius: 20px; width:180px; height:180px; display:block; text-align: center;">
                             <p style="clear:both; margin-top: 20px; width:180px;"><b
                                     th:text="${fruitlist2.getProduct_name()}"></b></p>
                             <p style="clear:both; margin-top: 10px; color:green"><b>거래 가능</b></p>
@@ -256,7 +260,7 @@
                         <div class="JohabTag" th:text="${fruitlist3.getJohab()}"></div>
                         <a href="#">
                             <img src="" th:src="@{${fruitlist3.getImgsrc()}}"
-                                 style="width:180px; height:180px; display:block; text-align: center;">
+                                 style="border-radius: 20px; width:180px; height:180px; display:block; text-align: center;">
                             <p style="clear:both; margin-top: 20px; width:180px;"><b
                                     th:text="${fruitlist3.getProduct_name()}"></b></p>
                             <p style="clear:both; margin-top: 10px; color:green"><b>거래 가능</b></p>
@@ -280,7 +284,7 @@
     <div class="slideshow-container"
          style="margin-top:50px; margin-left: auto; margin-right:auto; height:400px; width:1300px;">
         <h2 style="margin-left:130px;"><b>채소</b></h2><br>
-        <a class="prev" onclick="plusFruitSlides(-1)">
+        <a class="prev" onclick="plusVegetableSlides(-1)">
             <button class="previous_btn" style="margin-top: 100px; margin-left:130px;"> <</button>
         </a>
         <div class="vegetableSlide fade2">
@@ -290,7 +294,7 @@
                         <div class="JohabTag" th:text="${vegetablelist1.getJohab()}"></div>
                         <a href="#">
                             <img src="" th:src="@{${vegetablelist1.getImgsrc()}}"
-                                 style="width:180px; height:180px; display:block; text-align: center;">
+                                 style="border-radius: 20px; width:180px; height:180px; display:block; text-align: center;">
                             <p style="clear:both; margin-top: 20px; width:180px;"><b
                                     th:text="${vegetablelist1.getProduct_name()}"></b></p>
                             <p style="clear:both; margin-top: 10px; color:green"><b>거래 가능</b></p>
@@ -307,7 +311,7 @@
                         <div class="JohabTag" th:text="${vegetablelist2.getJohab()}"></div>
                         <a href="#">
                             <img src="" th:src="@{${vegetablelist2.getImgsrc()}}"
-                                 style="width:180px; height:180px; display:block; text-align: center;">
+                                 style="border-radius: 20px; width:180px; height:180px; display:block; text-align: center;">
                             <p style="clear:both; margin-top: 20px; width:180px;"><b
                                     th:text="${vegetablelist2.getProduct_name()}"></b></p>
                             <p style="clear:both; margin-top: 10px; color:green"><b>거래 가능</b></p>
@@ -324,7 +328,7 @@
                         <div class="JohabTag" th:text="${vegetablelist3.getJohab()}"></div>
                         <a href="#">
                             <img src="" th:src="@{${vegetablelist3.getImgsrc()}}"
-                                 style="width:180px; height:180px; display:block; text-align: center;">
+                                 style="border-radius: 20px; width:180px; height:180px; display:block; text-align: center;">
                             <p style="clear:both; margin-top: 20px; width:180px;"><b
                                     th:text="${vegetablelist3.getProduct_name()}"></b></p>
                             <p style="clear:both; margin-top: 10px; color:green"><b>거래 가능</b></p>
@@ -348,7 +352,7 @@
     <div class="slideshow-container"
          style="margin-top:50px; margin-left: auto; margin-right:auto; height:400px; width:1300px;">
         <h2 style="margin-left:130px;"><b>작물</b></h2><br>
-        <a class="prev" onclick="plusFruitSlides(-1)">
+        <a class="prev" onclick="plusCropSlides(-1)">
             <button class="previous_btn" style="margin-top: 100px; margin-left:130px;"> <</button>
         </a>
         <div class="cropSlide fade2">
@@ -358,7 +362,7 @@
                         <div class="JohabTag" th:text="${croplist1.getJohab()}"></div>
                         <a href="#">
                             <img src="" th:src="@{${croplist1.getImgsrc()}}"
-                                 style="width:180px; height:180px; display:block; text-align: center;">
+                                 style="border-radius: 20px; width:180px; height:180px; display:block; text-align: center;">
                             <p style="clear:both; margin-top: 20px; width:180px;"><b
                                     th:text="${croplist1.getProduct_name()}"></b></p>
                             <p style="clear:both; margin-top: 10px; color:green"><b>거래 가능</b></p>
@@ -375,7 +379,7 @@
                         <div class="JohabTag" th:text="${croplist2.getJohab()}"></div>
                         <a href="#">
                             <img src="" th:src="@{${croplist2.getImgsrc()}}"
-                                 style="width:180px; height:180px; display:block; text-align: center;">
+                                 style="border-radius: 20px; width:180px; height:180px; display:block; text-align: center;">
                             <p style="clear:both; margin-top: 20px; width:180px;"><b
                                     th:text="${croplist2.getProduct_name()}"></b></p>
                             <p style="clear:both; margin-top: 10px; color:green"><b>거래 가능</b></p>
@@ -392,7 +396,7 @@
                         <div class="JohabTag" th:text="${croplist3.getJohab()}"></div>
                         <a href="#">
                             <img src="" th:src="@{${croplist3.getImgsrc()}}"
-                                 style="width:180px; height:180px; display:block; text-align: center;">
+                                 style="border-radius: 20px; width:180px; height:180px; display:block; text-align: center;">
                             <p style="clear:both; margin-top: 20px; width:180px;"><b
                                     th:text="${croplist3.getProduct_name()}"></b></p>
                             <p style="clear:both; margin-top: 10px; color:green"><b>거래 가능</b></p>
@@ -432,7 +436,6 @@
 <script type="text/javascript" src="/js/datepicker.js"></script>
 <script type="text/javascript" src="/js/buttonCondition.js"></script>
 <script type="text/javascript" src="/js/slide.js"></script>
-<script type="text/javascript" src="/js/reset.js"></script>
 </body>
 
 </html>
