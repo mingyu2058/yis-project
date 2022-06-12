@@ -10,29 +10,25 @@
 	<div class="top-div">
 		<div class="main-nabar">
 			<div class="menu-area">
-				<img id="data" th:src="@{/img/datacenter.png}"> <a href="#">데이터
-					센터</a> <img id="data" th:src="@{/img/trade.png}"> <a href="#">선물
-					거래</a> <img id="data" th:src="@{/img/news.png}"> <a href="#">뉴스</a>
-				<img id="data" th:src="@{/img/crowdfunding.png}"> <a href="#">크라우드
-					펀딩</a>
+				<img id="data" th:src="@{/img/datacenter.png}"> <a href="#">데이터센터</a> <img id="data" th:src="@{/img/trade.png}"> <a href="#">선물거래</a> <img id="data" th:src="@{/img/news.png}"> <a href="#">뉴스</a>
+				<img id="data" th:src="@{/img/crowdfunding.png}"> <a href="#">크라우드 펀딩</a>
 			</div>
 		</div>
 		<div class="img-div">
 			<div class="img-area">
 				<div class="img-logo">
-					<img id="logo" th:src="@{/img/logo_white.png}" alt="로고">
+					<img id="logo" th:src="@{/img/logo_white.png}" alt="濡쒓퀬">
 				</div>
 				<div class="user-area">
-					<img id="menu" th:src="@{/img/table.png}" alt="메뉴"> <img
-						id="user" th:src="@{/img/person.png}" alt="사용자"> <span>안녕하세요
-						username 님!</span>
+					<img id="menu" th:src="@{/img/table.png}" alt="硫붾돱"> <img
+						id="user" th:src="@{/img/person.png}" alt="�궗�슜�옄"> <span>안녕하세요 username 님!</span>
 				</div>
 			</div>
 		</div>
 		<div class="item-div">
 			<div class="item-serch">
 				<ul>
-					<li><a>과일</a></li>
+					<li><a>상품정보</a></li>
 					<li><a>></a></li>
 					<li><a>과일</a></li>
 					<li><a>></a></li>
@@ -40,11 +36,11 @@
 				</ul>
 			</div>
 			<div class="item-img">
-				<img th:src="@{${plist.product_img_obj}}">
+				<img th:src="@{/{img}(img=${plist.product_img_obj})}">
 			</div>
 			<div class="item-info">
 				<div class="item-title">
-					<h1 th:text=${plist.product_name}></h1>
+					<h2 th:text=${plist.product_name}></h2>
 				</div>
 				<div class="item-info-div">
 					<div class="title">
@@ -61,7 +57,7 @@
 							<span>지역</span>
 						</div>
 						<div class="subtitle">
-							<span>과세여부</span>
+							<span>과세정보</span>
 						</div>
 					</div>
 					<div class="title2">
@@ -85,14 +81,14 @@
 				<div class="farm-info">
 					<div class="farm-title">
 						<div class="farm">
-							<span>농가정보</span>
+							<span>농부정보</span>
 						</div>
 						<div class="farm-img">
 							<div class="img-detail">
-								<img th:src="@{${plist.farmer_img_obj}">
+								<img th:src="@{/{img}(img=${plist.farmer_img_obj})}">
 							</div>
 							<div class="farm-detail">
-								<p th:text="|${plist.address} | ${plist.farmer_name}"></p>
+								<p th:text="|${plist.address} - ${plist.farmer_name}|"></p>
 								<span th:text=${plist.farmer_comment}></span>
 							</div>
 						</div>
@@ -108,7 +104,11 @@
 			</ul>
 		</div>
 		<div class="bottom-div">
-			<div class="text-area">상품상세정보</div>
+		<div:block th:each="imags: ${plist.image_info}">
+			<div class="text-area">
+			<img th:src="@{/{img}(img=${imags[0]})}">
+			</div>
+		</div:block>
 			<div class="btn-area">
 				<button>거래요청</button>
 				<button>찜하기</button>
@@ -116,7 +116,7 @@
 			<div class="last-div">
 				<div class="last">
 					<div class="last-img">
-						<img th:src="@{${plist.farmer_img_obj}">
+						<img th:src="@{/{img}(img=${plist.farmer_img_obj})}">
 					</div>
 					<div class="last-text">
 						<div class="text1">
@@ -129,10 +129,10 @@
 					</div>
 					<div class="last-btn">
 						<div class="btn1">
-							<button>1:1채팅문의</button>
+							<button>1:1채팅 문의</button>
 						</div>
 						<div class="btn2">
-							<button>1:1채팅문의</button>
+							<button th:text=${plist.farmer_company}></button>
 						</div>
 					</div>
 				</div>

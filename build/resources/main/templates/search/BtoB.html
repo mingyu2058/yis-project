@@ -138,9 +138,9 @@
                 <form action="./detailSearch" method="get" name="detailSearch">
                     <div class="firstFilter">
                         <div class="titleDiv">
-                            <p style="margin-left: 85px;"><b>품목 선택</b></p>
-                            <p style="margin-left: 200px;"><b>품종</b></p>
-                            <p style="margin-left: 215px;"><b>출하 기간</b></p>
+                            <p style="margin-left: 87px;"><b>카테고리</b></p>
+                            <p style="margin-left: 205px;"><b>품목</b></p>
+                            <p style="margin-left: 215px;"><b>출하기간</b></p>
                         </div>
                         <div class="firstDiv1">
                             <select multiple class="form-control" id="categoryA" name="categoryA" autocomplete="off"
@@ -168,8 +168,8 @@
 
                     <div class="secondFilter">
                         <div class="titleDiv">
-                            <p style="margin-left: 87px;"><b>협동 조합</b></p>
-                            <p style="margin-left: 200px;"><b>가격</b></p>
+                            <p style="margin-left: 87px;"><b>협동조합</b></p>
+                            <p style="margin-left: 205px;"><b>가격</b></p>
                         </div>
                         <div class="secondDiv1">
                             <select multiple class="form-control" id="johab" name="johab" autocomplete="off">
@@ -226,7 +226,7 @@
                         <div class="JohabTag" th:text="${fruitlist1.getJohab()}"></div>
                         <a href="#">
                             <img src="" th:src="@{${fruitlist1.getImgsrc()}}"
-                                 style="border-radius: 20px; width:180px; height:180px; display:block; text-align: center;">
+                                 style="border-radius: 20px; width:180px; height:180px; display:block; text-align: center;" onclick="location.href='http://nongbu.site/detail/1';">
                             <p style="clear:both; margin-top: 20px; width:180px;"><b
                                     th:text="${fruitlist1.getProduct_name()}"></b></p>
                             <p style="clear:both; margin-top: 10px; color:green"><b>거래 가능</b></p>
@@ -430,12 +430,12 @@
     </footer>
 </div>
 
-
 <script type="text/javascript" src="/js/modal.js"></script>
 <script type="text/javascript" src="/js/changer.js"></script>
 <script type="text/javascript" src="/js/datepicker.js"></script>
 <script type="text/javascript" src="/js/buttonCondition.js"></script>
 <script type="text/javascript" src="/js/slide.js"></script>
+
 </body>
 
 </html>

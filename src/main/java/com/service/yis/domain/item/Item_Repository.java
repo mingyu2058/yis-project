@@ -55,7 +55,7 @@ public interface Item_Repository extends JpaRepository<Item_Entity, Long> {
             "group by B.date order by B.date DESC", nativeQuery = true)
     public List<Item_Entity> getItemAvgYear(@Param("item_name")String item_name);
 
-    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantitye\n" +
+    @Query(value = "select sold_num, item_name, date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity\n" +
             "from (select sold_num, item_name, date_format(date, '%Y') as date, market, location, kind, avg(price) as price, sum(total_quantity) as total_quantity, sum(quantity) as quantity from sold_items_table where item_name = :item_name group by date, market having market like CONCAT('%',:market,'%')) B\n" +
             "group by B.date order by B.date DESC", nativeQuery = true)
     public List<Item_Entity> getItemAvgYear2(@Param("item_name")String item_name,  @Param("market")String market);

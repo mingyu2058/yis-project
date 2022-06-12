@@ -76,9 +76,14 @@
             <img
                     src="../../static/img/table.png"
                     th:src="@{/img/table.png}"/>
-            <img
-                    src="../../static/img/person.png"
-                    th:src="@{/img/person.png}"/>
+
+            <a
+                    style="display: inline"
+                th:href="@{/mypage}">
+
+                <img src="../../static/img/person.png"
+                     th:src="@{/img/person.png}"/>
+            </a>
 
             <a sec:authorize="isAnonymous()"
                href="login.html"
@@ -120,8 +125,8 @@
 
 
 <!-- 플랫폼 소개 -->
-<section onclick="noShow()" id="introduction" class="introduction">
-    <div
+<section  id="introduction" class="introduction">
+    <div    onclick="noShow()"
             id="explanation1"
             class="swiper-container">
         <div class="swiper-wrapper">

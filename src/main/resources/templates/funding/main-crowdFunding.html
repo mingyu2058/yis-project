@@ -22,7 +22,7 @@
                             src="../../static/img/datacenter.png"
                             th:src="@{/img/datacenter.png}"
                     />
-                    <h>�뜲�씠�꽣 �꽱�꽣</h>
+                    <h>데이터 센터</h>
                 </a>
 
             </li>
@@ -33,7 +33,7 @@
                             class="news-img"
                             src="../../static/img/trade.png"
                             th:src="@{/img/trade.png}"/>
-                    <h>�꽑臾쇨굅�옒</h>
+                    <h>선물거래</h>
                 </a>
             </li>
             <li>
@@ -43,7 +43,7 @@
                             class="trade-img"
                             src="../../static/img/news.png"
                             th:src="@{/img/news.png}"/>
-                    <h>�돱�뒪</h>
+                    <h>뉴스</h>
                 </a>
             </li>
             <li>
@@ -53,7 +53,7 @@
                             class="funding-img"
                             src="../../static/img/crowdfunding.png"
                             th:src="@{/img/crowdfunding.png}"/>
-                    <h>�겕�씪�슦�뱶 ���뵫</h>
+                    <h>크라우드 펀딩</h>
                 </a>
             </li>
         </ul>
@@ -79,7 +79,7 @@
                             src="../../static/img/datacenter.png"
                             th:src="@{/img/datacenter.png}"
                     />
-                    <h>�뜲�씠�꽣 �꽱�꽣</h>
+                    <h>데이터 센터</h>
                 </a>
 
             </li>
@@ -90,7 +90,7 @@
                             class="news-img"
                             src="../../static/img/trade.png"
                             th:src="@{/img/trade.png}"/>
-                    <h>�꽑臾쇨굅�옒</h>
+                    <h>선물거래</h>
                 </a>
             </li>
             <li>
@@ -100,7 +100,7 @@
                             class="trade-img"
                             src="../../static/img/news.png"
                             th:src="@{/img/news.png}"/>
-                    <h>�돱�뒪</h>
+                    <h>뉴스</h>
                 </a>
             </li>
             <li>
@@ -110,7 +110,7 @@
                             class="funding-img"
                             src="../../static/img/crowdfunding.png"
                             th:src="@{/img/crowdfunding.png}"/>
-                    <h>�겕�씪�슦�뱶 ���뵫</h>
+                    <h>크라우드 펀딩</h>
                 </a>
             </li>
         </ul>
@@ -124,30 +124,30 @@
 
             <a sec:authorize="isAnonymous()"
                href="login.html"
-               th:href="@{/account/login}">濡쒓렇�씤</a>
+               th:href="@{/account/login}">로그인</a>
 
             <h
-                    sec:authorize="isAnonymous()">�삉�뒗</h>
+                    sec:authorize="isAnonymous()">또는</h>
 
             <a sec:authorize="isAnonymous()"
                href="join.html"
-               th:href="@{/account/join}">�쉶�썝媛��엯</a>
+               th:href="@{/account/join}">회원가입</a>
 
             <h
                     sec:authorize="isAuthenticated()"
-            >�븞�뀞�븯�꽭�슂! </h>
+            >안녕하세요! </h>
             <h
                     th:text="${name}">
             </h>
             <h
                     sec:authorize="isAuthenticated()">
-                �떂
+                님
             </h>
 
             <a
                     sec:authorize="isAuthenticated()"
                     href="/doLogout">
-                濡쒓렇�븘�썐
+                로그아웃
             </a>
 
             <a
@@ -166,8 +166,8 @@
     <div class="contents-title">
         <a  href="#"
             th:href="@{/crowd}">
-        <p>吏꾪뻾 以묒씤 由ъ썙�뱶 </p>
-            <h4>�냽遺��븘吏��빞�뿉�꽌 �빂�븳 �봽濡쒖젥�듃�뱾�쓣 留뚮굹蹂댁꽭�슂.</h4>
+        <p>진행 중인 리워드 </p>
+            <h4>농부아지야에서 핫한 프로젝트들을 만나보세요.</h4>
         </a>
 
     </div>
@@ -185,9 +185,9 @@
                     />
                 </a>
                 <div class="contents-title-box">
-                <h>7�썡 ���몴 蹂듭댂�븘 3醫�!</h>
+                <h>7월 대표 복숭아 3종!</h>
                 <div class="funding-contents">
-                    <h>11,380,800�썝</h>
+                    <h>11,380,800원</h>
                     <h>2276%</h>
                 </div>
                 </div>
@@ -199,13 +199,12 @@
                    href="../funding/crowdFunding-detail.html"
                    th:href="@{/crowd/detail}">
                     <img
-
                     />
                 </a>
                 <div class="contents-title-box">
-                    <h>[�뵳 �븳�떖留� �닔�솗]�떖肄ㅽ븳 泥대━�옄�몢!</h>
+                    <h>[딱 한달만 수확]달콤한 체리자두!</h>
                     <div class="funding-contents">
-                        <h>8,843,500�썝</h>
+                        <h>8,843,500원</h>
                         <h>1768%</h>
                     </div>
                 </div>
@@ -216,13 +215,12 @@
                    href="../funding/crowdFunding-detail.html"
                    th:href="@{/crowd/detail}">
                     <img
-
                     />
                 </a>
                 <div class="contents-title-box">
-                    <h>已��뱷! �떖肄�! �깉肄�! 臾댁�媛� 留앷퀬</h>
+                    <h>쫀득! 달콤! 새콤! 무지개 망고</h>
                     <div class="funding-contents">
-                        <h>3,159,600�썝</h>
+                        <h>3,159,600원</h>
                         <h>631%</h>
                     </div>
                 </div>
@@ -237,16 +235,15 @@
                    href="../funding/crowdFunding-detail.html"
                    th:href="@{/crowd/detail}">
                     <img
-
                     />
                 </a>
                 <div class="contents-title-box">
-                    <h>�븳援��뿉 諛⑸Ц�븳 �뿴��怨쇱씪�쓽 �뿬�솗! <h> �깮 留앷퀬�뒪�떞</h>
+                    <div><h> 한국에 방문한 열대과일의 여왕! <h> 생 망고스틴</h>
                     <div class="funding-contents">
-                        <h>2,081,100�썝</h>
+                        <h>2,081,100원</h>
                         <h>416%</h>
                     </div>
-                </div>
+                    </div>
 
             </li>
             <li>
@@ -255,13 +252,12 @@
                    href="../funding/crowdFunding-detail.html"
                    th:href="@{/crowd/detail}">
                     <img
-
                     />
                 </a>
                 <div class="contents-title-box">
-                    <h>泥대━�� �옄�몢�쓽 �떖-肄� �깉-肄ㅽ븳 留뚮궓 <h> �떊�뭹醫� 泥대━�옄�몢 !</h></h>
+                    <h>체리와 자두의 달-콤 새-콤한 만남 <h> 신품종 체리자두 !</h></h>
                     <div class="funding-contents">
-                        <h>40,923,100�썝</h>
+                        <h>40,923,100원</h>
                         <h>8184%</h>
                     </div>
                 </div>
@@ -272,13 +268,12 @@
                    href="../funding/crowdFunding-detail.html"
                    th:href="@{/crowd/detail}">
                     <img
-
                     />
                 </a>
                 <div class="contents-title-box">
-                    <h>轅� 怨쇱쬂�씠 二쇰Ⅴ瑜� �끂~�� 釉붾옓留앷퀬�닔諛�</h>
+                    <h>꿀 과즙이 주르륵 노~란 블랙망고수박</h>
                     <div class="funding-contents">
-                        <h>869,000�썝</h>
+                        <h>869,000원</h>
                         <h>173%</h>
                     </div>
                 </div>
@@ -292,13 +287,13 @@
 <!-- Footer -->
 <footer class="footer">
     <div class="footer-inner">
-        <p>寃쎈턿�삊�룞議고빀 �냽遺��븘吏��빞</p>
+        <p>경북협동조합 농부아지야</p>
         <hr/>
         <ul>
-            <li><a href="#">�냽�꽬</a></li>
+            <li><a href="#">농넷</a></li>
             <li><a href="#">KAMIS</a></li>
-            <li><a href="#">�븳援��냽�뼱珥뚭났�궗</a></li>
-            <li><a href="#">�쁺�궓���븰援�</a></li>
+            <li><a href="#">한국농어촌공사</a></li>
+            <li><a href="#">영남대학교</a></li>
         </ul>
     </div>
 </footer>

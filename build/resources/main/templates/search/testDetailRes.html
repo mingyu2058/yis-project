@@ -138,9 +138,9 @@
                 <form action="./detailSearch" method="get" name="detailSearch">
                     <div class="firstFilter">
                         <div class="titleDiv">
-                            <p style="margin-left: 85px;"><b>품목 선택</b></p>
-                            <p style="margin-left: 200px;"><b>품종</b></p>
-                            <p style="margin-left: 215px;"><b>출하 기간</b></p>
+                            <p style="margin-left: 87px;"><b>카테고리</b></p>
+                            <p style="margin-left: 205px;"><b>품목</b></p>
+                            <p style="margin-left: 215px;"><b>출하기간</b></p>
                         </div>
                         <div class="firstDiv1">
                             <select multiple class="form-control" id="categoryA" name="categoryA" autocomplete="off"
@@ -168,13 +168,13 @@
 
                     <div class="secondFilter">
                         <div class="titleDiv">
-                            <p style="margin-left: 85px;"><b>협동 조합</b></p>
-                            <p style="margin-left: 200px;"><b>가격</b></p>
+                            <p style="margin-left: 87px;"><b>협동조합</b></p>
+                            <p style="margin-left: 205px;"><b>가격</b></p>
                         </div>
                         <div class="secondDiv1">
                             <select multiple class="form-control" id="johab" name="johab" autocomplete="off">
                                 <option th:each="johab:${johab}" style="font-size:16px; margin-top:15px;" th:value="${johab}"
-                                        th:text="${johab}">
+                                th:text="${johab}">
                                 </option>
                             </select>
                         </div>

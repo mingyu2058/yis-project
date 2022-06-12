@@ -23,7 +23,7 @@
                             src="../../static/img/datacenter.png"
                             th:src="@{/img/datacenter.png}"
                     />
-                    <h>�뜲�씠�꽣 �꽱�꽣</h>
+                    <h>데이터 센터</h>
                 </a>
 
             </li>
@@ -34,7 +34,7 @@
                             class="news-img"
                             src="../../static/img/trade.png"
                             th:src="@{/img/trade.png}"/>
-                    <h>�꽑臾쇨굅�옒</h>
+                    <h>선물거래</h>
                 </a>
             </li>
             <li>
@@ -44,7 +44,7 @@
                             class="trade-img"
                             src="../../static/img/news.png"
                             th:src="@{/img/news.png}"/>
-                    <h>�돱�뒪</h>
+                    <h>뉴스</h>
                 </a>
             </li>
             <li>
@@ -54,7 +54,7 @@
                             class="funding-img"
                             src="../../static/img/crowdfunding.png"
                             th:src="@{/img/crowdfunding.png}"/>
-                    <h>�겕�씪�슦�뱶 ���뵫</h>
+                    <h>크라우드 펀딩</h>
                 </a>
             </li>
         </ul>
@@ -79,19 +79,19 @@
 
         <a sec:authorize="isAnonymous()"
            href="login.html"
-           th:href="@{/account/login}">濡쒓렇�씤</a>
+           th:href="@{/account/login}">로그인</a>
 
         <h
-                sec:authorize="isAnonymous()">�삉�뒗
+                sec:authorize="isAnonymous()">또는
         </h>
 
         <a sec:authorize="isAnonymous()"
            href="join.html"
-           th:href="@{/account/join}">�쉶�썝媛��엯</a>
+           th:href="@{/account/join}">회원가입</a>
 
         <h
                 sec:authorize="isAuthenticated()"
-        >�븞�뀞�븯�꽭�슂!
+        >안녕하세요!
         </h>
         <a
                 sec:authorize="isAuthenticated()"
@@ -104,19 +104,19 @@
 <div class="contents">
     <div class="title-contents">
         <h1>
-            7�썡 ���몴 蹂듭댂�븘 3醫�!
+            7월 대표 복숭아 3종!
         </h1>
     </div>
     <div class="img-contents">
         <img
                 src="../../static/img/peach.jpeg"
-                th:src="@{/img/peach.jpeg}"/>
+                th:src="@{/img/fruit.png}"/>
     </div>
     <div class="info-contents">
-        <p>湲덉븸 ���뵫 以�</p>
-        <p>2276% �떖�꽦</p>
-        <p>11,380,800�썝 ���뵫</p>
-        <p>269紐낆쓽 �꽌�룷�듃</p>
+        <p>금액 펀딩 중</p>
+        <p>2276% 달성</p>
+        <p>11,380,800원 펀딩</p>
+        <p>269명의 서포트</p>
     </div>
 </div>
 
@@ -148,20 +148,20 @@
 
 <div class="funding-btn">
     <button>
-        ���뵫�븯湲�
+        펀딩하기
     </button>
 </div>
 
 <!-- Footer -->
 <footer class="footer">
     <div class="footer-inner">
-        <p>寃쎈턿�삊�룞議고빀 �냽遺��븘吏��빞</p>
+        <p>경북협동조합 농부아지야</p>
         <hr/>
         <ul>
-            <li><a href="#">�냽�꽬</a></li>
+            <li><a href="#">농넷</a></li>
             <li><a href="#">KAMIS</a></li>
-            <li><a href="#">�븳援��냽�뼱珥뚭났�궗</a></li>
-            <li><a href="#">�쁺�궓���븰援�</a></li>
+            <li><a href="#">한국농어촌공사</a></li>
+            <li><a href="#">영남대학교</a></li>
         </ul>
     </div>
 </footer>
